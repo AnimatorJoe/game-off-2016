@@ -1,27 +1,30 @@
-# GitHub Game Off 2016
+# Westlake APC's Submission to GitHub Game Off 2016
 
 ![GitHub Game Off 2016 Theme is Hacking, Modding, or Augmenting](https://cloud.githubusercontent.com/assets/121322/19498019/d8827370-9543-11e6-82d8-6da822b6147b.png)
 
-<div align="right">
-  <sup>
-    <a href="#the-challenge">English</a> ·
-    <a href="#お題">日本語</a>
-  </sup>
-</div>
+## Our Submission
 
-## The Challenge
+We have the entire month of November to create a game *loosely* based on the theme **hacking, modding and/or augmenting**.
 
-You have the entire month of November to create a game *loosely* based on the theme **hacking, modding and/or augmenting**.
+We chose to make a game focusing around _modding_'s second unofficial meaning: moderation. In the game, you control a federally commissioned team to _moderate_ the behavior of bad guys working for the CIA to lower their sentences, in an insanely large and chaotic rendition of _White Collar_, the bad guys being a user-controlled SpriteKit particle effect.
 
-What do we mean by **loosely** based on hacking, modding and/or augmenting? We literally mean, *loosely* based. Some examples might be:
+## How to build
 
-* an endless runner where you *hack* down binary trees in your path with a pixelated axe,
-* a *modern* take on a classic e.g. a roguelike set in a 3D or VR world, or
-* an *augmented* reality game bringing octopus/cat hybrids into the real world.
+To build our app on a macOS 10.12 environment with Xcode 8 and Cocoapods, first install the Cocoapods dependencies.
 
-Unleash your creativity. You can work alone or with a team and build for any platform or device. The use of open source game engines and libraries is encouraged but not required.
+```bash
+pod install
+```
 
-We'll highlight some of our favorites on the GitHub blog, and the world will get to enjoy (and maybe even contribute to and/or learn from) your creations.
+Then, use the `xcrun` command line tool as follows, to compile and run:
+
+```bash
+xcrun xcodebuild \
+  -scheme iOS \
+  -workspace GameOff.xcworkspace \
+  -configuration Debug \
+  -destination 'platform=iOS Simulator,name=iPhone 7 Plus,OS=10.0'
+```
 
 ## How to participate
 
@@ -42,44 +45,6 @@ If you're **new to Git, GitHub, or version control**…
 * Questions specific to the GitHub Game Off? Please [create an issue][game-off-repo-issues]. This will be the official FAQ.
 
 The official Twitter hashtag for the Game Off is `#ggo16`. We look forward to playing with your creations.
-
-GLHF! <3
-
-## お題
-
-11月いっぱいを使って、ゲームを作ってください。作ってもらいたいゲームのテーマは大まかに言って、**hacking, modding and/or augmenting(ハック、改造もしくは拡張)**です。
-
-"**大まか**に言ってhacking, modding and/or augmenting(ハック、改造もしくは拡張)"とはどういう意味でしょうか？ 文字通り、*大まか*にテーマに沿っていればいいということです。
-
-例えば、こんな例も含まれるということです:
-
-* ピクセル製の斧をつかってあなたが*叩き切った*(*hack* down)バイナリツリー上をランナーが走り続けるゲームとか
-* ゲームの古典をベースに*現代的*(*modern*)な解釈をするとか(例えばローグライクゲームを3DやVRの世界で再現してみる)
-* タコと猫のハイブリッドを現実世界に持ち込むような*拡張*現実(*augmented* reality)ゲームとか
-
-みなさんのクリエイティビティを最大限発揮できるように、1人で作業してもチームで作業しても問題ありませんし、作るゲームがどんなプラットフォーム向けでもどんなデバイス向けでも不問とします。また、オープンソースのゲームエンジンやライブラリを使用することは歓迎しますが、必須ではありません。
-
-ご応募いただいたゲームのうちいくつかはGitHubのブログで取り上げる予定です。世界中があなたが作ったゲームを楽しんでくれると思います。（そしてあなたのゲームに対して貢献もしてくれるかもしれませんし、同時にあなたのゲームから何かを学び取ることもあるでしょう）
-
-## 参加方法
-
-* まだGitHubのアカウントを持っていない場合、[GitHubにサインアップしてアカウントを作ってください。（無料のもので問題ありません）][github-signup]
-* [このリポジトリ][game-off-repo]を自分のアカウントにフォークしてください。（もしくは[オーガニゼーションにフォークしても問題ありません。もちろん無料プランでいいです。][github-signup-org])
-* 自身のコンピュータにリポジトリをクローンして、ゲームを開発してください。
-* ゲームのソースコードをフォークした自分のリポジトリに12月1日になる前にプッシュしてください。
-* `README.md`ファイルを更新して、ゲームの説明、プレイの仕方、ダウンロードの仕方、またはビルド/コンパイルの方法、依存しているライブラリ等の説明、等々、必要な情報を含めてください。
-* 最後にこの[フォーム][wufoo-form]を使ってゲームをサブミットしてください。
-
-## ヒトリデハキケンジャ コレヲ サズケヨウ <img src="https://octodex.github.com/images/linktocat.jpg" height="40">
-
-もし**GitやGitHub、バージョン管理そのものについて初心者なのであれば**...
-
-* [Git Documentation](https://git-scm.com/documentation) - バージョンコントロールについてと、Gitを使い始めるために必要な情報はここにあります。（日本語で読める情報としては[Pro Gitの日本語版](https://git-scm.com/book/ja/v2)があります）
-* [GitHub Help](https://help.github.com/) - GitHubについてはこちらを参照してください。
-* GitHubについて質問したいことがあれば、ぜひ[ここから問い合わせてください！（ただし英語でお願いします :bow: )][github-support] サポートチームが助けてくれます。
-* GitHub Game Offに関する質問については、[ここにIssueを作って聞いてください。（英語でお願いします）][game-off-repo-issues]. これが公式のFAQになっていく予定です。
-
-このGame OffのためのTwitterの公式ハッシュタグは`#ggo16`です。皆さんのゲームで遊べるのを楽しみにしています。
 
 GLHF! <3
 
