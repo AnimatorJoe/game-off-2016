@@ -38,6 +38,7 @@
 		176CA3851DC934DA009CF9A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 176CA3311DC934D9009CF9A5 /* Assets.xcassets */; };
 		176CA3861DC934DA009CF9A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 176CA3311DC934D9009CF9A5 /* Assets.xcassets */; };
 		176CA3871DC934DA009CF9A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 176CA3311DC934D9009CF9A5 /* Assets.xcassets */; };
+		17B1B55A1DC953CB00A6585C /* BadGuysMob.sks in Resources */ = {isa = PBXBuildFile; fileRef = 17B1B5591DC953CB00A6585C /* BadGuysMob.sks */; };
 		AE2D6D82C53A1FA8D67B55B7 /* Pods_watchOS_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693C28A42E9BDB3101041835 /* Pods_watchOS_Extension.framework */; };
 		C26A7FBE5B8BAB62D79CB8A9 /* Pods_watchOS_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74169612C07800E477299E04 /* Pods_watchOS_App.framework */; };
 		F5F8A0EF4739C1B85095F57E /* Pods_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52BF82D1BA78BD9806FAF1F /* Pods_macOS.framework */; };
@@ -115,6 +116,7 @@
 		176CA3731DC934DA009CF9A5 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		176CA3761DC934DA009CF9A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		176CA3781DC934DA009CF9A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17B1B5591DC953CB00A6585C /* BadGuysMob.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BadGuysMob.sks; sourceTree = "<group>"; };
 		2F4966097F55DF575D7AB6C8 /* Pods-watchOS Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-watchOS Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-watchOS Extension/Pods-watchOS Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		4D6037D3DA9803535A0B48BD /* Pods-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS/Pods-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		52FFA1CC282D1DE3EF25EB55 /* Pods_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,6 +199,7 @@
 				176CA32F1DC934D9009CF9A5 /* GameScene.sks */,
 				176CA3301DC934D9009CF9A5 /* GameScene.swift */,
 				176CA3311DC934D9009CF9A5 /* Assets.xcassets */,
+				17B1B5591DC953CB00A6585C /* BadGuysMob.sks */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17B1B55A1DC953CB00A6585C /* BadGuysMob.sks in Resources */,
 				176CA37C1DC934DA009CF9A5 /* GameScene.sks in Resources */,
 				176CA33F1DC934DA009CF9A5 /* Main.storyboard in Resources */,
 				176CA3791DC934DA009CF9A5 /* Actions.sks in Resources */,
@@ -571,7 +575,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		59D8F0B5069E1EFCBC53D327 /* [CP] Copy Pods Resources */ = {
@@ -601,7 +605,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		620FFF47E29761F6E4CBE049 /* [CP] Embed Pods Frameworks */ = {
@@ -646,7 +650,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8B513AA32AFB43EA8D064106 /* [CP] Embed Pods Frameworks */ = {
@@ -691,7 +695,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		E6B4FC2721156113C48E977F /* [CP] Copy Pods Resources */ = {
@@ -721,7 +725,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1111,6 +1115,7 @@
 				176CA38C1DC934DA009CF9A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		176CA38E1DC934DA009CF9A5 /* Build configuration list for PBXNativeTarget "watchOS App" */ = {
 			isa = XCConfigurationList;
@@ -1119,6 +1124,7 @@
 				176CA3901DC934DA009CF9A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		176CA3921DC934DA009CF9A5 /* Build configuration list for PBXNativeTarget "iOS" */ = {
 			isa = XCConfigurationList;
@@ -1127,6 +1133,7 @@
 				176CA3941DC934DA009CF9A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		176CA3951DC934DA009CF9A5 /* Build configuration list for PBXNativeTarget "tvOS" */ = {
 			isa = XCConfigurationList;
@@ -1135,6 +1142,7 @@
 				176CA3971DC934DA009CF9A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		176CA3981DC934DA009CF9A5 /* Build configuration list for PBXNativeTarget "macOS" */ = {
 			isa = XCConfigurationList;
@@ -1143,6 +1151,7 @@
 				176CA39A1DC934DA009CF9A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
