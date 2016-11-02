@@ -1,4 +1,4 @@
-# Westlake APC's Submission to GitHub Game Off 2016
+# Immolation Organization
 
 ![GitHub Game Off 2016 Theme is Hacking, Modding, or Augmenting](https://cloud.githubusercontent.com/assets/121322/19498019/d8827370-9543-11e6-82d8-6da822b6147b.png)
 
@@ -6,7 +6,7 @@
 
 We have the entire month of November to create a game *loosely* based on the theme **hacking, modding and/or augmenting**.
 
-We chose to make a game focusing around _modding_'s second unofficial meaning: moderation. In the game, you control a federally commissioned team to _moderate_ the behavior of bad guys working for the CIA to lower their sentences, in an insanely large and chaotic rendition of _White Collar_, the bad guys being a user-controlled SpriteKit particle effect.
+In ours, you control a federally commissioned team to _**moderate**_ a cluster of bad guys working for the CIA to lower their sentences, which _**hack**_ away at evil robots and aliens, the bad guys being a user-controlled SpriteKit particle effect. Pretty much, it's just an insanely enormous and chaotic rendition of DC Comics' _Suicide Squad_.
 
 ## How to build
 
