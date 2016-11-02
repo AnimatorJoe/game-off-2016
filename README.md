@@ -4,7 +4,7 @@
 
 ## Our Submission
 
-We have the entire month of November to create a game *loosely* based on the theme **hacking, modding and/or augmenting**.
+We have the entire month of November to create a game *loosely* based on the theme **hacking, modding and/or augmenting** for the developer services company GitHub's annual game development competition, the Game Off.
 
 In ours, you control a federally commissioned team to _**moderate**_ a cluster of bad guys working for the CIA to lower their sentences, which _**hack**_ away at evil robots and aliens, the bad guys being a user-controlled SpriteKit particle effect. Pretty much, it's just an insanely enormous and chaotic rendition of DC Comics' _Suicide Squad_.
 
