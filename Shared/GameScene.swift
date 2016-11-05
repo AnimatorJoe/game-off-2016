@@ -81,6 +81,7 @@ class GameScene: SKScene {
             self.setUpScene()
         }
     #else
+    //MARK: IOS Did Move to View
         override func didMove(to view: SKView) {
             self.setUpScene()
         }
