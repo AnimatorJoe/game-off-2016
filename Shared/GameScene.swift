@@ -34,7 +34,9 @@ class GameScene: SKScene {
         return scene
     }
     
+    //MARK: Scene Setup
     func setUpScene() {
+        
         // Get label node from scene and store it for use later
         self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
         if let label = self.label {
@@ -97,6 +99,7 @@ class GameScene: SKScene {
     }
 }
 
+//MARK: TV OS and IOS Setup
 #if os(iOS) || os(tvOS)
     // Touch-based event handling
     extension GameScene {
@@ -133,6 +136,7 @@ class GameScene: SKScene {
     }
 #endif
 
+//MARK: Mac OS Setup
 #if os(macOS)
     // Mouse-based event handling
     extension GameScene {
