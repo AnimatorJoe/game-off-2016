@@ -34,11 +34,8 @@ class GameScene: SKScene {
         return scene
     }
     
-    //MARK: Scene Setup
+    // MARK: Scene setup
     func setUpScene() {
-        
-        // Get label node from scene and store it for use later
-        
         self.badGuys = SKEmitterNode(fileNamed: "BadGuysMob")
         if let badGuys = self.badGuys {
             badGuys.position = CGPoint(x: self.frame.origin.x,
@@ -76,7 +73,6 @@ class GameScene: SKScene {
             self.setUpScene()
         }
     #else
-    //MARK: IOS Did Move to View
         override func didMove(to view: SKView) {
             self.setUpScene()
         }
@@ -95,7 +91,7 @@ class GameScene: SKScene {
     }
 }
 
-//MARK: TV OS and IOS Setup
+// MARK: tvOS and iOS setup
 #if os(iOS) || os(tvOS)
     // Touch-based event handling
     extension GameScene {
@@ -132,7 +128,7 @@ class GameScene: SKScene {
     }
 #endif
 
-//MARK: Mac OS Setup
+// MARK: macOS setup
 #if os(macOS)
     // Mouse-based event handling
     extension GameScene {
