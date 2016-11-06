@@ -23,6 +23,9 @@ class GameScene: SKScene {
     //Variable Setup
     let spinnyStuff = false
     
+    var badguySpawnRate : CGFloat = 0.5
+    var energyLevel = 0
+    
     //Helps load scene through GameViewController
     class func newGameScene() -> GameScene {
         // Load 'GameScene.sks' as an SKScene.
@@ -41,10 +44,11 @@ class GameScene: SKScene {
     func setUpScene() {
         self.badGuys = SKEmitterNode(fileNamed: "BadGuysMob")
         if let badGuys = self.badGuys {
-            badGuys.position = CGPoint(x: self.frame.origin.x,
-                                       y: self.frame.origin.y)
+            badGuys.position = CGPoint(x: 0,
+                                       y: 0)
             badGuys.setScale(5)
             badGuys.isHidden = false
+            badGuys.particleBirthRate = badguySpawnRate
             self.addChild(badGuys)
         }
         
@@ -52,6 +56,7 @@ class GameScene: SKScene {
         let w = (self.size.width + self.size.height) * 0.05
         self.spinnyNode = SKShapeNode.init(rectOf: CGSize.init(width: w, height: w), cornerRadius: w * 0.3)
         
+        //Setup spinny nodes
         if let spinnyNode = self.spinnyNode {
             spinnyNode.lineWidth = 4.0
             spinnyNode.run(SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(M_PI), duration: 1)))
@@ -73,7 +78,7 @@ class GameScene: SKScene {
         }
     }
 
-    //Makes spinny stuff
+    //MARK: Makes spinny stuff
     func makeSpinny(at pos: CGPoint, color: SKColor) {
         if let spinny = self.spinnyNode?.copy() as! SKShapeNode? {
             spinny.position = pos
@@ -125,6 +130,7 @@ class GameScene: SKScene {
             for t in touches {
                 if(spinnyStuff){self.makeSpinny(at: t.location(in: self), color: SKColor.green)}
                 moveBadGuys(pos: t.location(in: self))
+                print(t.location(in: self))
             }
         }
     
