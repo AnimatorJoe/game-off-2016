@@ -203,7 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				73E71D681DCF892D001E0E50 /* Assets */,
-				176CA32E1DC934D9009CF9A5 /* Actions.sks */,
+				176CA32F1DC934D9009CF9A5 /* GameScene.sks */,
 				176CA3301DC934D9009CF9A5 /* GameScene.swift */,
 				176CA3311DC934D9009CF9A5 /* Assets.xcassets */,
 				178A09461DCFA66A008562F6 /* Settings.bundle */,
@@ -280,7 +280,7 @@
 		73E71D681DCF892D001E0E50 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				176CA32F1DC934D9009CF9A5 /* GameScene.sks */,
+				176CA32E1DC934D9009CF9A5 /* Actions.sks */,
 				17B1B5591DC953CB00A6585C /* BadGuysMob.sks */,
 			);
 			name = Assets;
