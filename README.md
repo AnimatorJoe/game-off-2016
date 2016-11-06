@@ -4,9 +4,9 @@
 
 ## Our Submission
 
-We have the entire month of November to create a game *loosely* based on the theme **hacking, modding and/or augmenting** for the developer services company GitHub's annual game development competition, the Game Off.
+We are the Westlake Accessible Programming Club, a team of high-schoolers interested in the development of everything from games to kernels in the high-level language Swift. We're excited this year to take the entire month of November to create a game *loosely* based on the theme **hacking, modding and/or augmenting** for the developer services company GitHub's annual game development competition, the Game Off.
 
-In ours, you control a federally commissioned team to _**moderate**_ a cluster of bad guys working for the CIA to lower their sentences, which _**hack**_ away at evil robots and aliens, the bad guys being a user-controlled SpriteKit particle effect. Pretty much, it's just an insanely enormous and chaotic rendition of DC Comics' _Suicide Squad_.
+In our submission, you control a federally commissioned team to _**moderate**_ a cluster of bad guys working for the CIA to lower their sentences, which _**hack**_ away at evil robots and aliens, the bad guys being a user-controlled SpriteKit particle effect. Pretty much, it's just an insanely enormous and chaotic rendition of DC Comics' _Suicide Squad_.
 
 ## How to build
 
@@ -26,6 +26,11 @@ xcrun xcodebuild \
   -destination 'platform=iOS Simulator,name=iPhone 7 Plus,OS=10.0'
 ```
 
+
+## Gameplay instructions.
+
+This section will be more full when we have a working prototype…
+
 ## How to participate
 
 * [Sign up for a free personal account][github-signup] if you don't already have one.
@@ -41,7 +46,7 @@ If you're **new to Git, GitHub, or version control**…
 
 * [Git Documentation](https://git-scm.com/documentation) - everything you need to know about version control, and how to get started with Git.
 * [GitHub Help](https://help.github.com/) - everything you need to know about GitHub.
-* Questions about GitHub? Please [contact our Support team][github-support] and they'll be delighted to help you.
+* Questions about GitHub? Please [contact their Support team][github-support] and they'll be delighted to help you.
 * Questions specific to the GitHub Game Off? Please [create an issue][game-off-repo-issues]. This will be the official FAQ.
 
 The official Twitter hashtag for the Game Off is `#ggo16`. We look forward to playing with your creations.
