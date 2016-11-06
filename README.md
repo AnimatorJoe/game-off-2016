@@ -26,6 +26,11 @@ xcrun xcodebuild \
   -destination 'platform=iOS Simulator,name=iPhone 7 Plus,OS=10.0'
 ```
 
+
+## Gameplay instructions.
+
+This section will be more full when we have a working prototype…
+
 ## How to participate
 
 * [Sign up for a free personal account][github-signup] if you don't already have one.
@@ -41,7 +46,7 @@ If you're **new to Git, GitHub, or version control**…
 
 * [Git Documentation](https://git-scm.com/documentation) - everything you need to know about version control, and how to get started with Git.
 * [GitHub Help](https://help.github.com/) - everything you need to know about GitHub.
-* Questions about GitHub? Please [contact our Support team][github-support] and they'll be delighted to help you.
+* Questions about GitHub? Please [contact their Support team][github-support] and they'll be delighted to help you.
 * Questions specific to the GitHub Game Off? Please [create an issue][game-off-repo-issues]. This will be the official FAQ.
 
 The official Twitter hashtag for the Game Off is `#ggo16`. We look forward to playing with your creations.
