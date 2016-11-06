@@ -96,6 +96,11 @@ class GameScene: SKScene {
     //MARK: In game calculations
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+        if (energyLevel >= 10 && badguySpawnRate <= 5){
+            badguySpawnRate = 5
+            badGuys?.particleBirthRate = badguySpawnRate
+        }
+        
     }
     
     
