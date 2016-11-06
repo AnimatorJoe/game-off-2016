@@ -24,7 +24,7 @@ class GameScene: SKScene {
     let spinnyStuff = false
     
     var badguySpawnRate : CGFloat = 0.5
-    var energyLevel = 0
+    var energyLevel = 3
     
     //Helps load scene through GameViewController
     class func newGameScene() -> GameScene {
