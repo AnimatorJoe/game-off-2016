@@ -16,9 +16,8 @@ import SpriteKit
 class GameScene: SKScene {
     
     // MARK: Internal SKNode references
-    fileprivate var label : SKLabelNode?
     fileprivate var spinnyNode : SKShapeNode?
-    fileprivate var badGuys: SKEmitterNode?
+    fileprivate var badGuys : SKEmitterNode?
     
     // MARK: Internal variables
     let spinnyStuff = UserDefaults.standard.value(forKey: "spinnyStuff") ?? false
@@ -125,16 +124,11 @@ class GameScene: SKScene {
     extension GameScene {
 
         override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            if let label = self.label{
-                label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
-            }
-        
             for t in touches {
                 if self.spinnyStuff as! Bool {
                     self.makeSpinny(at: t.location(in: self), color: SKColor.green)
                 }
                 moveBadGuys(pos: t.location(in: self))
-                print(t.location(in: self))
             }
         }
     
@@ -175,25 +169,24 @@ class GameScene: SKScene {
     extension GameScene {
 
         override func mouseDown(with event: NSEvent) {
-            if let label = self.label {
-                label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
-            }
-            
             if self.spinnyStuff as! Bool {
                 self.makeSpinny(at: event.location(in: self), color: SKColor.green)
             }
+            moveBadGuys(pos: event.location(in: self))
         }
     
         override func mouseDragged(with event: NSEvent) {
             if self.spinnyStuff as! Bool {
                 self.makeSpinny(at: event.location(in: self), color: SKColor.blue)
             }
+            moveBadGuys(pos: event.location(in: self))
         }
     
         override func mouseUp(with event: NSEvent) {
             if self.spinnyStuff as! Bool {
                 self.makeSpinny(at: event.location(in: self), color: SKColor.red)
             }
+            moveBadGuys(pos: event.location(in: self))
         }
     }
 #endif
