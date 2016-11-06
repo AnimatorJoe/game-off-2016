@@ -15,18 +15,17 @@ import SpriteKit
 
 class GameScene: SKScene {
     
-    //SKNodes
+    // MARK: Internal SKNode references
     fileprivate var label : SKLabelNode?
     fileprivate var spinnyNode : SKShapeNode?
     fileprivate var badGuys: SKEmitterNode?
     
-    //Variable Setup
-    let spinnyStuff = false
-    
+    // MARK: Internal variables
+    let spinnyStuff = UserDefaults.standard.value(forKey: "spinnyStuff") ?? false
     var badguySpawnRate : CGFloat = 0.5
     var energyLevel = 3
     
-    //Helps load scene through GameViewController
+    // MARK: Initialize with SKS contents
     class func newGameScene() -> GameScene {
         // Load 'GameScene.sks' as an SKScene.
         guard let scene = SKScene(fileNamed: "GameScene") as? GameScene else {
@@ -40,7 +39,7 @@ class GameScene: SKScene {
         return scene
     }
     
-    //MARK: Scene setup
+    // MARK: Scene setup
     func setUpScene() {
         self.badGuys = SKEmitterNode(fileNamed: "BadGuysMob")
         if let badGuys = self.badGuys {
@@ -87,7 +86,7 @@ class GameScene: SKScene {
         }
     }
     
-    //MARK: Move "Hackers" to player taps (It's a pun)
+    //MARK: Move "hackers" to player taps at constant speed
     func moveBadGuys(pos: CGPoint){
         badGuys?.run(SKAction.move(to: pos, duration: TimeInterval.init(
             sqrt(pow(pos.x-badGuys!.frame.origin.x,2)+pow(pos.y-badGuys!.frame.origin.y,2))/100.0)));
@@ -103,15 +102,13 @@ class GameScene: SKScene {
         
     }
     
-    
-    //MARK: Loads scene based on OS
+    // MARK: Platform conditional SKView initialization
     #if os(watchOS)
         override func sceneDidLoad() {
             self.setUpScene()
         }
     #else
         override func didMove(to view: SKView) {
-    
             self.setUpScene()
         }
     #endif
@@ -133,7 +130,9 @@ class GameScene: SKScene {
             }
         
             for t in touches {
-                if(spinnyStuff){self.makeSpinny(at: t.location(in: self), color: SKColor.green)}
+                if self.spinnyStuff as! Bool {
+                    self.makeSpinny(at: t.location(in: self), color: SKColor.green)
+                }
                 moveBadGuys(pos: t.location(in: self))
                 print(t.location(in: self))
             }
@@ -141,21 +140,27 @@ class GameScene: SKScene {
     
         override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
             for t in touches {
-                if(spinnyStuff){self.makeSpinny(at: t.location(in: self), color: SKColor.blue)}
+                if self.spinnyStuff as! Bool {
+                    self.makeSpinny(at: t.location(in: self), color: SKColor.blue)
+                }
                 moveBadGuys(pos: t.location(in: self))
             }
         }
 
         override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
             for t in touches {
-                if(spinnyStuff){self.makeSpinny(at: t.location(in: self), color: SKColor.red)}
+                if self.spinnyStuff as! Bool {
+                    self.makeSpinny(at: t.location(in: self), color: SKColor.red)
+                }
                 moveBadGuys(pos: t.location(in: self))
             }
         }
     
         override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
             for t in touches {
-                if(spinnyStuff){self.makeSpinny(at: t.location(in: self), color: SKColor.red)}
+                if self.spinnyStuff as! Bool {
+                    self.makeSpinny(at: t.location(in: self), color: SKColor.red)
+                }
                 moveBadGuys(pos: t.location(in: self))
             }
         }
@@ -173,17 +178,23 @@ class GameScene: SKScene {
             if let label = self.label {
                 label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
             }
-            self.makeSpinny(at: event.location(in: self), color: SKColor.green)
+            
+            if self.spinnyStuff as! Bool {
+                self.makeSpinny(at: event.location(in: self), color: SKColor.green)
+            }
         }
     
         override func mouseDragged(with event: NSEvent) {
-            self.makeSpinny(at: event.location(in: self), color: SKColor.blue)
+            if self.spinnyStuff as! Bool {
+                self.makeSpinny(at: event.location(in: self), color: SKColor.blue)
+            }
         }
     
         override func mouseUp(with event: NSEvent) {
-            self.makeSpinny(at: event.location(in: self), color: SKColor.red)
+            if self.spinnyStuff as! Bool {
+                self.makeSpinny(at: event.location(in: self), color: SKColor.red)
+            }
         }
-
     }
 #endif
 
