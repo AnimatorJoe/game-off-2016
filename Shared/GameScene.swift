@@ -20,7 +20,7 @@ class GameScene: SKScene {
     fileprivate var badGuys : SKEmitterNode?
     
     // MARK: Internal variables
-    let spinnyStuff = UserDefaults.standard.value(forKey: "spinnyStuff") ?? false
+    let spinnyStuff = UserDefaults.standard.value(forKey: "spinnyStuff") ?? true
     var badguySpawnRate : CGFloat = 0.5
     var energyLevel = 3
     
@@ -54,7 +54,7 @@ class GameScene: SKScene {
         let w = (self.size.width + self.size.height) * 0.05
         self.spinnyNode = SKShapeNode.init(rectOf: CGSize.init(width: w, height: w), cornerRadius: w * 0.3)
         
-        //Setup spinny nodes
+        // Setup spinny nodes
         if let spinnyNode = self.spinnyNode {
             spinnyNode.lineWidth = 4.0
             spinnyNode.run(SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(M_PI), duration: 1)))
@@ -76,7 +76,7 @@ class GameScene: SKScene {
         }
     }
 
-    //MARK: Makes spinny stuff
+    // MARK: Makes spinny stuff
     func makeSpinny(at pos: CGPoint, color: SKColor) {
         if let spinny = self.spinnyNode?.copy() as! SKShapeNode? {
             spinny.position = pos
@@ -85,13 +85,13 @@ class GameScene: SKScene {
         }
     }
     
-    //MARK: Move "hackers" to player taps at constant speed
-    func moveBadGuys(pos: CGPoint){
+    // MARK: Move "hackers" to player taps at constant speed
+    func moveBadGuys(_ pos: CGPoint){
         badGuys?.run(SKAction.move(to: pos, duration: TimeInterval.init(
             sqrt(pow(pos.x-badGuys!.frame.origin.x,2)+pow(pos.y-badGuys!.frame.origin.y,2))/100.0)));
     }
     
-    //MARK: In game calculations
+    // MARK: In game calculations
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
         if (energyLevel >= 10 && badguySpawnRate <= 5){
@@ -128,7 +128,7 @@ class GameScene: SKScene {
                 if self.spinnyStuff as! Bool {
                     self.makeSpinny(at: t.location(in: self), color: SKColor.green)
                 }
-                moveBadGuys(pos: t.location(in: self))
+                moveBadGuys(t.location(in: self))
             }
         }
     
@@ -137,7 +137,7 @@ class GameScene: SKScene {
                 if self.spinnyStuff as! Bool {
                     self.makeSpinny(at: t.location(in: self), color: SKColor.blue)
                 }
-                moveBadGuys(pos: t.location(in: self))
+                moveBadGuys(t.location(in: self))
             }
         }
 
@@ -146,7 +146,7 @@ class GameScene: SKScene {
                 if self.spinnyStuff as! Bool {
                     self.makeSpinny(at: t.location(in: self), color: SKColor.red)
                 }
-                moveBadGuys(pos: t.location(in: self))
+                moveBadGuys(t.location(in: self))
             }
         }
     
@@ -155,7 +155,7 @@ class GameScene: SKScene {
                 if self.spinnyStuff as! Bool {
                     self.makeSpinny(at: t.location(in: self), color: SKColor.red)
                 }
-                moveBadGuys(pos: t.location(in: self))
+                moveBadGuys(t.location(in: self))
             }
         }
     
@@ -172,21 +172,21 @@ class GameScene: SKScene {
             if self.spinnyStuff as! Bool {
                 self.makeSpinny(at: event.location(in: self), color: SKColor.green)
             }
-            moveBadGuys(pos: event.location(in: self))
+            moveBadGuys(event.location(in: self))
         }
     
         override func mouseDragged(with event: NSEvent) {
             if self.spinnyStuff as! Bool {
                 self.makeSpinny(at: event.location(in: self), color: SKColor.blue)
             }
-            moveBadGuys(pos: event.location(in: self))
+            moveBadGuys(event.location(in: self))
         }
     
         override func mouseUp(with event: NSEvent) {
             if self.spinnyStuff as! Bool {
                 self.makeSpinny(at: event.location(in: self), color: SKColor.red)
             }
-            moveBadGuys(pos: event.location(in: self))
+            moveBadGuys(event.location(in: self))
         }
     }
 #endif
