@@ -22,7 +22,7 @@ class GameScene: SKScene {
     
     // MARK: Internal variables
     let spinnyStuff = UserDefaults.standard.value(forKey: "spinnyStuff") ?? true
-    var badguySpawnRate : CGFloat = 0.5
+    var badguySpawnRate : CGFloat = 10
     var energyLevel = 3
     
     // MARK: Initialize with SKS contents
@@ -88,8 +88,9 @@ class GameScene: SKScene {
     
     // MARK: Move "hackers" to player taps at constant speed
     func moveBadGuys(_ pos: CGPoint){
+        badGuys?.removeAllActions()
         badGuys?.run(SKAction.move(to: pos, duration: TimeInterval.init(
-            sqrt(pow(pos.x-badGuys!.frame.origin.x,2)+pow(pos.y-badGuys!.frame.origin.y,2))/100.0)));
+            sqrt(pow(pos.x-badGuys!.frame.origin.x,2)+pow(pos.y-badGuys!.frame.origin.y,2))/100.0)))
     }
     
     // MARK: In game calculations
