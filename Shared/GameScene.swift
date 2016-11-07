@@ -13,6 +13,7 @@ import SpriteKit
     typealias SKColor = UIColor
 #endif
 
+// MARK: Platform generic methods
 class GameScene: SKScene {
     
     // MARK: Internal SKNode references
