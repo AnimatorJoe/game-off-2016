@@ -21,7 +21,7 @@ class GameScene: SKScene {
     fileprivate var badGuys : SKEmitterNode?
     
     // MARK: Internal variables
-    let spinnyStuff = UserDefaults.standard.value(forKey: "spinnyStuff") ?? true
+    let spinnyStuff = UserDefaults.standard.value(forKey: "spinnyStuff") ?? false
     var badguySpawnRate : CGFloat = 10
     var energyLevel = 3
     
