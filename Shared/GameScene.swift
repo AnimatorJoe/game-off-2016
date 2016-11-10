@@ -21,8 +21,8 @@ class GameScene: SKScene {
     fileprivate var badGuys : SKEmitterNode?
     
     // MARK: Internal variables
-    let spinnyStuff = UserDefaults.standard.value(forKey: "spinnyStuff") ?? true
-    
+    let spinnyStuff = UserDefaults.standard.value(forKey: "spinnyStuff") ?? false    
+
     // MARK: Initialize with SKS contents
     class func newGameScene() -> GameScene {
         // Load 'GameScene.sks' as an SKScene.
