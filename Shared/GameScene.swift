@@ -45,7 +45,6 @@ class GameScene: SKScene {
                                        y: self.frame.origin.y)
             badGuys.setScale(5)
             badGuys.isHidden = false
-            badGuys.particleBirthRate = badguySpawnRate
             self.addChild(badGuys)
         }
         
