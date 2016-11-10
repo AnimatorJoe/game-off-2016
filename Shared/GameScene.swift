@@ -22,8 +22,6 @@ class GameScene: SKScene {
     
     // MARK: Internal variables
     let spinnyStuff = UserDefaults.standard.value(forKey: "spinnyStuff") ?? true
-    var badguySpawnRate : CGFloat = 10
-    var energyLevel = 3
     
     // MARK: Initialize with SKS contents
     class func newGameScene() -> GameScene {
@@ -96,11 +94,7 @@ class GameScene: SKScene {
     // MARK: In game calculations
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
-        if (energyLevel >= 10 && badguySpawnRate <= 5){
-            badguySpawnRate = 5
-            badGuys?.particleBirthRate = badguySpawnRate
-        }
-        
+        badGuys?.particleBirthRate *= 0.90
     }
     
     // MARK: Platform conditional SKView initialization
