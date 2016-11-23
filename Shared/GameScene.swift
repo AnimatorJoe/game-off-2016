@@ -64,10 +64,11 @@ class GameScene: SKScene {
     
     // MARK: Scene setup
     func setUpScene() {
+        
         self.badGuys = SKEmitterNode(fileNamed: "BadGuysMob")
         if let badGuys = self.badGuys {
             badGuys.position = CGPoint(x: 0,
-                                       y: 0)
+                                       y: -20)
             badGuys.setScale(5)
             badGuys.zPosition = 3
             badGuys.isHidden = false
@@ -126,12 +127,11 @@ class GameScene: SKScene {
     // MARK: Spawn Other Enemies
     func spawnEnemies() {
         
-        //Declorations
-        let moveUp = SKAction.moveBy(x: self.size.width/2, y: self.size.height/2, duration: 3)
-        let waitRandom = SKAction.wait(forDuration: TimeInterval(arc4random_uniform(UInt32(3))))
+        // Declorations
+        let waitRandom = SKAction.wait(forDuration: TimeInterval(arc4random_uniform(UInt32(2))))
         var enemy = SKSpriteNode()
         
-        //Randomly Selecting Sprite Type
+        // Randomly Selecting Sprite Type
         let selectTexture = arc4random() % 3
         
         switch selectTexture {
@@ -149,14 +149,18 @@ class GameScene: SKScene {
             
         }
         
+        // Adds Enemy to Screen
+        enemy.position = CGPoint(x: self.size.width/2 - CGFloat(arc4random_uniform(UInt32(self.size.width))), y: self.size.height * 3/5)
         
-        enemy.position = CGPoint(x: 0, y: 0)
+        let moveEnemy = SKAction.moveBy(x: enemy.position.x - (CGFloat(arc4random_uniform(UInt32(self.size.width * 2/3)))), y: -(self.size.height * 1.2), duration: 2)
+        
         enemy.zPosition = 2
         enemy.xScale = 0.6
         enemy.yScale = 0.6
         self.addChild(enemy)
         
-        enemy.run((SKAction.sequence([moveUp, waitRandom])), completion: { self.spawnEnemies() })
+        // Spawns More Enemies
+        enemy.run((SKAction.sequence([moveEnemy, waitRandom])), completion: { self.spawnEnemies() })
         
     }
     
@@ -164,6 +168,7 @@ class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
         if !initialCall{
+            spawnEnemies()
             spawnEnemies()
             initialCall = true
         }
@@ -179,6 +184,14 @@ class GameScene: SKScene {
         }
     #else
         override func didMove(to view: SKView) {
+    
+            //Matching Dimensions
+            self.size.width = UIScreen.main.bounds.width * 2
+            self.size.height = UIScreen.main.bounds.height * 2
+            print("Screen Width: " + String(describing: self.size.width))
+            print("Screen Height: " + String(describing: self.size.height)
+    )
+    
             self.setUpScene()
         }
     #endif
