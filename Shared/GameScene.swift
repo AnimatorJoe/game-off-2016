@@ -114,7 +114,7 @@ class GameScene: SKScene {
         
         for enemy in 1...3 {
             for stage in 0...3 {
-                textureMatrix[enemy-1][stage] = atlas.textureNamed("spacesprite\(enemy).\(stage).png")
+                textureMatrix[enemy-1][stage] = atlas.textureNamed("spacesprite\(enemy).\(stage)")
             }
         }
         
@@ -155,7 +155,7 @@ class GameScene: SKScene {
         enemy.position = CGPoint(x: self.size.width/2 - CGFloat(arc4random_uniform(UInt32(self.size.width))),
                                  y: self.size.height * 6/5 + CGFloat(arc4random_uniform(UInt32(self.size.height/9))))
         let moveEnemy = SKAction.moveBy(x: (CGFloat(arc4random_uniform(UInt32(self.size.width * 2/3)))) - enemy.position.x,
-                                        y: (self.size.height * -3/5) - enemy.position.y, duration: 20)
+                                        y: (self.size.height * -3/5) - enemy.position.y, duration: 40)
         
         enemy.zPosition = 2
         enemy.xScale = 0.6
