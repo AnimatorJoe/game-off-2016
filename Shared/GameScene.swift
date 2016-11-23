@@ -13,6 +13,35 @@ import SpriteKit
     typealias SKColor = UIColor
 #endif
 
+// MARK: Deterioration stages
+enum Deterioration {
+    case perfectShape
+    case goodShape
+    case badShape
+    case finishHim
+}
+
+// MARK: SKSpriteNode extension to support deterioration.
+class SKEnemyNode: SKSpriteNode {
+    
+    var deteriorationStage: Deterioration = .perfectShape
+    let textureArray: [SKTexture?] = []
+    
+    func deteriorate() {
+        switch (deteriorationStage) {
+            case .perfectShape:
+                deteriorationStage = .goodShape
+            case .goodShape:
+                deteriorationStage = .badShape
+            case .badShape:
+                deteriorationStage = .finishHim
+            case .finishHim:
+                self.isHidden = true
+                self.removeFromParent()
+        }
+    }
+}
+
 // MARK: Platform generic methods
 class GameScene: SKScene {
     
@@ -21,7 +50,6 @@ class GameScene: SKScene {
     fileprivate var badGuys : SKEmitterNode?
     var enemyList = [SKSpriteNode?](repeating: nil, count: 0)
     let atlas = SKTextureAtlas(named: "Enemy Sprite Atlas")
-    
     
     // MARK: Enemy texture matrix.
     var textureMatrix = [[SKTexture?]](repeating: [SKTexture?](repeating: nil, count: 4), count: 3)
