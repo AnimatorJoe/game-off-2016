@@ -28,7 +28,6 @@ class GameScene: SKScene {
     
     // MARK: Configuration variables.
     let spinnyStuff = UserDefaults.standard.value(forKey: "spinnyStuff") ?? false
-    var initialCall: Bool = false
     
     // MARK: Initialize with SKS contents
     class func newGameScene() -> GameScene {
