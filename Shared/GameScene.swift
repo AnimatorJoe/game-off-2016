@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+
 #if os(watchOS)
     import WatchKit
     // <rdar://problem/26756207> SKColor typealias does not seem to be exposed on watchOS SpriteKit
@@ -16,9 +17,13 @@ import SpriteKit
 // MARK: Platform generic methods
 class GameScene: SKScene {
     
+    // MARK: Variables
+    var initialCall = false
+    
     // MARK: Internal SKNode references
     fileprivate var spinnyNode : SKShapeNode?
     fileprivate var badGuys : SKEmitterNode?
+    var enemyList = [SKSpriteNode?](repeating: nil, count: 0)
     
     //En as Enemy Number
     //St as Deterioration Stage
@@ -94,6 +99,7 @@ class GameScene: SKScene {
                                                                    })])))
             #endif
         }
+        
     }
 
     // MARK: Makes spinny stuff
@@ -112,10 +118,15 @@ class GameScene: SKScene {
             sqrt(pow(pos.x-badGuys!.frame.origin.x,2)+pow(pos.y-badGuys!.frame.origin.y,2))/100.0)))
     }
     
+    // MARK: Player Deterioration
+    func playerDeter() {
+        badGuys?.particleBirthRate *= 0.45
+    }
+    
     // MARK: Spawn Other Enemies
-    func spawnEneies() {
-        
+    func spawnEnemies() {
         let moveUp = SKAction.moveBy(x: self.size.width/2, y: self.size.height/2, duration: 3)
+        let waitRandom = SKAction.wait(forDuration: TimeInterval(arc4random_uniform(UInt32(3))))
         
         var enemy = SKSpriteNode()
         
@@ -137,33 +148,23 @@ class GameScene: SKScene {
             
         }
         
+        
         enemy.position = CGPoint(x: 0, y: 0)
         enemy.zPosition = 2
         self.addChild(enemy)
-        enemy.run(moveUp)
-        
-        //let waitRandom = SKAction.wait(forDuration: TimeInterval(arc4random_uniform(UInt32(3))))
-        //var run = SKAction.runBlock {
-        //    enemy.position = CGPoint(x: 0, y: 0)
-        //    enemy.zPosition = 4
-        //    self.addChild(enemy)
-        //    enemy.
-        //}
+        enemy.run((SKAction.sequence([moveUp, waitRandom])), completion: { self.spawnEnemies() })
         
         
-        
-        
-    }
-    
-    // MARK: Player Deterioration
-    func playerDeter() {
-        badGuys?.particleBirthRate *= 0.45
     }
     
     // MARK: In game calculations
     override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered    
-        spawnEneies()
+        // Called before each frame is rendered
+        if !initialCall{
+            spawnEnemies()
+            initialCall = true
+        }
+        
         playerDeter()
     
     }
