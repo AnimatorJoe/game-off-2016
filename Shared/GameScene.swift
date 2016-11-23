@@ -119,8 +119,6 @@ class GameScene: SKScene {
         //Randomly Selecting Sprite Type
         let selectTexture = arc4random() % 3
         
-        print(selectTexture)
-        
         switch selectTexture {
         case 0:
             enemy = SKSpriteNode(texture: en1st0)
