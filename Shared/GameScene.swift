@@ -41,8 +41,8 @@ class GameScene: SKScene {
     func setUpScene() {
         self.badGuys = SKEmitterNode(fileNamed: "BadGuysMob")
         if let badGuys = self.badGuys {
-            badGuys.position = CGPoint(x: self.frame.origin.x,
-                                       y: self.frame.origin.y)
+            badGuys.position = CGPoint(x: 0,
+                                       y: 0)
             badGuys.setScale(5)
             badGuys.isHidden = false
             self.addChild(badGuys)
@@ -88,6 +88,12 @@ class GameScene: SKScene {
         badGuys?.removeAllActions()
         badGuys?.run(SKAction.move(to: pos, duration: TimeInterval.init(
             sqrt(pow(pos.x-badGuys!.frame.origin.x,2)+pow(pos.y-badGuys!.frame.origin.y,2))/100.0)))
+    }
+    
+    // MARK: Spawn Other Enemies
+    func spawnEneies() -> Void {
+        //let enemy = SKSpriteNode()
+        
     }
     
     // MARK: In game calculations
