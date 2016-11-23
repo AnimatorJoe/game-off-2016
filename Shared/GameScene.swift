@@ -25,7 +25,7 @@ enum Deterioration {
 class SKEnemyNode: SKSpriteNode {
     
     var deteriorationStage: Deterioration = .perfectShape
-    let textureArray: [SKTexture?] = []
+    var textureArray: [SKTexture?]? = nil
     
     func deteriorate() {
         switch (deteriorationStage) {
@@ -134,18 +134,21 @@ class GameScene: SKScene {
             sqrt(pow(pos.x-badGuys!.frame.origin.x,2)+pow(pos.y-badGuys!.frame.origin.y,2))/100.0)))
     }
     
-    // MARK: Player Deterioration
+    // MARK: Player deterioration
     func playerDeter() {
         badGuys?.particleBirthRate *= 0.999
         print("Spawn rate: " + String(describing: badGuys?.particleBirthRate))
     }
     
-    // MARK: Spawn Other Enemies
+    // MARK: Spawn other enemies
     func spawnEnemies() {
+        let enemyNumber = Int(arc4random_uniform(2))
         let waitRandom = SKAction.wait(forDuration: TimeInterval(arc4random_uniform(UInt32(2))))
-        let enemy = SKSpriteNode(texture: textureMatrix[Int(arc4random_uniform(2))][0])
+        let enemy = SKEnemyNode(texture: textureMatrix[enemyNumber][0])
         let moveEnemy = SKAction.moveBy(x: (CGFloat(arc4random_uniform(UInt32(self.size.width * 2/3)))) - enemy.position.x,
                                         y: (self.size.height * -3/5) - enemy.position.y, duration: 20)
+        
+        enemy.textureArray = textureMatrix[enemyNumber]
         
         // Add enemy to scene
         enemy.position = CGPoint(x: self.size.width/2 - CGFloat(arc4random_uniform(UInt32(self.size.width))),
@@ -199,7 +202,6 @@ class GameScene: SKScene {
                     self.makeSpinny(at: t.location(in: self), color: SKColor.green)
                 }
                 moveBadGuys(t.location(in: self))
-                //print(t.location(in: self))
             }
         }
     
