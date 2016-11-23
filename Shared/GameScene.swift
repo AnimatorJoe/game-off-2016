@@ -7,7 +7,6 @@
 //
 
 import SpriteKit
-
 #if os(watchOS)
     import WatchKit
     // <rdar://problem/26756207> SKColor typealias does not seem to be exposed on watchOS SpriteKit
@@ -17,36 +16,19 @@ import SpriteKit
 // MARK: Platform generic methods
 class GameScene: SKScene {
     
-    // MARK: Variables
-    var initialCall = false
-    
-    // MARK: Internal SKNode references
+    // MARK: Internal SKNode and texture references
     fileprivate var spinnyNode : SKShapeNode?
     fileprivate var badGuys : SKEmitterNode?
     var enemyList = [SKSpriteNode?](repeating: nil, count: 0)
+    let atlas = SKTextureAtlas(named: "Enemy Sprite Atlas")
     
-    //En as Enemy Number
-    //St as Deterioration Stage
-    let en1st0 = SKTexture(imageNamed: "spacesprite1.0.png")
-    let en2st0 = SKTexture(imageNamed: "spacesprite2.0.png")
-    let en3st0 = SKTexture(imageNamed: "spacesprite3.0.png")
     
-    let en1st1 = SKTexture(imageNamed: "spacesprite1.1.png")
-    let en2st1 = SKTexture(imageNamed: "spacesprite2.1.png")
-    let en3st1 = SKTexture(imageNamed: "spacesprite3.1.png")
+    // MARK: Enemy texture matrix.
+    let textureMatrix = [[SKTexture?]](repeating: [SKTexture?](repeating: nil, count: 4), count: 3)
     
-    let en1st2 = SKTexture(imageNamed: "spacesprite1.2.png")
-    let en2st2 = SKTexture(imageNamed: "spacesprite2.2.png")
-    let en3st2 = SKTexture(imageNamed: "spacesprite3.2.png")
-    
-    let en1st3 = SKTexture(imageNamed: "spacesprite1.3.png")
-    let en2st3 = SKTexture(imageNamed: "spacesprite2.3.png")
-    let en3st3 = SKTexture(imageNamed: "spacesprite3.3.png")
-    
-    // MARK: Internal Variables
-    let spinnyStuff = UserDefaults.standard.value(forKey: "spinnyStuff") ?? false    
-
-    
+    // MARK: Configuration variables.
+    let spinnyStuff = UserDefaults.standard.value(forKey: "spinnyStuff") ?? false
+    var initialCall: Bool = false
     
     // MARK: Initialize with SKS contents
     class func newGameScene() -> GameScene {
@@ -64,11 +46,10 @@ class GameScene: SKScene {
     
     // MARK: Scene setup
     func setUpScene() {
-        
         self.badGuys = SKEmitterNode(fileNamed: "BadGuysMob")
         if let badGuys = self.badGuys {
-            badGuys.position = CGPoint(x: 0,
-                                       y: -20)
+            badGuys.position = CGPoint(x: self.frame.origin.x,
+                                       y: self.frame.origin.y)
             badGuys.setScale(5)
             badGuys.zPosition = 3
             badGuys.isHidden = false
@@ -101,6 +82,12 @@ class GameScene: SKScene {
             #endif
         }
         
+        for var enemy in textureMatrix {
+            for stage in 0...3 {
+                enemy[stage] = atlas.textureNamed("spacesprite\(enemy).\(stage).png")
+            }
+        }
+        spawnEnemies()
     }
 
     // MARK: Makes spinny stuff
@@ -127,54 +114,32 @@ class GameScene: SKScene {
     
     // MARK: Spawn Other Enemies
     func spawnEnemies() {
-        
-        // Declorations
         let waitRandom = SKAction.wait(forDuration: TimeInterval(arc4random_uniform(UInt32(2))))
-        var enemy = SKSpriteNode()
+        let enemy = SKSpriteNode(texture: textureMatrix[Int(arc4random_uniform(2))][0])
+        let moveEnemy = SKAction.moveBy(x: (CGFloat(arc4random_uniform(UInt32(self.size.width * 2/3)))) - enemy.position.x,
+                                        y: (self.size.height * -3/5) - enemy.position.y, duration: 20)
         
-        // Randomly Selecting Sprite Type
-        let selectTexture = arc4random() % 3
-        
-        switch selectTexture {
-        case 0:
-            enemy = SKSpriteNode(texture: en1st0)
-            break;
-        case 1:
-            enemy = SKSpriteNode(texture: en2st0)
-            break;
-        case 2:
-            enemy = SKSpriteNode(texture: en3st0)
-            break;
-        default:
-            enemy = SKSpriteNode(texture: en1st0)
-            
-        }
-        
-        // Adds Enemy to Screen
-        enemy.position = CGPoint(x: self.size.width/2 - CGFloat(arc4random_uniform(UInt32(self.size.width))), y: self.size.height * 6/5 + CGFloat(arc4random_uniform(UInt32(self.size.height/9))))
-        
-        let moveEnemy = SKAction.moveBy(x: (CGFloat(arc4random_uniform(UInt32(self.size.width * 2/3)))) - enemy.position.x, y:(self.size.height * -3/5) - enemy.position.y, duration: 20)
+        // Add enemy to scene
+        enemy.position = CGPoint(x: self.size.width/2 - CGFloat(arc4random_uniform(UInt32(self.size.width))),
+                                 y: self.size.height * 6/5 + CGFloat(arc4random_uniform(UInt32(self.size.height/9))))
         
         enemy.zPosition = 2
         enemy.xScale = 0.6
         enemy.yScale = 0.6
         self.addChild(enemy)
         
-        // Spawns More Enemies
-        enemy.run((SKAction.sequence([moveEnemy, waitRandom])), completion: { /*enemy.run(SKAction.removeFromParent());*/self.spawnEnemies(); self.spawnEnemies() })
-        
+        // Spawn more enemies
+        enemy.run((SKAction.sequence([moveEnemy, waitRandom])), completion: {
+            for _ in 0...1 {
+                self.spawnEnemies()
+            }
+        })
     }
     
     // MARK: In game calculations
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
-        if !initialCall{
-            spawnEnemies()
-            initialCall = true
-        }
-        
         playerDeter()
-    
     }
     
     // MARK: Platform conditional SKView initialization
@@ -189,17 +154,12 @@ class GameScene: SKScene {
             self.size.width = UIScreen.main.bounds.width * 2
             self.size.height = UIScreen.main.bounds.height * 2
             print("Screen Width: " + String(describing: self.size.width))
-            print("Screen Height: " + String(describing: self.size.height)
-    )
+            print("Screen Height: " + String(describing: self.size.height))
     
             self.setUpScene()
         }
     #endif
 }
-
-
-
-
 
 
 // MARK: tvOS and iOS setup
@@ -243,10 +203,9 @@ class GameScene: SKScene {
                 moveBadGuys(t.location(in: self))
             }
         }
-    
-   
     }
 #endif
+
 
 // MARK: macOS setup
 #if os(macOS)
