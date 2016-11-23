@@ -20,9 +20,17 @@ class GameScene: SKScene {
     fileprivate var spinnyNode : SKShapeNode?
     fileprivate var badGuys : SKEmitterNode?
     
-    // MARK: Internal variables
+    //En as Enemy Number
+    //St as Deterioration Stage
+    let en1st0 = SKTexture(imageNamed: "spacesprite1.0.png")
+    let en2st0 = SKTexture(imageNamed: "spacesprite2.0.png")
+    let en3st0 = SKTexture(imageNamed: "spacesprite3.0.png")
+    
+    // MARK: Internal Variables
     let spinnyStuff = UserDefaults.standard.value(forKey: "spinnyStuff") ?? false    
 
+    
+    
     // MARK: Initialize with SKS contents
     class func newGameScene() -> GameScene {
         // Load 'GameScene.sks' as an SKScene.

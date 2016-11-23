@@ -44,6 +44,9 @@
 		178A094B1DCFA67F008562F6 /* Settings-Watch.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 178A09491DCFA67F008562F6 /* Settings-Watch.bundle */; };
 		178A094C1DCFA67F008562F6 /* Settings-Watch.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 178A09491DCFA67F008562F6 /* Settings-Watch.bundle */; };
 		17B1B55A1DC953CB00A6585C /* BadGuysMob.sks in Resources */ = {isa = PBXBuildFile; fileRef = 17B1B5591DC953CB00A6585C /* BadGuysMob.sks */; };
+		73FC06811DE532A700B93014 /* spacesprite1.0.png in Resources */ = {isa = PBXBuildFile; fileRef = 73FC067E1DE532A700B93014 /* spacesprite1.0.png */; };
+		73FC06821DE532A700B93014 /* spacesprite2.0.png in Resources */ = {isa = PBXBuildFile; fileRef = 73FC067F1DE532A700B93014 /* spacesprite2.0.png */; };
+		73FC06831DE532A700B93014 /* spacesprite3.0.png in Resources */ = {isa = PBXBuildFile; fileRef = 73FC06801DE532A700B93014 /* spacesprite3.0.png */; };
 		AE2D6D82C53A1FA8D67B55B7 /* Pods_watchOS_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693C28A42E9BDB3101041835 /* Pods_watchOS_Extension.framework */; };
 		C26A7FBE5B8BAB62D79CB8A9 /* Pods_watchOS_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74169612C07800E477299E04 /* Pods_watchOS_App.framework */; };
 		F5F8A0EF4739C1B85095F57E /* Pods_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52BF82D1BA78BD9806FAF1F /* Pods_macOS.framework */; };
@@ -130,6 +133,9 @@
 		5B477100ECC0F001463833A2 /* Pods-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS/Pods-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		693C28A42E9BDB3101041835 /* Pods_watchOS_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_watchOS_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70E2E996ED83E54AE6D0362A /* Pods-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-macOS/Pods-macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		73FC067E1DE532A700B93014 /* spacesprite1.0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacesprite1.0.png; sourceTree = "<group>"; };
+		73FC067F1DE532A700B93014 /* spacesprite2.0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacesprite2.0.png; sourceTree = "<group>"; };
+		73FC06801DE532A700B93014 /* spacesprite3.0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacesprite3.0.png; sourceTree = "<group>"; };
 		74169612C07800E477299E04 /* Pods_watchOS_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_watchOS_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93AD1950357065F2B8C019FB /* Pods_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A52BF82D1BA78BD9806FAF1F /* Pods_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -280,6 +286,9 @@
 		73E71D681DCF892D001E0E50 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				73FC067E1DE532A700B93014 /* spacesprite1.0.png */,
+				73FC067F1DE532A700B93014 /* spacesprite2.0.png */,
+				73FC06801DE532A700B93014 /* spacesprite3.0.png */,
 				176CA32E1DC934D9009CF9A5 /* Actions.sks */,
 				17B1B5591DC953CB00A6585C /* BadGuysMob.sks */,
 			);
@@ -486,8 +495,11 @@
 			files = (
 				17B1B55A1DC953CB00A6585C /* BadGuysMob.sks in Resources */,
 				176CA37C1DC934DA009CF9A5 /* GameScene.sks in Resources */,
+				73FC06821DE532A700B93014 /* spacesprite2.0.png in Resources */,
 				178A094A1DCFA67F008562F6 /* Settings-Watch.bundle in Resources */,
+				73FC06811DE532A700B93014 /* spacesprite1.0.png in Resources */,
 				176CA33F1DC934DA009CF9A5 /* Main.storyboard in Resources */,
+				73FC06831DE532A700B93014 /* spacesprite3.0.png in Resources */,
 				176CA3791DC934DA009CF9A5 /* Actions.sks in Resources */,
 				176CA3421DC934DA009CF9A5 /* LaunchScreen.storyboard in Resources */,
 				176CA3841DC934DA009CF9A5 /* Assets.xcassets in Resources */,
