@@ -65,6 +65,7 @@ class GameScene: SKScene {
                                        y: 0)
             badGuys.setScale(5)
             badGuys.isHidden = false
+            badGuys.particleBirthRate = 0.5
             self.addChild(badGuys)
         }
         
@@ -119,7 +120,7 @@ class GameScene: SKScene {
     // MARK: In game calculations
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
-        badGuys?.particleBirthRate *= 0.90
+        badGuys?.particleBirthRate *= 0.45
     }
     
     // MARK: Platform conditional SKView initialization
