@@ -121,7 +121,7 @@ class GameScene: SKScene {
     
     // MARK: Player Deterioration
     func playerDeter() {
-        badGuys?.particleBirthRate *= 0.45
+        badGuys?.particleBirthRate *= 0.55
     }
     
     // MARK: Spawn Other Enemies
@@ -150,9 +150,9 @@ class GameScene: SKScene {
         }
         
         // Adds Enemy to Screen
-        enemy.position = CGPoint(x: self.size.width/2 - CGFloat(arc4random_uniform(UInt32(self.size.width))), y: self.size.height * 3/5)
+        enemy.position = CGPoint(x: self.size.width/2 - CGFloat(arc4random_uniform(UInt32(self.size.width))), y: self.size.height * 6/5 + CGFloat(arc4random_uniform(UInt32(self.size.height/9))))
         
-        let moveEnemy = SKAction.moveBy(x: (CGFloat(arc4random_uniform(UInt32(self.size.width * 2/3)))) - enemy.position.x, y: -(self.size.height * 1.2), duration: 9)
+        let moveEnemy = SKAction.moveBy(x: (CGFloat(arc4random_uniform(UInt32(self.size.width * 2/3)))) - enemy.position.x, y:(self.size.height * -3/5) - enemy.position.y, duration: 9)
         
         enemy.zPosition = 2
         enemy.xScale = 0.6
@@ -160,7 +160,7 @@ class GameScene: SKScene {
         self.addChild(enemy)
         
         // Spawns More Enemies
-        enemy.run((SKAction.sequence([moveEnemy, waitRandom])), completion: { self.spawnEnemies() })
+        enemy.run((SKAction.sequence([moveEnemy, waitRandom])), completion: { /*enemy.run(SKAction.removeFromParent());*/self.spawnEnemies() })
         
     }
     
