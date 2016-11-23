@@ -112,15 +112,49 @@ class GameScene: SKScene {
     }
     
     // MARK: Spawn Other Enemies
-    func spawnEneies() -> Void {
-        //let enemy = SKSpriteNode()
+    func spawnEneies() {
         
+        var enemy = SKSpriteNode()
+        
+        //Randomly Selecting Sprite Type
+        let selectTexture = arc4random() % 3
+        
+        print(selectTexture)
+        
+        switch selectTexture {
+        case 0:
+            enemy = SKSpriteNode(texture: en1st0)
+            break;
+        case 1:
+            enemy = SKSpriteNode(texture: en2st0)
+            break;
+        case 2:
+            enemy = SKSpriteNode(texture: en3st0)
+            break;
+        default:
+            enemy = SKSpriteNode(texture: en1st0)
+            
+        }
+        
+        enemy.position = CGPoint(x: 0, y: 0)
+        enemy.zPosition = 4
+        self.addChild(enemy)
+        
+        //let waitRandom = SKAction.wait(forDuration: TimeInterval(arc4random_uniform(UInt32(3))))
+        
+    }
+    
+    // MARK: Player Deterioration
+    func playerDeter() {
+        badGuys?.particleBirthRate *= 0.45
     }
     
     // MARK: In game calculations
     override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
-        badGuys?.particleBirthRate *= 0.45
+        // Called before each frame is rendered    
+        spawnEneies()
+        playerDeter()
+    
     }
     
     // MARK: Platform conditional SKView initialization
@@ -151,6 +185,7 @@ class GameScene: SKScene {
                     self.makeSpinny(at: t.location(in: self), color: SKColor.green)
                 }
                 moveBadGuys(t.location(in: self))
+                print(t.location(in: self))
             }
         }
     
