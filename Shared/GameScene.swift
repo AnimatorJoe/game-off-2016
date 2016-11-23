@@ -31,10 +31,13 @@ class SKEnemyNode: SKSpriteNode {
         switch (deteriorationStage) {
             case .perfectShape:
                 deteriorationStage = .goodShape
+                self.texture = textureArray?[1]
             case .goodShape:
                 deteriorationStage = .badShape
+                self.texture = textureArray?[2]
             case .badShape:
                 deteriorationStage = .finishHim
+                self.texture = textureArray?[3]
             case .finishHim:
                 self.isHidden = true
                 self.removeFromParent()
