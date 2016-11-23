@@ -121,7 +121,8 @@ class GameScene: SKScene {
     
     // MARK: Player Deterioration
     func playerDeter() {
-        badGuys?.particleBirthRate *= 0.55
+        badGuys?.particleBirthRate *= 0.5
+        print("Spawn rate: " + String(describing: badGuys?.particleBirthRate))
     }
     
     // MARK: Spawn Other Enemies
@@ -213,7 +214,7 @@ class GameScene: SKScene {
                     self.makeSpinny(at: t.location(in: self), color: SKColor.green)
                 }
                 moveBadGuys(t.location(in: self))
-                print(t.location(in: self))
+                //print(t.location(in: self))
             }
         }
     
