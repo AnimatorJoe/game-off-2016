@@ -114,6 +114,8 @@ class GameScene: SKScene {
     // MARK: Spawn Other Enemies
     func spawnEneies() {
         
+        let moveUp = SKAction.moveBy(x: self.size.width/2, y: self.size.height/2, duration: 3)
+        
         var enemy = SKSpriteNode()
         
         //Randomly Selecting Sprite Type
@@ -137,8 +139,18 @@ class GameScene: SKScene {
         enemy.position = CGPoint(x: 0, y: 0)
         enemy.zPosition = 4
         self.addChild(enemy)
+        enemy.run(moveUp)
         
         //let waitRandom = SKAction.wait(forDuration: TimeInterval(arc4random_uniform(UInt32(3))))
+        //var run = SKAction.runBlock {
+        //    enemy.position = CGPoint(x: 0, y: 0)
+        //    enemy.zPosition = 4
+        //    self.addChild(enemy)
+        //    enemy.
+        //}
+        
+        
+        
         
     }
     
