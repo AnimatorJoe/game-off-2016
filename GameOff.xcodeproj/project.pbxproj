@@ -47,6 +47,15 @@
 		73FC06811DE532A700B93014 /* spacesprite1.0.png in Resources */ = {isa = PBXBuildFile; fileRef = 73FC067E1DE532A700B93014 /* spacesprite1.0.png */; };
 		73FC06821DE532A700B93014 /* spacesprite2.0.png in Resources */ = {isa = PBXBuildFile; fileRef = 73FC067F1DE532A700B93014 /* spacesprite2.0.png */; };
 		73FC06831DE532A700B93014 /* spacesprite3.0.png in Resources */ = {isa = PBXBuildFile; fileRef = 73FC06801DE532A700B93014 /* spacesprite3.0.png */; };
+		73FC06871DE5348E00B93014 /* spacesprite1.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 73FC06841DE5348E00B93014 /* spacesprite1.1.png */; };
+		73FC06881DE5348E00B93014 /* spacesprite2.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 73FC06851DE5348E00B93014 /* spacesprite2.1.png */; };
+		73FC06891DE5348E00B93014 /* spacesprite3.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 73FC06861DE5348E00B93014 /* spacesprite3.1.png */; };
+		73FC068D1DE534AD00B93014 /* spacesprite1.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 73FC068A1DE534AD00B93014 /* spacesprite1.2.png */; };
+		73FC068E1DE534AD00B93014 /* spacesprite2.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 73FC068B1DE534AD00B93014 /* spacesprite2.2.png */; };
+		73FC068F1DE534AD00B93014 /* spacesprite3.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 73FC068C1DE534AD00B93014 /* spacesprite3.2.png */; };
+		73FC06931DE534CC00B93014 /* spacesprite1.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 73FC06901DE534CC00B93014 /* spacesprite1.3.png */; };
+		73FC06941DE534CC00B93014 /* spacesprite2.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 73FC06911DE534CC00B93014 /* spacesprite2.3.png */; };
+		73FC06951DE534CC00B93014 /* spacesprite3.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 73FC06921DE534CC00B93014 /* spacesprite3.3.png */; };
 		AE2D6D82C53A1FA8D67B55B7 /* Pods_watchOS_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693C28A42E9BDB3101041835 /* Pods_watchOS_Extension.framework */; };
 		C26A7FBE5B8BAB62D79CB8A9 /* Pods_watchOS_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74169612C07800E477299E04 /* Pods_watchOS_App.framework */; };
 		F5F8A0EF4739C1B85095F57E /* Pods_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52BF82D1BA78BD9806FAF1F /* Pods_macOS.framework */; };
@@ -136,6 +145,15 @@
 		73FC067E1DE532A700B93014 /* spacesprite1.0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacesprite1.0.png; sourceTree = "<group>"; };
 		73FC067F1DE532A700B93014 /* spacesprite2.0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacesprite2.0.png; sourceTree = "<group>"; };
 		73FC06801DE532A700B93014 /* spacesprite3.0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacesprite3.0.png; sourceTree = "<group>"; };
+		73FC06841DE5348E00B93014 /* spacesprite1.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacesprite1.1.png; sourceTree = "<group>"; };
+		73FC06851DE5348E00B93014 /* spacesprite2.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacesprite2.1.png; sourceTree = "<group>"; };
+		73FC06861DE5348E00B93014 /* spacesprite3.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacesprite3.1.png; sourceTree = "<group>"; };
+		73FC068A1DE534AD00B93014 /* spacesprite1.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacesprite1.2.png; sourceTree = "<group>"; };
+		73FC068B1DE534AD00B93014 /* spacesprite2.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacesprite2.2.png; sourceTree = "<group>"; };
+		73FC068C1DE534AD00B93014 /* spacesprite3.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacesprite3.2.png; sourceTree = "<group>"; };
+		73FC06901DE534CC00B93014 /* spacesprite1.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacesprite1.3.png; sourceTree = "<group>"; };
+		73FC06911DE534CC00B93014 /* spacesprite2.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacesprite2.3.png; sourceTree = "<group>"; };
+		73FC06921DE534CC00B93014 /* spacesprite3.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacesprite3.3.png; sourceTree = "<group>"; };
 		74169612C07800E477299E04 /* Pods_watchOS_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_watchOS_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93AD1950357065F2B8C019FB /* Pods_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A52BF82D1BA78BD9806FAF1F /* Pods_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -286,6 +304,15 @@
 		73E71D681DCF892D001E0E50 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				73FC06901DE534CC00B93014 /* spacesprite1.3.png */,
+				73FC06911DE534CC00B93014 /* spacesprite2.3.png */,
+				73FC06921DE534CC00B93014 /* spacesprite3.3.png */,
+				73FC068A1DE534AD00B93014 /* spacesprite1.2.png */,
+				73FC068B1DE534AD00B93014 /* spacesprite2.2.png */,
+				73FC068C1DE534AD00B93014 /* spacesprite3.2.png */,
+				73FC06841DE5348E00B93014 /* spacesprite1.1.png */,
+				73FC06851DE5348E00B93014 /* spacesprite2.1.png */,
+				73FC06861DE5348E00B93014 /* spacesprite3.1.png */,
 				73FC067E1DE532A700B93014 /* spacesprite1.0.png */,
 				73FC067F1DE532A700B93014 /* spacesprite2.0.png */,
 				73FC06801DE532A700B93014 /* spacesprite3.0.png */,
@@ -493,17 +520,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73FC06931DE534CC00B93014 /* spacesprite1.3.png in Resources */,
 				17B1B55A1DC953CB00A6585C /* BadGuysMob.sks in Resources */,
 				176CA37C1DC934DA009CF9A5 /* GameScene.sks in Resources */,
+				73FC06941DE534CC00B93014 /* spacesprite2.3.png in Resources */,
+				73FC06891DE5348E00B93014 /* spacesprite3.1.png in Resources */,
 				73FC06821DE532A700B93014 /* spacesprite2.0.png in Resources */,
 				178A094A1DCFA67F008562F6 /* Settings-Watch.bundle in Resources */,
 				73FC06811DE532A700B93014 /* spacesprite1.0.png in Resources */,
 				176CA33F1DC934DA009CF9A5 /* Main.storyboard in Resources */,
+				73FC068D1DE534AD00B93014 /* spacesprite1.2.png in Resources */,
 				73FC06831DE532A700B93014 /* spacesprite3.0.png in Resources */,
 				176CA3791DC934DA009CF9A5 /* Actions.sks in Resources */,
+				73FC06951DE534CC00B93014 /* spacesprite3.3.png in Resources */,
+				73FC068E1DE534AD00B93014 /* spacesprite2.2.png in Resources */,
+				73FC068F1DE534AD00B93014 /* spacesprite3.2.png in Resources */,
+				73FC06871DE5348E00B93014 /* spacesprite1.1.png in Resources */,
 				176CA3421DC934DA009CF9A5 /* LaunchScreen.storyboard in Resources */,
 				176CA3841DC934DA009CF9A5 /* Assets.xcassets in Resources */,
 				178A09471DCFA66A008562F6 /* Settings.bundle in Resources */,
+				73FC06881DE5348E00B93014 /* spacesprite2.1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

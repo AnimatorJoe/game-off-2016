@@ -26,6 +26,18 @@ class GameScene: SKScene {
     let en2st0 = SKTexture(imageNamed: "spacesprite2.0.png")
     let en3st0 = SKTexture(imageNamed: "spacesprite3.0.png")
     
+    let en1st1 = SKTexture(imageNamed: "spacesprite1.1.png")
+    let en2st1 = SKTexture(imageNamed: "spacesprite2.1.png")
+    let en3st1 = SKTexture(imageNamed: "spacesprite3.1.png")
+    
+    let en1st2 = SKTexture(imageNamed: "spacesprite1.2.png")
+    let en2st2 = SKTexture(imageNamed: "spacesprite2.2.png")
+    let en3st2 = SKTexture(imageNamed: "spacesprite3.2.png")
+    
+    let en1st3 = SKTexture(imageNamed: "spacesprite1.3.png")
+    let en2st3 = SKTexture(imageNamed: "spacesprite2.3.png")
+    let en3st3 = SKTexture(imageNamed: "spacesprite3.3.png")
+    
     // MARK: Internal Variables
     let spinnyStuff = UserDefaults.standard.value(forKey: "spinnyStuff") ?? false    
 
