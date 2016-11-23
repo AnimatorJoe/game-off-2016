@@ -64,6 +64,7 @@ class GameScene: SKScene {
             badGuys.position = CGPoint(x: 0,
                                        y: 0)
             badGuys.setScale(5)
+            badGuys.zPosition = 3
             badGuys.isHidden = false
             badGuys.particleBirthRate = 0.5
             self.addChild(badGuys)
@@ -137,7 +138,7 @@ class GameScene: SKScene {
         }
         
         enemy.position = CGPoint(x: 0, y: 0)
-        enemy.zPosition = 4
+        enemy.zPosition = 2
         self.addChild(enemy)
         enemy.run(moveUp)
         
