@@ -152,7 +152,7 @@ class GameScene: SKScene {
         // Adds Enemy to Screen
         enemy.position = CGPoint(x: self.size.width/2 - CGFloat(arc4random_uniform(UInt32(self.size.width))), y: self.size.height * 3/5)
         
-        let moveEnemy = SKAction.moveBy(x: enemy.position.x - (CGFloat(arc4random_uniform(UInt32(self.size.width * 2/3)))), y: -(self.size.height * 1.2), duration: 2)
+        let moveEnemy = SKAction.moveBy(x: (CGFloat(arc4random_uniform(UInt32(self.size.width * 2/3)))) - enemy.position.x, y: -(self.size.height * 1.2), duration: 9)
         
         enemy.zPosition = 2
         enemy.xScale = 0.6
