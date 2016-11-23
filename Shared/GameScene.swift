@@ -24,7 +24,7 @@ class GameScene: SKScene {
     
     
     // MARK: Enemy texture matrix.
-    let textureMatrix = [[SKTexture?]](repeating: [SKTexture?](repeating: nil, count: 4), count: 3)
+    var textureMatrix = [[SKTexture?]](repeating: [SKTexture?](repeating: nil, count: 4), count: 3)
     
     // MARK: Configuration variables.
     let spinnyStuff = UserDefaults.standard.value(forKey: "spinnyStuff") ?? false
@@ -82,11 +82,12 @@ class GameScene: SKScene {
             #endif
         }
         
-        for var enemy in textureMatrix {
+        for enemy in 1...3 {
             for stage in 0...3 {
-                enemy[stage] = atlas.textureNamed("spacesprite\(enemy).\(stage).png")
+                textureMatrix[enemy-1][stage] = atlas.textureNamed("spacesprite\(enemy).\(stage)")
             }
         }
+        
         spawnEnemies()
     }
 
@@ -108,7 +109,7 @@ class GameScene: SKScene {
     
     // MARK: Player Deterioration
     func playerDeter() {
-        badGuys?.particleBirthRate *= 0.5
+        badGuys?.particleBirthRate *= 0.999
         print("Spawn rate: " + String(describing: badGuys?.particleBirthRate))
     }
     
@@ -130,9 +131,7 @@ class GameScene: SKScene {
         
         // Spawn more enemies
         enemy.run((SKAction.sequence([moveEnemy, waitRandom])), completion: {
-            for _ in 0...1 {
-                self.spawnEnemies()
-            }
+            self.spawnEnemies()
         })
     }
     
