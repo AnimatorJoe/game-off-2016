@@ -157,6 +157,7 @@ class GameScene: SKScene {
                     badGuys?.particleBirthRate *= 0.999
                 } else {
                     enemy?.deteriorate()
+                    badGuys?.particleBirthRate += enemy!.health * (1 - enemy!.deteriorationRate)
                 }
             }
         }
