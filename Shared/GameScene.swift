@@ -26,13 +26,14 @@ class SKEnemyNode: SKSpriteNode {
     
     // MARK: Internal enemy state
     var deteriorationStage: Deterioration = .perfectShape
+    let deteriorationRate: Double = 0.9
     var health: Double = 1.0
     var textureArray: [SKTexture?]? = nil
     
     // MARK: Make enemy deteriorate.
     func deteriorate() {
         // If health will pass 1.0, 0.667, 0.334, or 0.0
-        if (Int(health*3) > Int(health*2.7)) {
+        if (Int(health*3) > Int(health*3*deteriorationRate)) {
             switch (deteriorationStage) {
                 case .perfectShape:
                     deteriorationStage = .goodShape
@@ -49,7 +50,7 @@ class SKEnemyNode: SKSpriteNode {
             }
         }
         
-        health *= 0.9
+        health *= deteriorationRate
     }
 }
 
