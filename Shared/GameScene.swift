@@ -145,7 +145,7 @@ class GameScene: SKScene {
     
     // MARK: Spawn other enemies
     func spawnEnemies() {
-        let enemyNumber = Int(arc4random_uniform(2))
+        let enemyNumber = Int(arc4random_uniform(3))
         let waitRandom = SKAction.wait(forDuration: TimeInterval(arc4random_uniform(UInt32(2))))
         let enemy = SKEnemyNode(texture: textureMatrix[enemyNumber][0])
         let randomTime = 15 + Int(arc4random_uniform(10))
