@@ -153,7 +153,7 @@ class GameScene: SKScene {
             }
         }
         
-        print("Spawn rate: " + String(describing: badGuys?.particleBirthRate))
+        print("Spawn rate: \(String(describing: badGuys?.particleBirthRate))")
     }
     
     // MARK: Spawn other enemies
@@ -202,8 +202,8 @@ class GameScene: SKScene {
             //Matching Dimensions
             self.size.width = UIScreen.main.bounds.width * 2
             self.size.height = UIScreen.main.bounds.height * 2
-            print("Screen Width: " + String(describing: self.size.width))
-            print("Screen Height: " + String(describing: self.size.height))
+            print("Screen Width: \(String(describing: self.size.width))")
+            print("Screen Height: \(String(describing: self.size.height))")
     
             self.setUpScene()
         }
