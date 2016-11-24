@@ -61,6 +61,9 @@ class GameScene: SKScene {
     fileprivate var spinnyNode : SKShapeNode?
     fileprivate var badGuys : SKEmitterNode?
     fileprivate var mobSizeLabel: SKLabelNode?
+    fileprivate var overScreen: SKShapeNode?
+    fileprivate var deathLabel = SKLabelNode()
+    fileprivate var pLabel = SKLabelNode()
     let textureAtlas = SKTextureAtlas(named: "Enemy Sprite Atlas")
     var textureMatrix = [[SKTexture?]](repeating: [SKTexture?](repeating: nil, count: 4), count: 3)
     var enemyArray = [SKEnemyNode?](repeating: nil, count: 0)
@@ -96,6 +99,24 @@ class GameScene: SKScene {
         }
         
         self.mobSizeLabel = self.childNode(withName: "mobSizeLabel") as? SKLabelNode
+        
+        self.overScreen = self.childNode(withName: "overScreen") as? SKShapeNode
+        
+        // Restart label, displayed on death
+        deathLabel.text = "Tap to Restart"
+        deathLabel.fontSize = 30;
+        deathLabel.setScale(0.33);
+        deathLabel.fontColor = UIColor.black
+        deathLabel.position = CGPoint(x: 0,y: -10)
+        deathLabel.zPosition = 15
+        self.overScreen?.addChild(deathLabel)
+        
+        // Score label, displayed on death
+        pLabel.fontSize = 45;
+        pLabel.setScale(0.33);
+        pLabel.fontColor = UIColor.black
+        pLabel.position = CGPoint(x: 0,y: 20)
+        self.overScreen?.addChild(pLabel)
         
         // Create shape node to use during mouse interaction
         let w = (self.size.width + self.size.height) * 0.05
@@ -161,8 +182,6 @@ class GameScene: SKScene {
                 }
             }
         }
-        
-        print("Spawn rate: \(String(describing: badGuys?.particleBirthRate))")
     }
     
     // MARK: Spawn other enemies
@@ -200,6 +219,18 @@ class GameScene: SKScene {
         playerDeter()
         
         self.mobSizeLabel?.text = "Mob Count: \(Int(badGuys!.particleBirthRate*100))"
+        
+        if (Int(badGuys!.particleBirthRate*100) == 0) {
+            self.overScreen?.setScale(0)
+            self.overScreen?.isHidden = false
+            self.overScreen?.alpha = 1
+            self.badGuys?.isHidden = false
+            
+            deathLabel.text = "Tap to Restart"
+            pLabel.text = "No troopers left!"
+            
+            self.overScreen?.run(SKAction.scale(to: 4.0, duration: 1.5))
+        }
     }
     
     // MARK: Platform conditional SKView initialization
