@@ -29,6 +29,7 @@ class SKEnemyNode: SKSpriteNode {
     var health: Double = 1.0
     var textureArray: [SKTexture?]? = nil
     
+    // MARK: Make enemy deteriorate.
     func deteriorate() {
         // If health will pass 1.0, 0.667, 0.334, or 0.0
         if (Int(health*3) > Int(health*2.7)) {
@@ -58,11 +59,9 @@ class GameScene: SKScene {
     // MARK: Internal SKNode and texture references
     fileprivate var spinnyNode : SKShapeNode?
     fileprivate var badGuys : SKEmitterNode?
-    var enemyList = [SKSpriteNode?](repeating: nil, count: 0)
-    let atlas = SKTextureAtlas(named: "Enemy Sprite Atlas")
-    
-    // MARK: Enemy texture matrix.
+    let textureAtlas = SKTextureAtlas(named: "Enemy Sprite Atlas")
     var textureMatrix = [[SKTexture?]](repeating: [SKTexture?](repeating: nil, count: 4), count: 3)
+    var enemyArray = [SKSpriteNode?](repeating: nil, count: 0)
     
     // MARK: Configuration variables.
     let spinnyStuff = UserDefaults.standard.value(forKey: "spinnyStuff") ?? false
@@ -121,7 +120,7 @@ class GameScene: SKScene {
         
         for enemy in 1...3 {
             for stage in 0...3 {
-                textureMatrix[enemy-1][stage] = atlas.textureNamed("spacesprite\(enemy)-\(stage)")
+                textureMatrix[enemy-1][stage] = textureAtlas.textureNamed("spacesprite\(enemy)-\(stage)")
             }
         }
         
@@ -148,7 +147,7 @@ class GameScene: SKScene {
     func playerDeter() {
         badGuys?.particleBirthRate *= 0.999
         
-        for enemy in enemyList {
+        for enemy in enemyArray {
             if enemy!.intersects(badGuys!) {
                 badGuys?.particleBirthRate *= 0.999
             }
@@ -176,7 +175,7 @@ class GameScene: SKScene {
         enemy.yScale = 0.6
         self.addChild(enemy)
         
-        enemyList.append(enemy)
+        enemyArray.append(enemy)
         
         // Spawn more enemies
         enemy.run((SKAction.sequence([moveEnemy, waitRandom,SKAction.removeFromParent()])), completion: {
