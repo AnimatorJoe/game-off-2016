@@ -163,7 +163,7 @@ class GameScene: SKScene {
         self.addChild(enemy)
         
         // Spawn more enemies
-        enemy.run((SKAction.sequence([moveEnemy, waitRandom])), completion: {
+        enemy.run((SKAction.sequence([moveEnemy, waitRandom,SKAction.removeFromParent()])), completion: {
             for _ in 0...1 {
                 self.spawnEnemies()
             }
