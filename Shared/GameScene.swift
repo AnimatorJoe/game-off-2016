@@ -30,7 +30,8 @@ class SKEnemyNode: SKSpriteNode {
     var textureArray: [SKTexture?]? = nil
     
     func deteriorate() {
-        if (Int(health*3)>=Int(health*2.7)) {
+        // If health will pass 1.0, 0.667, 0.334, or 0.0
+        if (Int(health*3) > Int(health*2.7)) {
             switch (deteriorationStage) {
                 case .perfectShape:
                     deteriorationStage = .goodShape
