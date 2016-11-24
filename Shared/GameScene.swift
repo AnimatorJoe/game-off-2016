@@ -147,6 +147,13 @@ class GameScene: SKScene {
     // MARK: Player deterioration
     func playerDeter() {
         badGuys?.particleBirthRate *= 0.999
+        
+        for enemy in enemyList {
+            if enemy!.intersects(badGuys!) {
+                badGuys?.particleBirthRate *= 0.999
+            }
+        }
+        
         print("Spawn rate: " + String(describing: badGuys?.particleBirthRate))
     }
     
@@ -168,6 +175,8 @@ class GameScene: SKScene {
         enemy.xScale = 0.6
         enemy.yScale = 0.6
         self.addChild(enemy)
+        
+        enemyList.append(enemy)
         
         // Spawn more enemies
         enemy.run((SKAction.sequence([moveEnemy, waitRandom,SKAction.removeFromParent()])), completion: {
