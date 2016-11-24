@@ -13,17 +13,18 @@ import SpriteKit
     typealias SKColor = UIColor
 #endif
 
-// MARK: Deterioration stages
-enum Deterioration {
-    case perfectShape
-    case goodShape
-    case badShape
-    case finishHim
-}
-
 // MARK: SKSpriteNode extension to support deterioration.
 class SKEnemyNode: SKSpriteNode {
     
+    // MARK: Deterioration stages
+    enum Deterioration {
+        case perfectShape
+        case goodShape
+        case badShape
+        case finishHim
+    }
+    
+    // Internal enemy state
     var deteriorationStage: Deterioration = .perfectShape
     var health: Double = 1.0
     var textureArray: [SKTexture?]? = nil
