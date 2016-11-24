@@ -60,6 +60,7 @@ class GameScene: SKScene {
     // MARK: Internal SKNode and texture references
     fileprivate var spinnyNode : SKShapeNode?
     fileprivate var badGuys : SKEmitterNode?
+    fileprivate var mobSizeLabel: SKLabelNode?
     let textureAtlas = SKTextureAtlas(named: "Enemy Sprite Atlas")
     var textureMatrix = [[SKTexture?]](repeating: [SKTexture?](repeating: nil, count: 4), count: 3)
     var enemyArray = [SKEnemyNode?](repeating: nil, count: 0)
@@ -93,6 +94,8 @@ class GameScene: SKScene {
             badGuys.particleBirthRate = 0.5
             self.addChild(badGuys)
         }
+        
+        self.mobSizeLabel = self.childNode(withName: "mobSizeLabel") as? SKLabelNode
         
         // Create shape node to use during mouse interaction
         let w = (self.size.width + self.size.height) * 0.05
@@ -194,6 +197,8 @@ class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
         playerDeter()
+        
+        self.mobSizeLabel?.text = "Mob Count: \(Int(badGuys!.particleBirthRate*100))"
     }
     
     // MARK: Platform conditional SKView initialization
