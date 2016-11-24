@@ -114,7 +114,7 @@ class GameScene: SKScene {
         
         for enemy in 1...3 {
             for stage in 0...3 {
-                textureMatrix[enemy-1][stage] = atlas.textureNamed("spacesprite\(enemy).\(stage)")
+                textureMatrix[enemy-1][stage] = atlas.textureNamed("spacesprite\(enemy)-\(stage)")
             }
         }
         
