@@ -26,14 +26,14 @@ class SKEnemyNode: SKSpriteNode {
     
     // MARK: Internal enemy state
     var deteriorationStage: Deterioration = .perfectShape
-    let deteriorationRate: Double = 0.9
-    var health: Double = 1.0
+    let deteriorationRate: CGFloat = 0.95
+    var health: CGFloat = 3.0
     var textureArray: [SKTexture?]? = nil
     
     // MARK: Make enemy deteriorate.
     func deteriorate() {
         // If health will pass 1.0, 0.667, 0.334, or 0.0
-        if (Int(health*3) > Int(health*3*deteriorationRate)) {
+        if (Int(health) > Int(health*deteriorationRate)) {
             switch (deteriorationStage) {
                 case .perfectShape:
                     deteriorationStage = .goodShape
@@ -62,7 +62,7 @@ class GameScene: SKScene {
     fileprivate var badGuys : SKEmitterNode?
     let textureAtlas = SKTextureAtlas(named: "Enemy Sprite Atlas")
     var textureMatrix = [[SKTexture?]](repeating: [SKTexture?](repeating: nil, count: 4), count: 3)
-    var enemyArray = [SKSpriteNode?](repeating: nil, count: 0)
+    var enemyArray = [SKEnemyNode?](repeating: nil, count: 0)
     
     // MARK: Configuration variables.
     let spinnyStuff = UserDefaults.standard.value(forKey: "spinnyStuff") ?? false
@@ -150,7 +150,11 @@ class GameScene: SKScene {
         
         for enemy in enemyArray {
             if enemy!.intersects(badGuys!) {
-                badGuys?.particleBirthRate *= 0.999
+                if badGuys!.particleBirthRate * 5 < enemy!.health {
+                    badGuys?.particleBirthRate *= 0.999
+                } else {
+                    enemy?.deteriorate()
+                }
             }
         }
         
