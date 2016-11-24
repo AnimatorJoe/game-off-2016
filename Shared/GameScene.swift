@@ -13,35 +13,41 @@ import SpriteKit
     typealias SKColor = UIColor
 #endif
 
-// MARK: Deterioration stages
-enum Deterioration {
-    case perfectShape
-    case goodShape
-    case badShape
-    case finishHim
-}
-
 // MARK: SKSpriteNode extension to support deterioration.
 class SKEnemyNode: SKSpriteNode {
     
+    // MARK: Deterioration stages
+    enum Deterioration {
+        case perfectShape
+        case goodShape
+        case badShape
+        case finishHim
+    }
+    
+    // MARK: Internal enemy state
     var deteriorationStage: Deterioration = .perfectShape
+    var health: Double = 1.0
     var textureArray: [SKTexture?]? = nil
     
     func deteriorate() {
-        switch (deteriorationStage) {
-            case .perfectShape:
-                deteriorationStage = .goodShape
-                self.texture = textureArray?[1]
-            case .goodShape:
-                deteriorationStage = .badShape
-                self.texture = textureArray?[2]
-            case .badShape:
-                deteriorationStage = .finishHim
-                self.texture = textureArray?[3]
-            case .finishHim:
-                self.isHidden = true
-                self.removeFromParent()
+        if (Int(health*3)>=Int(health*2.7)) {
+            switch (deteriorationStage) {
+                case .perfectShape:
+                    deteriorationStage = .goodShape
+                    self.texture = textureArray?[1]
+                case .goodShape:
+                    deteriorationStage = .badShape
+                    self.texture = textureArray?[2]
+                case .badShape:
+                    deteriorationStage = .finishHim
+                    self.texture = textureArray?[3]
+                case .finishHim:
+                    self.isHidden = true
+                    self.removeFromParent()
+            }
         }
+        
+        health *= 0.9
     }
 }
 
