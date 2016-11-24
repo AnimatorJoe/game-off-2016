@@ -24,7 +24,7 @@ class SKEnemyNode: SKSpriteNode {
         case finishHim
     }
     
-    // Internal enemy state
+    // MARK: Internal enemy state
     var deteriorationStage: Deterioration = .perfectShape
     var health: Double = 1.0
     var textureArray: [SKTexture?]? = nil
