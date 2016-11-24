@@ -221,6 +221,8 @@ class GameScene: SKScene {
         self.mobSizeLabel?.text = "Mob Count: \(Int(badGuys!.particleBirthRate*100))"
         
         if (Int(badGuys!.particleBirthRate*100) == 0) {
+            badGuys!.particleBirthRate = 0
+            
             self.overScreen?.setScale(0)
             self.overScreen?.isHidden = false
             self.overScreen?.alpha = 1
@@ -229,6 +231,7 @@ class GameScene: SKScene {
             deathLabel.text = "Tap to Restart"
             pLabel.text = "No troopers left!"
             
+            self.scene?.isUserInteractionEnabled = false
             self.overScreen?.run(SKAction.scale(to: 4.0, duration: 1.5))
         }
     }
