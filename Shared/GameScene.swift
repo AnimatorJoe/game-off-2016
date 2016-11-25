@@ -232,7 +232,7 @@ class GameScene: SKScene {
             self.badGuys?.isHidden = false
             
             deathLabel.text = "Tap to Restart"
-            pLabel.text = "Player Terminated"
+            pLabel.text = "Militia Terminated"
             
             self.scene?.isUserInteractionEnabled = false
             self.overScreen?.run(SKAction.scale(to: 4.0, duration: 1.5))
