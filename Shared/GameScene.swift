@@ -118,7 +118,7 @@ class GameScene: SKScene {
         pLabel.fontSize = 45;
         pLabel.setScale(0.33);
         pLabel.fontColor = UIColor.black
-        pLabel.fontName = "SF Mono Semibold"
+        pLabel.fontName = "menlo"
         pLabel.position = CGPoint(x: 0,y: 20)
         self.overScreen?.addChild(pLabel)
         
@@ -217,13 +217,8 @@ class GameScene: SKScene {
         })
     }
     
-    // MARK: In game calculations
-    override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
-        playerDeter()
-        
-        self.mobSizeLabel?.text = "Mob Count: \(Int(badGuys!.particleBirthRate*100))"
-        
+    // MARK: Checks player death
+    func checkDeath() {
         if (Int(badGuys!.particleBirthRate*100) == 0) {
             badGuys!.particleBirthRate = 0
             
@@ -238,6 +233,16 @@ class GameScene: SKScene {
             self.scene?.isUserInteractionEnabled = false
             self.overScreen?.run(SKAction.scale(to: 4.0, duration: 1.5))
         }
+    }
+    
+    // MARK: In game calculations
+    override func update(_ currentTime: TimeInterval) {
+        // Called before each frame is rendered
+        playerDeter()
+        checkDeath()
+        
+        self.mobSizeLabel?.text = "Mob Count: \(Int(badGuys!.particleBirthRate*100))"
+        
     }
     
     // MARK: Platform conditional SKView initialization
