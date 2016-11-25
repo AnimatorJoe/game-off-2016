@@ -51,7 +51,7 @@ class SKEnemyNode: SKSpriteNode {
                     self.texture = textureArray?[3]
                 case .finishHim:
                     self.isHidden = true
-                    siblings?.remove(at: arrayPosition!)
+                    _ = siblings?.remove(at: arrayPosition!)
                     gameScene?.spawnEnemies()
                     self.removeFromParent()
             }
