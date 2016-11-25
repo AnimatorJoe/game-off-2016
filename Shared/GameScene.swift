@@ -219,7 +219,7 @@ class GameScene: SKScene {
                 // Move from left to right
                 case 2:
                     enemy.position = CGPoint(x: self.size.width * -0.55 - CGFloat(arc4random_uniform(UInt32(self.size.width/9))),
-                                             y:self.size.height/2 - CGFloat(arc4random_uniform(UInt32(self.size.height))))
+                                             y: self.size.height/2 - CGFloat(arc4random_uniform(UInt32(self.size.height))))
                     moveEnemy = SKAction.moveBy(x: CGFloat((self.size.width/2) + CGFloat(arc4random_uniform(UInt32(self.size.width)))) - enemy.position.x,
                                                 y: CGFloat((self.size.height/2) - CGFloat(arc4random_uniform(UInt32(self.size.height)))) - enemy.position.y,
                                                 duration: 15.0 + Double(arc4random_uniform(10)))
@@ -227,7 +227,7 @@ class GameScene: SKScene {
                 // Move from right to left
                 case 3:
                     enemy.position = CGPoint(x: self.size.width * 0.55 + CGFloat(arc4random_uniform(UInt32(self.size.width/9))),
-                                             y:self.size.height/2 - CGFloat(arc4random_uniform(UInt32(self.size.height))))
+                                             y: self.size.height/2 - CGFloat(arc4random_uniform(UInt32(self.size.height))))
                     moveEnemy = SKAction.moveBy(x: CGFloat(-(self.size.width/2) - CGFloat(arc4random_uniform(UInt32(self.size.width)))) - enemy.position.x,
                                                 y: CGFloat((self.size.height/2) - CGFloat(arc4random_uniform(UInt32(self.size.height)))) - enemy.position.y,
                                                 duration: 15.0 + Double(arc4random_uniform(10)))
@@ -263,7 +263,7 @@ class GameScene: SKScene {
         }
     }
     
-    // MARK: Restart
+    // MARK: Restart function
     func restart() {
         
     }
