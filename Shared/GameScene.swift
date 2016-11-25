@@ -105,22 +105,24 @@ class GameScene: SKScene {
         mobSizeLabel?.position = CGPoint(x: self.size.width * 1/5, y: self.size.height * 2/5)
         
         self.overScreen = self.childNode(withName: "overScreen") as? SKShapeNode
+        self.overScreen?.strokeColor = UIColor.gray
+        self.overScreen?.fillColor = UIColor.black
         
         // Restart label, displayed on death
-        deathLabel.text = "Tap to Restart"
-        deathLabel.fontSize = 30;
-        deathLabel.setScale(0.33);
-        deathLabel.fontColor = UIColor.black
-        deathLabel.position = CGPoint(x: 0,y: -10)
+        deathLabel.fontSize = 30
+        deathLabel.setScale(0.33)
+        deathLabel.fontName = "Menlo"
+        deathLabel.fontColor = UIColor.green
+        deathLabel.position = CGPoint(x: 0,y: -15)
         deathLabel.zPosition = 15
         self.overScreen?.addChild(deathLabel)
         
         // Score label, displayed on death
-        pLabel.fontSize = 45;
-        pLabel.setScale(0.33);
-        pLabel.fontColor = UIColor.black
-        pLabel.fontName = "menlo"
-        pLabel.position = CGPoint(x: 0,y: 20)
+        pLabel.fontSize = 45
+        pLabel.setScale(0.20)
+        pLabel.fontName = "Menlo"
+        pLabel.fontColor = UIColor.green
+        pLabel.position = CGPoint(x: 0,y: 15)
         self.overScreen?.addChild(pLabel)
         
         // Create shape node to use during mouse interaction
@@ -230,7 +232,7 @@ class GameScene: SKScene {
             self.badGuys?.isHidden = false
             
             deathLabel.text = "Tap to Restart"
-            pLabel.text = "No troopers left!"
+            pLabel.text = "Player Terminated"
             
             self.scene?.isUserInteractionEnabled = false
             self.overScreen?.run(SKAction.scale(to: 4.0, duration: 1.5))
