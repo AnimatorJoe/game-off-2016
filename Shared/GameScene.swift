@@ -195,15 +195,15 @@ class GameScene: SKScene {
             let enemyNumber = Int(arc4random_uniform(3))
             let waitRandom = SKAction.wait(forDuration: TimeInterval(arc4random_uniform(UInt32(2))))
             let enemy = SKEnemyNode(texture: textureMatrix[enemyNumber][0])
-            let randomTime = 15 + Int(arc4random_uniform(10))
         
             enemy.textureArray = textureMatrix[enemyNumber]
         
             // Add enemy to scene
             enemy.position = CGPoint(x: self.size.width/2 - CGFloat(arc4random_uniform(UInt32(self.size.width))),
                                      y: self.size.height * 0.55 + CGFloat(arc4random_uniform(UInt32(self.size.height/9))))
-            let moveEnemy = SKAction.moveBy(x: CGFloat((self.size.width/2) -    CGFloat(arc4random_uniform(UInt32(self.size.width)))) - enemy.position.x,
-                                            y: (self.size.height * -3/5) - enemy.position.y, duration: Double(randomTime))
+            let moveEnemy = SKAction.moveBy(x: CGFloat((self.size.width/2) - CGFloat(arc4random_uniform(UInt32(self.size.width)))) - enemy.position.x,
+                                            y: (self.size.height * -3/5) - enemy.position.y,
+                                            duration: 15.0 + Double(arc4random_uniform(10)))
             enemy.zPosition = 2
             enemy.setScale(CGFloat(UInt32(5) + (arc4random_uniform(UInt32(3))))/10)
             self.addChild(enemy)
