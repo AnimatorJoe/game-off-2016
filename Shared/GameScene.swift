@@ -235,13 +235,21 @@ class GameScene: SKScene {
         }
     }
     
+    // MARK: Score update
+    func scoreUpdate() {
+        self.mobSizeLabel?.text = "Mob Count: \(Int(badGuys!.particleBirthRate*100))"
+        
+        if (Int(badGuys!.particleBirthRate * 100) <= 5){
+            self.mobSizeLabel?.fontColor = UIColor.red
+        }
+    }
+    
     // MARK: In game calculations
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
         playerDeter()
+        scoreUpdate()
         checkDeath()
-        
-        self.mobSizeLabel?.text = "Mob Count: \(Int(badGuys!.particleBirthRate*100))"
         
     }
     
