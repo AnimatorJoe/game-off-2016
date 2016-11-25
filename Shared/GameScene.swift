@@ -203,24 +203,18 @@ class GameScene: SKScene {
             enemy.textureArray = textureMatrix[enemyNumber]
         
             // Add enemy to scene
-            
             switch Int(arc4random_uniform(1)) {
-            
-            //Move from top to bottum
-            case 0:
-                enemy.position = CGPoint(x: self.size.width/2 - CGFloat(arc4random_uniform(UInt32(self.size.width))),
-                                         y: self.size.height * 0.55 + CGFloat(arc4random_uniform(UInt32(self.size.height/9))))
-                moveEnemy = SKAction.moveBy(x: CGFloat((self.size.width/2) - CGFloat(arc4random_uniform(UInt32(self.size.width)))) - enemy.position.x,
+                // Move from top to bottom
+                case 0:
+                    enemy.position = CGPoint(x: self.size.width/2 - CGFloat(arc4random_uniform(UInt32(self.size.width))),
+                                             y: self.size.height * 0.55 + CGFloat(arc4random_uniform(UInt32(self.size.height/9))))
+                    moveEnemy = SKAction.moveBy(x: CGFloat((self.size.width/2) - CGFloat(arc4random_uniform(UInt32(self.size.width)))) - enemy.position.x,
                                                 y: (self.size.height * -3/5) - enemy.position.y,
                                                 duration: 15.0 + Double(arc4random_uniform(10)))
-                break;
-                
-            
-                
-            default:
-                enemy.position = CGPoint(x: self.size.width/2 - CGFloat(arc4random_uniform(UInt32(self.size.width))),
-                                         y: self.size.height * 0.55 + CGFloat(arc4random_uniform(UInt32(self.size.height/9))))
-                moveEnemy = SKAction.moveBy(x: CGFloat((self.size.width/2) - CGFloat(arc4random_uniform(UInt32(self.size.width)))) - enemy.position.x,
+                default:
+                    enemy.position = CGPoint(x: self.size.width/2 - CGFloat(arc4random_uniform(UInt32(self.size.width))),
+                                             y: self.size.height * 0.55 + CGFloat(arc4random_uniform(UInt32(self.size.height/9))))
+                    moveEnemy = SKAction.moveBy(x: CGFloat((self.size.width/2) - CGFloat(arc4random_uniform(UInt32(self.size.width)))) - enemy.position.x,
                                                 y: (self.size.height * -3/5) - enemy.position.y,
                                                 duration: 15.0 + Double(arc4random_uniform(10)))
             }
