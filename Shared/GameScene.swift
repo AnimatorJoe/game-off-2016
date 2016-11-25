@@ -204,7 +204,7 @@ class GameScene: SKScene {
             enemy.textureArray = textureMatrix[enemyNumber]
         
             // Add enemy to scene
-            switch Int(arc4random_uniform(1)) {
+            switch Int(arc4random_uniform(2)) {
                 // Move from top to bottom
                 case 0:
                     enemy.position = CGPoint(x: self.size.width/2 - CGFloat(arc4random_uniform(UInt32(self.size.width))),
@@ -212,6 +212,16 @@ class GameScene: SKScene {
                     moveEnemy = SKAction.moveBy(x: CGFloat((self.size.width/2) - CGFloat(arc4random_uniform(UInt32(self.size.width)))) - enemy.position.x,
                                                 y: (self.size.height * -3/5) - enemy.position.y,
                                                 duration: 15.0 + Double(arc4random_uniform(10)))
+                
+                //Move from bottom to top
+                case 1:
+                    enemy.position = CGPoint(x: self.size.width/2 - CGFloat(arc4random_uniform(UInt32(self.size.width))),
+                                             y: self.size.height * -0.55 + CGFloat(arc4random_uniform(UInt32(self.size.height/9))))
+                    moveEnemy = SKAction.moveBy(x: CGFloat((self.size.width/2) - CGFloat(arc4random_uniform(UInt32(self.size.width)))) - enemy.position.x,
+                                                y: (self.size.height * 3/5) - enemy.position.y,
+                                                duration: 15.0 + Double(arc4random_uniform(10)))
+                
+                //In case of error
                 default:
                     enemy.position = CGPoint(x: self.size.width/2 - CGFloat(arc4random_uniform(UInt32(self.size.width))),
                                              y: self.size.height * 0.55 + CGFloat(arc4random_uniform(UInt32(self.size.height/9))))
