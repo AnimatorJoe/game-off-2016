@@ -27,12 +27,16 @@ class SKEnemyNode: SKSpriteNode {
     // MARK: Internal enemy state
     var deteriorationStage: Deterioration = .perfectShape
     let deteriorationRate: CGFloat = 0.95
-    var health: CGFloat = 3.0
-    var textureArray: [SKTexture?]? = nil
+    var health: CGFloat = 4.0
+    var textureArray: [SKTexture?]?
+    
+    // MARK: Sibling information
+    var siblings: [SKEnemyNode?]?
+    var arrayPosition: Int?
     
     // MARK: Make enemy deteriorate.
     func deteriorate() {
-        // If health will pass 1.0, 0.667, 0.334, or 0.0
+        // If health will pass 3.0, 2.0, or 1.0
         if (Int(health) > Int(health*deteriorationRate)) {
             switch (deteriorationStage) {
                 case .perfectShape:
@@ -46,6 +50,7 @@ class SKEnemyNode: SKSpriteNode {
                     self.texture = textureArray?[3]
                 case .finishHim:
                     self.isHidden = true
+                    siblings?.remove(at: arrayPosition!)
                     self.removeFromParent()
             }
         }
@@ -202,6 +207,8 @@ class GameScene: SKScene {
             var moveEnemy = SKAction()
         
             enemy.textureArray = textureMatrix[enemyNumber]
+            enemy.siblings = enemyArray
+            enemy.arrayPosition = enemyArray.endIndex - 1
         
             // Add enemy to scene
             switch arc4random_uniform(4) {
