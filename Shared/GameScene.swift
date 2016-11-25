@@ -191,8 +191,8 @@ class GameScene: SKScene {
         for enemy in enemyArray {
             if enemy!.intersects(badGuys!) {
                 if badGuys!.particleBirthRate * 5 < enemy!.health {
-                    badGuys?.particleBirthRate *= 0.999
                     enemy?.deteriorate()
+                    badGuys?.particleBirthRate *= 0.999
                 } else {
                     enemy?.deteriorate()
                     badGuys?.particleBirthRate += enemy!.health * (1 - enemy!.deteriorationRate)
