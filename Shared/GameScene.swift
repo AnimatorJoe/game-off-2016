@@ -299,6 +299,15 @@ class GameScene: SKScene {
         playerDeter()
         scoreUpdate()
         checkDeath()
+        
+        for enemy in enemyArray {
+            if !(enemy?.intersects(self))! {
+                enemyArray.remove(at: enemyArray.index(where: { $0 == enemy })!)
+                enemy?.removeFromParent()
+                
+                spawnEnemies()
+            }
+        }
     }
     
     // MARK: Platform conditional SKView initialization
