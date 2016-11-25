@@ -221,7 +221,7 @@ class GameScene: SKScene {
         }
     }
     
-    // MARK: Checks player death
+    // MARK: Check player death
     func checkDeath() {
         if (Int(badGuys!.particleBirthRate*100) == 0) {
             badGuys!.particleBirthRate = 0
