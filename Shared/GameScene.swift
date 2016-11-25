@@ -280,6 +280,11 @@ class GameScene: SKScene {
         }
     }
     
+    // MARK: Restart
+    func restart() {
+        
+    }
+    
     // MARK: Score update
     func scoreUpdate() {
         self.mobSizeLabel?.text = "Mob Count: \(Int(badGuys!.particleBirthRate*100))"
