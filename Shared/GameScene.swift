@@ -90,8 +90,9 @@ class GameScene: SKScene {
     func setUpScene() {
         self.badGuys = SKEmitterNode(fileNamed: "BadGuysMob")
         if let badGuys = self.badGuys {
-            badGuys.position = CGPoint(x: self.frame.origin.x,
-                                       y: self.frame.origin.y)
+            badGuys.position = CGPoint(x: 0,
+                                       y: 0)
+            
             badGuys.setScale(5)
             badGuys.zPosition = 3
             badGuys.isHidden = false
