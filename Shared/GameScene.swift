@@ -224,7 +224,7 @@ class GameScene: SKScene {
                 // Move from bottom to top
                 case 1:
                     enemy.position = CGPoint(x: self.size.width/2 - CGFloat(arc4random_uniform(UInt32(self.size.width))),
-                                             y: self.size.height * -0.55 + CGFloat(arc4random_uniform(UInt32(self.size.height/9))))
+                                             y: self.size.height * -0.55 - CGFloat(arc4random_uniform(UInt32(self.size.height/9))))
                     moveEnemy = SKAction.moveBy(x: CGFloat((self.size.width/2) - CGFloat(arc4random_uniform(UInt32(self.size.width)))) - enemy.position.x,
                                                 y: (self.size.height * 3/5) - enemy.position.y,
                                                 duration: 15.0 + Double(arc4random_uniform(10)))
