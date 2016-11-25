@@ -27,7 +27,7 @@ class SKEnemyNode: SKSpriteNode {
     // MARK: Internal enemy state
     var deteriorationStage: Deterioration = .perfectShape
     let deteriorationRate: CGFloat = 0.95
-    var health: CGFloat = 3.0
+    var health: CGFloat = 4.0
     var textureArray: [SKTexture?]? = nil
     
     // MARK: Make enemy deteriorate.
@@ -185,6 +185,8 @@ class GameScene: SKScene {
             if enemy!.intersects(badGuys!) {
                 if badGuys!.particleBirthRate * 5 < enemy!.health {
                     badGuys?.particleBirthRate *= 0.999
+                    enemy?.deteriorate()
+
                 } else {
                     enemy?.deteriorate()
                     badGuys?.particleBirthRate += enemy!.health * (1 - enemy!.deteriorationRate)
