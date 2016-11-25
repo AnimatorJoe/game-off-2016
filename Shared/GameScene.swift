@@ -67,6 +67,7 @@ class GameScene: SKScene {
     let textureAtlas = SKTextureAtlas(named: "Enemy Sprite Atlas")
     var textureMatrix = [[SKTexture?]](repeating: [SKTexture?](repeating: nil, count: 4), count: 3)
     var enemyArray = [SKEnemyNode?](repeating: nil, count: 0)
+    var playerDidDie = false
     
     // MARK: Configuration variables.
     let spinnyStuff = UserDefaults.standard.value(forKey: "spinnyStuff") ?? false
@@ -190,32 +191,34 @@ class GameScene: SKScene {
     
     // MARK: Spawn other enemies
     func spawnEnemies() {
-        let enemyNumber = Int(arc4random_uniform(3))
-        let waitRandom = SKAction.wait(forDuration: TimeInterval(arc4random_uniform(UInt32(2))))
-        let enemy = SKEnemyNode(texture: textureMatrix[enemyNumber][0])
-        let randomTime = 15 + Int(arc4random_uniform(10))
-        let scale = CGFloat(UInt32(5) + (arc4random_uniform(UInt32(3))))/10
+        if !playerDidDie {
+            let enemyNumber = Int(arc4random_uniform(3))
+            let waitRandom = SKAction.wait(forDuration: TimeInterval(arc4random_uniform(UInt32(2))))
+            let enemy = SKEnemyNode(texture: textureMatrix[enemyNumber][0])
+            let randomTime = 15 + Int(arc4random_uniform(10))
+            let scale = CGFloat(UInt32(5) + (arc4random_uniform(UInt32(3))))/10
         
-        enemy.textureArray = textureMatrix[enemyNumber]
+            enemy.textureArray = textureMatrix[enemyNumber]
         
-        // Add enemy to scene
-        enemy.position = CGPoint(x: self.size.width/2 - CGFloat(arc4random_uniform(UInt32(self.size.width))),
-                                 y: self.size.height * 0.55 + CGFloat(arc4random_uniform(UInt32(self.size.height/9))))
-        let moveEnemy = SKAction.moveBy(x: CGFloat((self.size.width/2) - CGFloat(arc4random_uniform(UInt32(self.size.width)))) - enemy.position.x,
-                                        y: (self.size.height * -3/5) - enemy.position.y, duration: Double(randomTime))
-        enemy.zPosition = 2
-        enemy.xScale = scale
-        enemy.yScale = scale
-        self.addChild(enemy)
+            // Add enemy to scene
+            enemy.position = CGPoint(x: self.size.width/2 - CGFloat(arc4random_uniform(UInt32(self.size.width))),
+                                     y: self.size.height * 0.55 + CGFloat(arc4random_uniform(UInt32(self.size.height/9))))
+            let moveEnemy = SKAction.moveBy(x: CGFloat((self.size.width/2) -    CGFloat(arc4random_uniform(UInt32(self.size.width)))) - enemy.position.x,
+                                            y: (self.size.height * -3/5) - enemy.position.y, duration: Double(randomTime))
+            enemy.zPosition = 2
+            enemy.xScale = scale
+            enemy.yScale = scale
+            self.addChild(enemy)
         
-        enemyArray.append(enemy)
-        
-        // Spawn more enemies
-        enemy.run((SKAction.sequence([moveEnemy, waitRandom,SKAction.removeFromParent()])), completion: {
-            for _ in 0...1 {
-                self.spawnEnemies()
-            }
-        })
+            enemyArray.append(enemy)
+            
+            // Spawn more enemies
+            enemy.run((SKAction.sequence([moveEnemy, waitRandom,SKAction.removeFromParent()])), completion: {
+                for _ in 0...1 {
+                    self.spawnEnemies()
+                }
+            })
+        }
     }
     
     // MARK: Checks player death
@@ -233,6 +236,7 @@ class GameScene: SKScene {
             
             self.scene?.isUserInteractionEnabled = false
             self.overScreen?.run(SKAction.scale(to: 4.0, duration: 1.5))
+            self.playerDidDie = true
         }
     }
     
