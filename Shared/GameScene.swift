@@ -67,6 +67,7 @@ class GameScene: SKScene {
     let textureAtlas = SKTextureAtlas(named: "Enemy Sprite Atlas")
     var textureMatrix = [[SKTexture?]](repeating: [SKTexture?](repeating: nil, count: 4), count: 3)
     var enemyArray = [SKEnemyNode?](repeating: nil, count: 0)
+    var playerDidDie = false
     
     // MARK: Configuration variables.
     let spinnyStuff = UserDefaults.standard.value(forKey: "spinnyStuff") ?? false
@@ -195,7 +196,7 @@ class GameScene: SKScene {
         let enemy = SKEnemyNode(texture: textureMatrix[enemyNumber][0])
         let randomTime = 15 + Int(arc4random_uniform(10))
         
-        enemy.textureArray = textureMatrix[enemyNumber]
+            enemy.textureArray = textureMatrix[enemyNumber]
         
         // Add enemy to scene
         enemy.position = CGPoint(x: self.size.width/2 - CGFloat(arc4random_uniform(UInt32(self.size.width))),
@@ -206,14 +207,15 @@ class GameScene: SKScene {
         enemy.setScale(CGFloat(UInt32(5) + (arc4random_uniform(UInt32(3))))/10)
         self.addChild(enemy)
         
-        enemyArray.append(enemy)
-        
-        // Spawn more enemies
-        enemy.run((SKAction.sequence([moveEnemy, waitRandom,SKAction.removeFromParent()])), completion: {
-            for _ in 0...1 {
-                self.spawnEnemies()
-            }
-        })
+            enemyArray.append(enemy)
+            
+            // Spawn more enemies
+            enemy.run((SKAction.sequence([moveEnemy, waitRandom,SKAction.removeFromParent()])), completion: {
+                for _ in 0...1 {
+                    self.spawnEnemies()
+                }
+            })
+        }
     }
     
     // MARK: Checks player death
@@ -231,6 +233,7 @@ class GameScene: SKScene {
             
             self.scene?.isUserInteractionEnabled = false
             self.overScreen?.run(SKAction.scale(to: 4.0, duration: 1.5))
+            self.playerDidDie = true
         }
     }
     
