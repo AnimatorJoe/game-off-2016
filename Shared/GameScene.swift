@@ -32,7 +32,6 @@ class SKEnemyNode: SKSpriteNode {
     
     // MARK: Sibling information
     var gameScene: GameScene?
-    var siblings: [SKEnemyNode?]?
     
     // MARK: Make enemy deteriorate.
     func deteriorate() {
@@ -50,7 +49,7 @@ class SKEnemyNode: SKSpriteNode {
                     self.texture = textureArray?[3]
                 case .finishHim:
                     self.isHidden = true
-                    _ = siblings?.remove(at: (siblings?.index(where: { $0 == self }))!)
+                    _ = gameScene?.enemyArray.remove(at: (gameScene?.enemyArray.index(where: { $0 == self }))!)
                     gameScene?.spawnEnemies()
                     self.removeFromParent()
             }
@@ -211,7 +210,6 @@ class GameScene: SKScene {
         
             enemy.textureArray = textureMatrix[enemyNumber]
             enemy.gameScene = self
-            enemy.siblings = enemyArray
         
             // Add enemy to scene
             switch arc4random_uniform(4) {
