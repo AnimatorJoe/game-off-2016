@@ -67,8 +67,8 @@ class GameScene: SKScene {
     fileprivate var badGuys : SKEmitterNode?
     fileprivate var mobSizeLabel: SKLabelNode?
     fileprivate var overScreen: SKShapeNode?
-    fileprivate var deathLabel = SKLabelNode()
-    fileprivate var pLabel = SKLabelNode()
+    fileprivate var deathLabel: SKLabelNode?
+    fileprivate var terminatedLabel: SKLabelNode?
     let textureAtlas = SKTextureAtlas(named: "Enemy Sprite Atlas")
     var textureMatrix = [[SKTexture?]](repeating: [SKTexture?](repeating: nil, count: 4), count: 3)
     var enemyArray = [SKEnemyNode?](repeating: nil, count: 0)
@@ -93,6 +93,11 @@ class GameScene: SKScene {
     
     // MARK: Scene setup
     func setUpScene() {
+        
+        // Print out screen size.
+        print("Screen Width: \(self.size.width)")
+        print("Screen Height: \(self.size.height)")
+        
         self.badGuys = SKEmitterNode(fileNamed: "BadGuysMob")
         if let badGuys = self.badGuys {
             badGuys.position = CGPoint(x: 0,
@@ -107,30 +112,11 @@ class GameScene: SKScene {
         }
         
         self.mobSizeLabel = self.childNode(withName: "mobSizeLabel") as? SKLabelNode
-        mobSizeLabel?.fontName = "Menlo"
-        mobSizeLabel?.fontColor = UIColor.green
         mobSizeLabel?.position = CGPoint(x: self.size.width * 1/5, y: self.size.height * 2/5)
         
         self.overScreen = self.childNode(withName: "overScreen") as? SKShapeNode
-        self.overScreen?.strokeColor = UIColor.gray
-        self.overScreen?.fillColor = UIColor.black
-        
-        // Restart label, displayed on death
-        deathLabel.fontSize = 30
-        deathLabel.setScale(0.33)
-        deathLabel.fontName = "Menlo"
-        deathLabel.fontColor = UIColor.green
-        deathLabel.position = CGPoint(x: 0,y: -15)
-        deathLabel.zPosition = 15
-        self.overScreen?.addChild(deathLabel)
-        
-        // Score label, displayed on death
-        pLabel.fontSize = 45
-        pLabel.setScale(0.18)
-        pLabel.fontName = "Menlo"
-        pLabel.fontColor = UIColor.green
-        pLabel.position = CGPoint(x: 0,y: 15)
-        self.overScreen?.addChild(pLabel)
+        self.deathLabel = self.overScreen?.childNode(withName: "deathLabel") as? SKLabelNode
+        self.terminatedLabel = self.overScreen?.childNode(withName: "terminatedLabel") as? SKLabelNode
         
         // Create shape node to use during mouse interaction
         let w = (self.size.width + self.size.height) * 0.05
@@ -271,9 +257,6 @@ class GameScene: SKScene {
             self.overScreen?.alpha = 1
             self.badGuys?.isHidden = false
             
-            deathLabel.text = "Tap to Restart"
-            pLabel.text = "Militia Terminated"
-            
             self.scene?.isUserInteractionEnabled = false
             self.overScreen?.run(SKAction.scale(to: 4.0, duration: 1.5))
             self.playerDidDie = true
@@ -321,8 +304,6 @@ class GameScene: SKScene {
             // Matching dimensions
             self.size.width = WKInterfaceDevice.current().screenBounds.width * 2
             self.size.height = WKInterfaceDevice.current().screenBounds.height * 2
-            print("Screen Width: \(self.size.width)")
-            print("Screen Height: \(self.size.height)")
             
             self.setUpScene()
         }
@@ -331,8 +312,6 @@ class GameScene: SKScene {
             // Matching dimensions
             self.size.width = UIScreen.main.bounds.width * 2
             self.size.height = UIScreen.main.bounds.height * 2
-            print("Screen Width: \(self.size.width)")
-            print("Screen Height: \(self.size.height)")
     
             self.setUpScene()
         }
