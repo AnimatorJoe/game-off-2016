@@ -318,16 +318,21 @@ class GameScene: SKScene {
     // MARK: Platform conditional SKView initialization
     #if os(watchOS)
         override func sceneDidLoad() {
+            // Matching dimensions
+            self.size.width = WKInterfaceDevice.current().screenBounds.width * 2
+            self.size.height = WKInterfaceDevice.current().screenBounds.height * 2
+            print("Screen Width: \(self.size.width)")
+            print("Screen Height: \(self.size.height)")
+            
             self.setUpScene()
         }
     #else
         override func didMove(to view: SKView) {
-    
-            //Matching Dimensions
+            // Matching dimensions
             self.size.width = UIScreen.main.bounds.width * 2
             self.size.height = UIScreen.main.bounds.height * 2
-            print("Screen Width: \(String(describing: self.size.width))")
-            print("Screen Height: \(String(describing: self.size.height))")
+            print("Screen Width: \(self.size.width)")
+            print("Screen Height: \(self.size.height)")
     
             self.setUpScene()
         }
