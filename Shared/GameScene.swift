@@ -222,7 +222,7 @@ class GameScene: SKScene {
         }
     }
     
-    // MARK: Checks player death
+    // MARK: Check player death
     func checkDeath() {
         if (Int(badGuys!.particleBirthRate*100) == 0) {
             badGuys!.particleBirthRate = 0
@@ -233,7 +233,7 @@ class GameScene: SKScene {
             self.badGuys?.isHidden = false
             
             deathLabel.text = "Tap to Restart"
-            pLabel.text = "Player Terminated"
+            pLabel.text = "Militia Terminated"
             
             self.scene?.isUserInteractionEnabled = false
             self.overScreen?.run(SKAction.scale(to: 4.0, duration: 1.5))
