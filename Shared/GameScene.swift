@@ -99,6 +99,9 @@ class GameScene: SKScene {
         }
         
         self.mobSizeLabel = self.childNode(withName: "mobSizeLabel") as? SKLabelNode
+        mobSizeLabel?.fontName = "Menlo"
+        mobSizeLabel?.fontColor = UIColor.green
+        mobSizeLabel?.position = CGPoint(x: self.size.width * 1/5, y: self.size.height * 2/5)
         
         self.overScreen = self.childNode(withName: "overScreen") as? SKShapeNode
         
@@ -115,6 +118,7 @@ class GameScene: SKScene {
         pLabel.fontSize = 45;
         pLabel.setScale(0.33);
         pLabel.fontColor = UIColor.black
+        pLabel.fontName = "SF Mono Semibold"
         pLabel.position = CGPoint(x: 0,y: 20)
         self.overScreen?.addChild(pLabel)
         
