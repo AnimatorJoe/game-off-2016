@@ -191,8 +191,8 @@ class GameScene: SKScene {
         for enemy in enemyArray {
             if enemy!.intersects(badGuys!) {
                 if badGuys!.particleBirthRate * 5 < enemy!.health {
-                    badGuys?.particleBirthRate *= 0.999
                     enemy?.deteriorate()
+                    badGuys?.particleBirthRate *= 0.999
                 } else {
                     enemy?.deteriorate()
                     badGuys?.particleBirthRate += enemy!.health * (1 - enemy!.deteriorationRate)
@@ -257,7 +257,7 @@ class GameScene: SKScene {
             enemyArray.append(enemy)
             
             // Spawn more enemies
-            enemy.run((SKAction.sequence([moveEnemy, waitRandom,SKAction.removeFromParent()])), completion: {self.spawnEnemies()})
+            enemy.run(SKAction.sequence([moveEnemy, waitRandom,SKAction.removeFromParent()]))
         }
     }
     
@@ -304,6 +304,15 @@ class GameScene: SKScene {
         playerDeter()
         scoreUpdate()
         checkDeath()
+        
+        for enemy in enemyArray {
+            if !(enemy?.intersects(self))! {
+                enemyArray.remove(at: enemyArray.index(where: { $0 == enemy })!)
+                enemy?.removeFromParent()
+                
+                spawnEnemies()
+            }
+        }
     }
     
     // MARK: Platform conditional SKView initialization
