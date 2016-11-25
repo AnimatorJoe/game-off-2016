@@ -191,7 +191,6 @@ class GameScene: SKScene {
                 if badGuys!.particleBirthRate * 5 < enemy!.health {
                     badGuys?.particleBirthRate *= 0.999
                     enemy?.deteriorate()
-
                 } else {
                     enemy?.deteriorate()
                     badGuys?.particleBirthRate += enemy!.health * (1 - enemy!.deteriorationRate)
@@ -285,6 +284,8 @@ class GameScene: SKScene {
         
         if (Int(badGuys!.particleBirthRate * 100) <= 5) {
             self.mobSizeLabel?.fontColor = UIColor.red
+        } else if (Int(badGuys!.particleBirthRate * 100) <= 50) {
+            self.mobSizeLabel?.fontColor = UIColor.white
         } else {
             self.mobSizeLabel?.fontColor = UIColor.green
         }
