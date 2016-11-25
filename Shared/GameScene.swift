@@ -194,7 +194,6 @@ class GameScene: SKScene {
         let waitRandom = SKAction.wait(forDuration: TimeInterval(arc4random_uniform(UInt32(2))))
         let enemy = SKEnemyNode(texture: textureMatrix[enemyNumber][0])
         let randomTime = 15 + Int(arc4random_uniform(10))
-        let scale = CGFloat(UInt32(5) + (arc4random_uniform(UInt32(3))))/10
         
         enemy.textureArray = textureMatrix[enemyNumber]
         
@@ -204,8 +203,7 @@ class GameScene: SKScene {
         let moveEnemy = SKAction.moveBy(x: CGFloat((self.size.width/2) - CGFloat(arc4random_uniform(UInt32(self.size.width)))) - enemy.position.x,
                                         y: (self.size.height * -3/5) - enemy.position.y, duration: Double(randomTime))
         enemy.zPosition = 2
-        enemy.xScale = scale
-        enemy.yScale = scale
+        enemy.setScale(CGFloat(UInt32(5) + (arc4random_uniform(UInt32(3))))/10)
         self.addChild(enemy)
         
         enemyArray.append(enemy)
@@ -240,8 +238,10 @@ class GameScene: SKScene {
     func scoreUpdate() {
         self.mobSizeLabel?.text = "Mob Count: \(Int(badGuys!.particleBirthRate*100))"
         
-        if (Int(badGuys!.particleBirthRate * 100) <= 5){
+        if (Int(badGuys!.particleBirthRate * 100) <= 5) {
             self.mobSizeLabel?.fontColor = UIColor.red
+        } else {
+            self.mobSizeLabel?.fontColor = UIColor.green
         }
     }
     
@@ -251,7 +251,6 @@ class GameScene: SKScene {
         playerDeter()
         scoreUpdate()
         checkDeath()
-        
     }
     
     // MARK: Platform conditional SKView initialization
