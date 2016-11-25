@@ -31,6 +31,7 @@ class SKEnemyNode: SKSpriteNode {
     var textureArray: [SKTexture?]?
     
     // MARK: Sibling information
+    var gameScene: GameScene?
     var siblings: [SKEnemyNode?]?
     var arrayPosition: Int?
     
@@ -51,6 +52,7 @@ class SKEnemyNode: SKSpriteNode {
                 case .finishHim:
                     self.isHidden = true
                     siblings?.remove(at: arrayPosition!)
+                    gameScene?.spawnEnemies()
                     self.removeFromParent()
             }
         }
@@ -209,6 +211,7 @@ class GameScene: SKScene {
             var moveEnemy = SKAction()
         
             enemy.textureArray = textureMatrix[enemyNumber]
+            enemy.gameScene = self
             enemy.siblings = enemyArray
             enemy.arrayPosition = enemyArray.endIndex - 1
         
@@ -257,11 +260,7 @@ class GameScene: SKScene {
             enemyArray.append(enemy)
             
             // Spawn more enemies
-            enemy.run((SKAction.sequence([moveEnemy, waitRandom,SKAction.removeFromParent()])), completion: {
-                for _ in 0...1 {
-                    self.spawnEnemies()
-                }
-            })
+            enemy.run(SKAction.sequence([moveEnemy, waitRandom,SKAction.removeFromParent()]))
         }
     }
     
