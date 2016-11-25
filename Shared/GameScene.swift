@@ -163,7 +163,9 @@ class GameScene: SKScene {
             }
         }
         
-        spawnEnemies()
+        for _ in 1...10 {
+            spawnEnemies()
+        }
     }
 
     // MARK: Makes spinny stuff
