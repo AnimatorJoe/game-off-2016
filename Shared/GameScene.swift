@@ -26,7 +26,7 @@ class SKEnemyNode: SKSpriteNode {
     
     // MARK: Internal enemy state
     var deteriorationStage: Deterioration = .perfectShape
-    let deteriorationRate: CGFloat = 0.95
+    let deteriorationRate: CGFloat = 0.99
     var health: CGFloat = 4.0
     var textureArray: [SKTexture?]?
     
@@ -257,7 +257,7 @@ class GameScene: SKScene {
             enemyArray.append(enemy)
             
             // Spawn more enemies
-            enemy.run(SKAction.sequence([moveEnemy, waitRandom,SKAction.removeFromParent()]))
+            enemy.run((SKAction.sequence([moveEnemy, waitRandom,SKAction.removeFromParent()])), completion: {self.spawnEnemies()})
         }
     }
     
