@@ -257,7 +257,6 @@ class GameScene: SKScene {
             self.overScreen?.alpha = 1
             self.badGuys?.isHidden = false
             
-            self.scene?.isUserInteractionEnabled = false
             self.overScreen?.run(SKAction.scale(to: 4.0, duration: 1.5))
             self.playerDidDie = true
         }
@@ -273,11 +272,11 @@ class GameScene: SKScene {
         self.mobSizeLabel?.text = "Mob Count: \(Int(badGuys!.particleBirthRate*100))"
         
         if (Int(badGuys!.particleBirthRate * 100) <= 5) {
-            self.mobSizeLabel?.fontColor = UIColor.red
+            self.mobSizeLabel?.fontColor = SKColor.red
         } else if (Int(badGuys!.particleBirthRate * 100) <= 50) {
-            self.mobSizeLabel?.fontColor = UIColor.white
+            self.mobSizeLabel?.fontColor = SKColor.white
         } else {
-            self.mobSizeLabel?.fontColor = UIColor.green
+            self.mobSizeLabel?.fontColor = SKColor.green
         }
     }
     
@@ -307,7 +306,7 @@ class GameScene: SKScene {
             
             self.setUpScene()
         }
-    #else
+    #elseif os(iOS) || os(tvOS)
         override func didMove(to view: SKView) {
             // Matching dimensions
             self.size.width = UIScreen.main.bounds.width * 2
@@ -315,6 +314,15 @@ class GameScene: SKScene {
     
             self.setUpScene()
         }
+    #elseif os(macOS)
+        override func didMove(to view: SKView) {
+            // Matching dimensions
+            self.size.width = (NSScreen.main()?.visibleFrame.width)! * 2
+            self.size.height = (NSScreen.main()?.visibleFrame.height)! * 2
+            
+            self.setUpScene()
+        }
+
     #endif
 }
 
@@ -326,7 +334,6 @@ class GameScene: SKScene {
 
         override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             for t in touches {
-                
                 for i in self.nodes(at: t.location(in: self)) {
                     if i.name == "overScreen" {
                         restart()
@@ -376,6 +383,12 @@ class GameScene: SKScene {
     extension GameScene {
 
         override func mouseDown(with event: NSEvent) {
+            for i in self.nodes(at: event.location(in: self)) {
+                if i.name == "overScreen" {
+                    restart()
+                }
+            }
+            
             if self.spinnyStuff as! Bool {
                 self.makeSpinny(at: event.location(in: self), color: SKColor.green)
             }
