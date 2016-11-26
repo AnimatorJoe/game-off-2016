@@ -36,14 +36,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Immolation Organization" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFz-9c-RbA">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="RLU-0l-gYN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a54-rt-7aU">
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                 <state key="normal" title="Play">
@@ -65,17 +57,25 @@
                                     <segue destination="hXO-hi-mVj" kind="show" id="jvE-1L-kx0"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Immolation Organization" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFz-9c-RbA">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ipD-Ja-eFD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="HFz-9c-RbA" firstAttribute="centerX" secondItem="Oid-Om-oPX" secondAttribute="centerX" id="A5t-Ra-Tsh"/>
+                            <constraint firstItem="a54-rt-7aU" firstAttribute="top" secondItem="HFz-9c-RbA" secondAttribute="bottom" constant="96" id="Ee6-XV-HmR"/>
                             <constraint firstItem="fb2-HX-zFi" firstAttribute="centerY" secondItem="Oid-Om-oPX" secondAttribute="centerY" id="GhP-sl-LO5"/>
                             <constraint firstItem="fb2-HX-zFi" firstAttribute="centerX" secondItem="a54-rt-7aU" secondAttribute="centerX" id="JFw-cm-e7D"/>
+                            <constraint firstItem="HFz-9c-RbA" firstAttribute="centerX" secondItem="a54-rt-7aU" secondAttribute="centerX" id="KKg-bn-z99"/>
                             <constraint firstItem="fb2-HX-zFi" firstAttribute="top" secondItem="a54-rt-7aU" secondAttribute="bottom" constant="28" id="Mbv-MM-aZt"/>
-                            <constraint firstItem="HFz-9c-RbA" firstAttribute="top" secondItem="0xx-gh-FaZ" secondAttribute="bottom" constant="45" id="SPa-O4-pec"/>
                             <constraint firstItem="Cty-ln-QsP" firstAttribute="top" secondItem="fb2-HX-zFi" secondAttribute="bottom" constant="319" id="gpC-ac-l5Q"/>
-                            <constraint firstItem="HFz-9c-RbA" firstAttribute="leading" secondItem="Oid-Om-oPX" secondAttribute="leadingMargin" constant="46" id="luZ-5L-4p0"/>
-                            <constraint firstItem="HFz-9c-RbA" firstAttribute="centerX" secondItem="Oid-Om-oPX" secondAttribute="centerX" id="vxU-RN-Hxs"/>
-                            <constraint firstItem="HFz-9c-RbA" firstAttribute="centerX" secondItem="a54-rt-7aU" secondAttribute="centerX" id="xnu-1a-5Af"/>
+                            <constraint firstItem="HFz-9c-RbA" firstAttribute="leading" secondItem="Oid-Om-oPX" secondAttribute="leadingMargin" constant="46" id="qse-Oh-ERL"/>
                         </constraints>
                     </view>
                 </viewController>
