@@ -50,6 +50,7 @@ class SKEnemyNode: SKSpriteNode {
                 case .finishHim:
                     self.isHidden = false
                     _ = gameScene?.enemyArray.remove(at: (gameScene?.enemyArray.index(where: { $0 == self }))!)
+                    gameScene?.badGuys?.particleBirthRate += 0.25
                     gameScene?.spawnEnemies()
                     self.removeFromParent()
             }
@@ -176,12 +177,9 @@ class GameScene: SKScene {
         
         for enemy in enemyArray {
             if enemy!.intersects(badGuys!) {
+                enemy?.deteriorate()
                 if badGuys!.particleBirthRate * 5 < enemy!.health {
-                    enemy?.deteriorate()
                     badGuys?.particleBirthRate *= 0.999
-                } else {
-                    enemy?.deteriorate()
-                    badGuys?.particleBirthRate += enemy!.health * (1 - enemy!.deteriorationRate)
                 }
             }
         }
@@ -293,7 +291,6 @@ class GameScene: SKScene {
         badGuys?.particleBirthRate = 0.5
         badGuys?.position = CGPoint(x: 0, y: 0)
         self.overScreen?.run(SKAction.scale(to: 0, duration: 1.5))
-        
     }
     
     // MARK: Score update
