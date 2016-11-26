@@ -26,7 +26,7 @@ class SKEnemyNode: SKSpriteNode {
     
     // MARK: Internal enemy state
     var deteriorationStage: Deterioration = .perfectShape
-    let deteriorationRate: CGFloat = 0.99
+    let deteriorationRate: CGFloat = 0.993
     var health: CGFloat = 4.0
     var textureArray: [SKTexture?]?
     
@@ -73,6 +73,7 @@ class GameScene: SKScene {
     let textureAtlas = SKTextureAtlas(named: "Enemy Sprite Atlas")
     var textureMatrix = [[SKTexture?]](repeating: [SKTexture?](repeating: nil, count: 4), count: 3)
     var enemyArray = [SKEnemyNode?](repeating: nil, count: 0)
+    var backgroundMusic = SKAudioNode()
     var playerDied = false
     
     // MARK: Configuration variables.
@@ -107,10 +108,17 @@ class GameScene: SKScene {
             badGuys.setScale(5)
             badGuys.zPosition = 3
             badGuys.isHidden = false
-            badGuys.particleBirthRate = 0.5
+            badGuys.particleBirthRate = 0.3
             badGuys.setScale(3)
             self.addChild(badGuys)
         }
+        
+        if let musicURL = Bundle.main.url(forResource: "music", withExtension: "m4a") {
+            backgroundMusic = SKAudioNode(url: musicURL)
+            addChild(backgroundMusic)
+        }
+        
+        backgroundMusic = SKAudioNode(url: Bundle.main.url(forResource: "music", withExtension: "m4a"))
         
         self.mobSizeLabel = self.childNode(withName: "mobSizeLabel") as? SKLabelNode
         mobSizeLabel?.position = CGPoint(x: self.size.width * 1/5, y: self.size.height * 2/5)
@@ -291,9 +299,10 @@ class GameScene: SKScene {
         
         self.playerDied = false
         badGuys?.setScale(3)
-        badGuys?.particleBirthRate = 0.5
+        badGuys?.particleBirthRate = 0.3
         badGuys?.position = CGPoint(x: 0, y: 0)
         self.overScreen?.run(SKAction.scale(to: 0, duration: 1.5))
+        spawnEnemies()
     }
     
     // MARK: Score update

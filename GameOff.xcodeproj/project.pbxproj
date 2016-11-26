@@ -44,6 +44,8 @@
 		178A094B1DCFA67F008562F6 /* Settings-Watch.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 178A09491DCFA67F008562F6 /* Settings-Watch.bundle */; };
 		178A094C1DCFA67F008562F6 /* Settings-Watch.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 178A09491DCFA67F008562F6 /* Settings-Watch.bundle */; };
 		17B1B55A1DC953CB00A6585C /* BadGuysMob.sks in Resources */ = {isa = PBXBuildFile; fileRef = 17B1B5591DC953CB00A6585C /* BadGuysMob.sks */; };
+		73E3BA9F1DE9421A003F4284 /* GameOff_Odyssey.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 73E3BA9E1DE9421A003F4284 /* GameOff_Odyssey.mp3 */; };
+		73E3BAA21DE9424F003F4284 /* GameSound - 1 up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 73E3BAA11DE9424F003F4284 /* GameSound - 1 up.mp3 */; };
 		AE2D6D82C53A1FA8D67B55B7 /* Pods_watchOS_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693C28A42E9BDB3101041835 /* Pods_watchOS_Extension.framework */; };
 		C26A7FBE5B8BAB62D79CB8A9 /* Pods_watchOS_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74169612C07800E477299E04 /* Pods_watchOS_App.framework */; };
 		F5F8A0EF4739C1B85095F57E /* Pods_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52BF82D1BA78BD9806FAF1F /* Pods_macOS.framework */; };
@@ -130,6 +132,8 @@
 		5B477100ECC0F001463833A2 /* Pods-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS/Pods-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		693C28A42E9BDB3101041835 /* Pods_watchOS_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_watchOS_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70E2E996ED83E54AE6D0362A /* Pods-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-macOS/Pods-macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		73E3BA9E1DE9421A003F4284 /* GameOff_Odyssey.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GameOff_Odyssey.mp3; sourceTree = "<group>"; };
+		73E3BAA11DE9424F003F4284 /* GameSound - 1 up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GameSound - 1 up.mp3"; sourceTree = "<group>"; };
 		74169612C07800E477299E04 /* Pods_watchOS_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_watchOS_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93AD1950357065F2B8C019FB /* Pods_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A52BF82D1BA78BD9806FAF1F /* Pods_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,6 +206,7 @@
 		176CA32D1DC934D9009CF9A5 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				73E3BAA01DE94235003F4284 /* Sound */,
 				73E71D681DCF892D001E0E50 /* Assets */,
 				176CA32F1DC934D9009CF9A5 /* GameScene.sks */,
 				176CA3301DC934D9009CF9A5 /* GameScene.swift */,
@@ -275,6 +280,15 @@
 				176CA3781DC934DA009CF9A5 /* Info.plist */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		73E3BAA01DE94235003F4284 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				73E3BA9E1DE9421A003F4284 /* GameOff_Odyssey.mp3 */,
+				73E3BAA11DE9424F003F4284 /* GameSound - 1 up.mp3 */,
+			);
+			name = Sound;
 			sourceTree = "<group>";
 		};
 		73E71D681DCF892D001E0E50 /* Assets */ = {
@@ -486,10 +500,12 @@
 			files = (
 				17B1B55A1DC953CB00A6585C /* BadGuysMob.sks in Resources */,
 				176CA37C1DC934DA009CF9A5 /* GameScene.sks in Resources */,
+				73E3BAA21DE9424F003F4284 /* GameSound - 1 up.mp3 in Resources */,
 				178A094A1DCFA67F008562F6 /* Settings-Watch.bundle in Resources */,
 				176CA33F1DC934DA009CF9A5 /* Main.storyboard in Resources */,
 				176CA3791DC934DA009CF9A5 /* Actions.sks in Resources */,
 				176CA3421DC934DA009CF9A5 /* LaunchScreen.storyboard in Resources */,
+				73E3BA9F1DE9421A003F4284 /* GameOff_Odyssey.mp3 in Resources */,
 				176CA3841DC934DA009CF9A5 /* Assets.xcassets in Resources */,
 				178A09471DCFA66A008562F6 /* Settings.bundle in Resources */,
 			);
