@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qh1-0Q-VBr">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11761" systemVersion="16C48b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qh1-0Q-VBr">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,6 +40,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a54-rt-7aU">
+                                <rect key="frame" x="167" y="259" width="41" height="32"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                 <state key="normal" title="Play">
                                     <color key="titleColor" red="0.26913306120000002" green="0.91778320069999997" blue="0.32139623169999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -46,6 +50,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fb2-HX-zFi">
+                                <rect key="frame" x="143" y="319" width="89" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="89" id="1KQ-F8-WA7"/>
                                 </constraints>
@@ -58,6 +63,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Immolation Organization" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFz-9c-RbA">
+                                <rect key="frame" x="62" y="142" width="251" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="ipD-Ja-eFD"/>
                                 </constraints>
@@ -96,6 +102,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYH-fn-Hfv">
+                                <rect key="frame" x="31" y="41" width="51" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="51" id="iy2-up-XnB"/>
                                     <constraint firstAttribute="height" constant="30" id="w3w-xs-gZd"/>
@@ -109,18 +116,21 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nm1-p8-rCi">
-                                <string key="text">In ‘Immolation Organization’, you're a mob of baddies with the intent of destroying alien spacecrafts! You do so by tapping the screen to guide the mob. Your mob will constantly deteriorate, and you must destroy to grow.</string>
+                                <rect key="frame" x="31" y="79" width="337" height="261.5"/>
+                                <string key="text">In ‘Immolation Organization,’ you're a mob of baddies with the intent of destroying alien spacecrafts! You do so by tapping the screen to guide the mob. Your mob will constantly deteriorate, and you must destroy to grow.</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BadGuys" translatesAutoresizingMaskIntoConstraints="NO" id="rql-lN-Eig">
+                                <rect key="frame" x="67" y="269.5" width="241" height="128"/>
                                 <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="Er1-Ay-mU4"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dispatch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZu-ra-8uv">
+                                <rect key="frame" x="140.5" y="404.5" width="94" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="94" id="AFB-4W-4z9"/>
                                     <constraint firstAttribute="height" constant="21" id="NOr-QH-T6s"/>
@@ -130,6 +140,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destroy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2E-8t-PcC">
+                                <rect key="frame" x="140.5" y="608" width="94" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="h82-8E-1lM"/>
                                 </constraints>
@@ -137,7 +148,9 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spacesprite1-0" translatesAutoresizingMaskIntoConstraints="NO" id="6Hd-t8-uIo"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spacesprite1-0" translatesAutoresizingMaskIntoConstraints="NO" id="6Hd-t8-uIo">
+                                <rect key="frame" x="58" y="464.5" width="259" height="128.5"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
