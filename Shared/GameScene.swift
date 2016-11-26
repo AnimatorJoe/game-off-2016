@@ -48,7 +48,7 @@ class SKEnemyNode: SKSpriteNode {
                     deteriorationStage = .finishHim
                     self.texture = textureArray?[3]
                 case .finishHim:
-                    self.isHidden = true
+                    self.isHidden = false
                     _ = gameScene?.enemyArray.remove(at: (gameScene?.enemyArray.index(where: { $0 == self }))!)
                     gameScene?.spawnEnemies()
                     self.removeFromParent()
@@ -72,7 +72,7 @@ class GameScene: SKScene {
     let textureAtlas = SKTextureAtlas(named: "Enemy Sprite Atlas")
     var textureMatrix = [[SKTexture?]](repeating: [SKTexture?](repeating: nil, count: 4), count: 3)
     var enemyArray = [SKEnemyNode?](repeating: nil, count: 0)
-    var playerDidDie = false
+    var playerDidDie = true
     
     // MARK: Configuration variables.
     let spinnyStuff = UserDefaults.standard.value(forKey: "spinnyStuff") ?? false
