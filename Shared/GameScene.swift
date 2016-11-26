@@ -26,7 +26,7 @@ class SKEnemyNode: SKSpriteNode {
     
     // MARK: Internal enemy state
     var deteriorationStage: Deterioration = .perfectShape
-    let deteriorationRate: CGFloat = 0.993
+    let deteriorationRate: CGFloat = 0.995
     var health: CGFloat = 4.0
     var textureArray: [SKTexture?]?
     
@@ -303,7 +303,10 @@ class GameScene: SKScene {
         badGuys?.particleBirthRate = 0.3
         badGuys?.position = CGPoint(x: 0, y: 0)
         self.overScreen?.run(SKAction.scale(to: 0, duration: 1.5))
-        spawnEnemies()
+        backgroundMusic.run(SKAction.play())
+        for _ in 1...10 {
+            spawnEnemies()
+        }
     }
     
     // MARK: Score update
