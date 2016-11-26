@@ -16,7 +16,7 @@ To build our app on a macOS 10.12 environment with Xcode 8 and Cocoapods, first 
 pod install
 ```
 
-Then, use the `xcrun` command line tool as follows, to compile and run:
+Then, use the `xcrun` command line tool as follows, to compile an intermediate binary:
 
 ```bash
 xcrun xcodebuild \
@@ -26,6 +26,7 @@ xcrun xcodebuild \
   -destination 'platform=iOS Simulator,name=iPhone 7 Plus,OS=10.0'
 ```
 
+Then, just launch Simulator and run _Immolation Organization_.
 
 ## How to play
 
