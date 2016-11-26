@@ -290,18 +290,14 @@ class GameScene: SKScene {
     
     // MARK: Restart function
     func restart() {
-        print("Called")
-        if enemyArray.count != 0{
-            for enemy in enemyArray {
-                enemy?.deteriorate()
-                enemy?.run(SKAction.removeFromParent())
-            }
-            for _ in 0 ... enemyArray.count - 1 {
-                enemyArray.remove(at: 0)
-            }
-            for _ in 1...10 {
-                spawnEnemies()
-            }
+        for enemy in enemyArray {
+            enemy?.deteriorate()
+            enemy?.run(SKAction.removeFromParent())
+        }
+        
+        enemyArray.removeAll()
+        for _ in 1...10 {
+            spawnEnemies()
         }
         
         self.playerDied = false
@@ -309,6 +305,7 @@ class GameScene: SKScene {
         badGuys?.particleBirthRate = 0.3
         badGuys?.position = CGPoint(x: 0, y: 0)
         self.overScreen?.run(SKAction.scale(to: 0, duration: 1.5))
+        
         backgroundMusic.run(SKAction.play())
         for _ in 1...10 {
             spawnEnemies()
