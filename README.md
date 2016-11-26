@@ -29,7 +29,7 @@ xcrun xcodebuild \
 
 ## How to play
 
-In 'Immolation Organization,' you moderate a mob of baddies with the intent of hacking away at and destroying alien spacecrafts! You do so by pointing at and touching places for the mob to travel. They'll always deteriorate and diminish the spacecrafts, but depending on who's bigger, the mob or the spacecrafts, they will either enlarge or shrink.
+In _Immolation Organization_, you moderate a mob of baddies with the intent of hacking away at and destroying alien spacecrafts! You do so by pointing at and touching places for the mob to travel. They'll always deteriorate and diminish the spacecrafts, but depending on who's bigger, the mob or the spacecrafts, they will either enlarge or shrink.
 
 ## How to participate
 
@@ -39,6 +39,16 @@ In 'Immolation Organization,' you moderate a mob of baddies with the intent of h
 * Push your game source code to your forked repository before Dec 1st.
 * Update the `README.md` file to include a description of your game, how/where to play/download it, how to build/compile it, what dependencies it has, etc.
 * Submit your final game using this [form][wufoo-form].
+
+## Dependencies
+
+We used many other tools and creative works to build _Immolation Organization_.
+
+| Creative Work | Copyright Owner | License              |
+|---------------|-----------------|----------------------|
+| Fiber2D       | Andrey Volodin  | BSD Simplified       |
+| GotItem.mp3   | Kastenfrosch    | CC-0 (Public Domain) |
+| Odyssey       | Kevin MacLeod   | CC-BY-3.0            |
 
 ## It's dangerous to go alone <img src="https://octodex.github.com/images/linktocat.jpg" height="40">
 
