@@ -53,6 +53,7 @@ class SKEnemyNode: SKSpriteNode {
                     _ = gameScene?.enemyArray.remove(at: (gameScene?.enemyArray.index(where: { $0 == self }))!)
                     gameScene?.badGuys?.particleBirthRate += 0.25
                     gameScene?.spawnEnemies()
+                    gameScene?.kills += 1
                     self.removeFromParent()
             }
         }
@@ -70,6 +71,7 @@ class GameScene: SKScene {
     fileprivate var mobSizeLabel: SKLabelNode?
     fileprivate var overScreen: SKShapeNode?
     fileprivate var deathLabel: SKLabelNode?
+    fileprivate var killsLabel: SKLabelNode?
     fileprivate var terminatedLabel: SKLabelNode?
     let textureAtlas = SKTextureAtlas(named: "Enemy Sprite Atlas")
     var textureMatrix = [[SKTexture?]](repeating: [SKTexture?](repeating: nil, count: 4), count: 3)
@@ -77,6 +79,7 @@ class GameScene: SKScene {
     var backgroundMusic: SKAudioNode?
     var killSound: SKAudioNode?
     var playerDied = false
+    var kills = 0
     
     // MARK: Configuration variables.
     let spinnyStuff = UserDefaults.standard.value(forKey: "spinnyStuff") ?? false
@@ -113,7 +116,9 @@ class GameScene: SKScene {
         }
         
         self.mobSizeLabel = self.childNode(withName: "mobSizeLabel") as? SKLabelNode
+        self.killsLabel = self.childNode(withName: "enemiesKilled") as? SKLabelNode
         mobSizeLabel?.position = CGPoint(x: self.size.width * 1/5, y: self.size.height * 2/5)
+        killsLabel?.position = CGPoint(x: self.size.width * 1/5, y: self.size.height * 2/5 - 1.5 * (killsLabel?.fontSize)!)
         
         self.backgroundMusic = self.childNode(withName: "backgroundMusic") as? SKAudioNode
         self.killSound = self.childNode(withName: "killSound") as? SKAudioNode
@@ -297,6 +302,7 @@ class GameScene: SKScene {
         badGuys?.position = CGPoint(x: 0, y: 0)
         self.overScreen?.run(SKAction.scale(to: 0, duration: 1.5))
         self.overScreen?.isUserInteractionEnabled = false
+        self.kills = 0
         
         backgroundMusic?.run(SKAction.play())
         for _ in 1...10 {
@@ -307,6 +313,15 @@ class GameScene: SKScene {
     // MARK: Score update
     func scoreUpdate() {
         self.mobSizeLabel?.text = "Mob Count: \(Int(badGuys!.particleBirthRate*100))"
+        self.killsLabel?.text = "Enemies Killed: \(kills)"
+        
+        if(kills == 0){
+            self.killsLabel?.fontColor = SKColor.red
+        } else if (kills <= 10) {
+            self.killsLabel?.fontColor = SKColor.white
+        } else if (kills > 10) {
+            self.killsLabel?.fontColor = SKColor.green
+        }
         
         if (Int(badGuys!.particleBirthRate * 100) <= 5) {
             self.mobSizeLabel?.fontColor = SKColor.red
