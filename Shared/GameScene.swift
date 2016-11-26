@@ -26,7 +26,7 @@ class SKEnemyNode: SKSpriteNode {
     
     // MARK: Internal enemy state
     var deteriorationStage: Deterioration = .perfectShape
-    let deteriorationRate: CGFloat = 0.995
+    let deteriorationRate: CGFloat = 0.990
     var health: CGFloat = 4.0
     var textureArray: [SKTexture?]?
     
@@ -109,7 +109,7 @@ class GameScene: SKScene {
             badGuys.setScale(5)
             badGuys.zPosition = 3
             badGuys.isHidden = false
-            badGuys.particleBirthRate = 0.3
+            badGuys.particleBirthRate = 0.5
             badGuys.setScale(3)
             self.addChild(badGuys)
         }
