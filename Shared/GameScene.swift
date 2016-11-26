@@ -72,7 +72,7 @@ class GameScene: SKScene {
     let textureAtlas = SKTextureAtlas(named: "Enemy Sprite Atlas")
     var textureMatrix = [[SKTexture?]](repeating: [SKTexture?](repeating: nil, count: 4), count: 3)
     var enemyArray = [SKEnemyNode?](repeating: nil, count: 0)
-    var playerDidDie = true
+    var playerDidDie = false
     
     // MARK: Configuration variables.
     let spinnyStuff = UserDefaults.standard.value(forKey: "spinnyStuff") ?? false
@@ -247,6 +247,19 @@ class GameScene: SKScene {
         }
     }
     
+    // MARK: Remove Enemies Off Screen
+    func removeOffScreenEnemies() {
+        for enemy in enemyArray {
+            if !(enemy?.intersects(self))! {
+                enemyArray.remove(at: enemyArray.index(where: { $0 == enemy })!)
+                enemy?.removeFromParent()
+                
+                spawnEnemies()
+            }
+        }
+
+    }
+    
     // MARK: Check player death
     func checkDeath() {
         if (Int(badGuys!.particleBirthRate*100) == 0) || playerDidDie {
@@ -264,7 +277,23 @@ class GameScene: SKScene {
     
     // MARK: Restart function
     func restart() {
-        print("Restart")
+        print("Called")
+        if enemyArray.count != 0{
+            for enemy in enemyArray {
+                enemy?.deteriorate()
+                enemy?.run(SKAction.removeFromParent())
+            }
+            for _ in 0 ... enemyArray.count - 1 {
+                enemyArray.remove(at: 0)
+            }
+        }
+        
+        self.playerDidDie = false
+        badGuys?.setScale(3)
+        badGuys?.particleBirthRate = 0.5
+        badGuys?.position = CGPoint(x: 0, y: 0)
+        self.overScreen?.run(SKAction.scale(to: 0, duration: 1.5))
+        
     }
     
     // MARK: Score update
@@ -286,15 +315,8 @@ class GameScene: SKScene {
         playerDeter()
         scoreUpdate()
         checkDeath()
+        removeOffScreenEnemies()
         
-        for enemy in enemyArray {
-            if !(enemy?.intersects(self))! {
-                enemyArray.remove(at: enemyArray.index(where: { $0 == enemy })!)
-                enemy?.removeFromParent()
-                
-                spawnEnemies()
-            }
-        }
     }
     
     // MARK: Platform conditional SKView initialization
