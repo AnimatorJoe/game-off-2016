@@ -315,7 +315,7 @@ class GameScene: SKScene {
         self.mobSizeLabel?.text = "Mob Count: \(Int(badGuys!.particleBirthRate*100))"
         self.killsLabel?.text = "Enemies Killed: \(kills)"
         
-        if(kills == 0){
+        if (kills == 0) {
             self.killsLabel?.fontColor = SKColor.red
         } else if (kills <= 10) {
             self.killsLabel?.fontColor = SKColor.white
