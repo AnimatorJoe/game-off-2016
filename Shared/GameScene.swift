@@ -312,7 +312,7 @@ class GameScene: SKScene {
     
     // MARK: Score update
     func scoreUpdate() {
-        self.mobSizeLabel?.text = "Mob Count: \(Int(badGuys!.particleBirthRate*100))"
+        self.mobSizeLabel?.text = "Player Attack Power: \(Int(badGuys!.particleBirthRate*100))"
         self.killsLabel?.text = "Enemies Killed: \(kills)"
         
         if (kills == 0) {
