@@ -107,11 +107,8 @@ class GameScene: SKScene {
             badGuys.position = CGPoint(x: 0,
                                        y: 0)
             
-            badGuys.setScale(5)
-            badGuys.zPosition = 3
-            badGuys.isHidden = false
-            badGuys.particleBirthRate = 0.5
             badGuys.setScale(3)
+            badGuys.particleBirthRate = 0.5
             self.addChild(badGuys)
         }
         
