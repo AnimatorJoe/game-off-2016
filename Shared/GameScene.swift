@@ -262,7 +262,6 @@ class GameScene: SKScene {
                 spawnEnemies()
             }
         }
-
     }
     
     // MARK: Check player death
@@ -276,6 +275,7 @@ class GameScene: SKScene {
             self.badGuys?.isHidden = false
             
             self.overScreen?.run(SKAction.scale(to: 4.0, duration: 1.5))
+            self.overScreen?.isUserInteractionEnabled = true
             self.playerDied = true
             
             backgroundMusic?.run(SKAction.stop())
@@ -299,6 +299,7 @@ class GameScene: SKScene {
         badGuys?.particleBirthRate = 0.3
         badGuys?.position = CGPoint(x: 0, y: 0)
         self.overScreen?.run(SKAction.scale(to: 0, duration: 1.5))
+        self.overScreen?.isUserInteractionEnabled = false
         
         backgroundMusic?.run(SKAction.play())
         for _ in 1...10 {
