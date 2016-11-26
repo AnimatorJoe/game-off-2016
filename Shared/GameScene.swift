@@ -326,7 +326,7 @@ class GameScene: SKScene {
         playerDeter()
         scoreUpdate()
         checkDeath()
-        //removeOffScreenEnemies()
+        removeOffScreenEnemies()
     }
     
     // MARK: Platform conditional SKView initialization
