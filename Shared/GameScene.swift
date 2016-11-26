@@ -27,6 +27,7 @@ class SKEnemyNode: SKSpriteNode {
     // MARK: Internal enemy state
     var deteriorationStage: Deterioration = .perfectShape
     let deteriorationRate: CGFloat = 0.990
+    let birthTime: Date = Date()
     var health: CGFloat = 4.0
     var textureArray: [SKTexture?]?
     
@@ -255,7 +256,7 @@ class GameScene: SKScene {
     // MARK: Remove Enemies Off Screen
     func removeOffScreenEnemies() {
         for enemy in enemyArray {
-            if !(enemy?.intersects(self))! {
+            if !(enemy?.intersects(self))! && Date().timeIntervalSince(enemy!.birthTime) > 3.0 {
                 enemyArray.remove(at: enemyArray.index(where: { $0 == enemy })!)
                 enemy?.removeFromParent()
                 spawnEnemies()
@@ -325,7 +326,6 @@ class GameScene: SKScene {
         scoreUpdate()
         checkDeath()
         removeOffScreenEnemies()
-        
     }
     
     // MARK: Platform conditional SKView initialization
