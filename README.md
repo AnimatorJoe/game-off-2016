@@ -27,9 +27,9 @@ xcrun xcodebuild \
 ```
 
 
-## Gameplay instructions.
+## How to play
 
-This section will be more full when we have a working prototype…
+In 'Immolation Organization,' you moderate a mob of baddies with the intent of hacking away at and destroying alien spacecrafts! You do so by pointing at and touching places for the mob to travel. They'll always deteriorate and diminish the spacecrafts, but depending on who's bigger, the mob or the spacecrafts, they will either enlarge or shrink.
 
 ## How to participate
 
