@@ -109,7 +109,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nm1-p8-rCi">
-                                <string key="text">In ‘Immolation Organization,’ you're a mob of baddies with the intent of destroying alien spacecrafts! You do so by tapping the screen to guide the mob. Your mob will constantly deteriorate, and you must destroy to grow.</string>
+                                <string key="text">In ‘Immolation Organization’, you're a mob of baddies with the intent of destroying alien spacecrafts! You do so by tapping the screen to guide the mob. Your mob will constantly deteriorate, and you must destroy to grow.</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
