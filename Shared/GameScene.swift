@@ -72,7 +72,7 @@ class GameScene: SKScene {
     let textureAtlas = SKTextureAtlas(named: "Enemy Sprite Atlas")
     var textureMatrix = [[SKTexture?]](repeating: [SKTexture?](repeating: nil, count: 4), count: 3)
     var enemyArray = [SKEnemyNode?](repeating: nil, count: 0)
-    var playerDidDie = false
+    var playerDied = false
     
     // MARK: Configuration variables.
     let spinnyStuff = UserDefaults.standard.value(forKey: "spinnyStuff") ?? false
@@ -189,7 +189,7 @@ class GameScene: SKScene {
     
     // MARK: Spawn other enemies
     func spawnEnemies() {
-        if !playerDidDie {
+        if !playerDied {
             let enemyNumber = Int(arc4random_uniform(3))
             let waitRandom = SKAction.wait(forDuration: TimeInterval(arc4random_uniform(UInt32(2))))
             let enemy = SKEnemyNode(texture: textureMatrix[enemyNumber][0])
@@ -262,7 +262,7 @@ class GameScene: SKScene {
     
     // MARK: Check player death
     func checkDeath() {
-        if (Int(badGuys!.particleBirthRate*100) == 0) || playerDidDie {
+        if (Int(badGuys!.particleBirthRate*100) == 0) || playerDied {
             badGuys!.particleBirthRate = 0
             
             self.overScreen?.setScale(0)
@@ -271,7 +271,7 @@ class GameScene: SKScene {
             self.badGuys?.isHidden = false
             
             self.overScreen?.run(SKAction.scale(to: 4.0, duration: 1.5))
-            self.playerDidDie = true
+            self.playerDied = true
         }
     }
     
@@ -288,7 +288,7 @@ class GameScene: SKScene {
             }
         }
         
-        self.playerDidDie = false
+        self.playerDied = false
         badGuys?.setScale(3)
         badGuys?.particleBirthRate = 0.5
         badGuys?.position = CGPoint(x: 0, y: 0)
