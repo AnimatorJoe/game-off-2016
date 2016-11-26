@@ -44,6 +44,14 @@
 		178A094B1DCFA67F008562F6 /* Settings-Watch.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 178A09491DCFA67F008562F6 /* Settings-Watch.bundle */; };
 		178A094C1DCFA67F008562F6 /* Settings-Watch.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 178A09491DCFA67F008562F6 /* Settings-Watch.bundle */; };
 		17B1B55A1DC953CB00A6585C /* BadGuysMob.sks in Resources */ = {isa = PBXBuildFile; fileRef = 17B1B5591DC953CB00A6585C /* BadGuysMob.sks */; };
+		17E26A611DEA415E00B02DAE /* GameOff_Odyssey.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 73E3BA9E1DE9421A003F4284 /* GameOff_Odyssey.mp3 */; };
+		17E26A621DEA415E00B02DAE /* GameSound - 1 up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 73E3BAA11DE9424F003F4284 /* GameSound - 1 up.mp3 */; };
+		17E26A631DEA415E00B02DAE /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 176CA32E1DC934D9009CF9A5 /* Actions.sks */; };
+		17E26A641DEA415E00B02DAE /* BadGuysMob.sks in Resources */ = {isa = PBXBuildFile; fileRef = 17B1B5591DC953CB00A6585C /* BadGuysMob.sks */; };
+		17E26A651DEA417B00B02DAE /* GameOff_Odyssey.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 73E3BA9E1DE9421A003F4284 /* GameOff_Odyssey.mp3 */; };
+		17E26A661DEA417C00B02DAE /* GameOff_Odyssey.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 73E3BA9E1DE9421A003F4284 /* GameOff_Odyssey.mp3 */; };
+		17E26A671DEA418900B02DAE /* BadGuysMob.sks in Resources */ = {isa = PBXBuildFile; fileRef = 17B1B5591DC953CB00A6585C /* BadGuysMob.sks */; };
+		17E26A681DEA418A00B02DAE /* BadGuysMob.sks in Resources */ = {isa = PBXBuildFile; fileRef = 17B1B5591DC953CB00A6585C /* BadGuysMob.sks */; };
 		73E3BA9F1DE9421A003F4284 /* GameOff_Odyssey.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 73E3BA9E1DE9421A003F4284 /* GameOff_Odyssey.mp3 */; };
 		73E3BAA21DE9424F003F4284 /* GameSound - 1 up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 73E3BAA11DE9424F003F4284 /* GameSound - 1 up.mp3 */; };
 		AE2D6D82C53A1FA8D67B55B7 /* Pods_watchOS_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693C28A42E9BDB3101041835 /* Pods_watchOS_Extension.framework */; };
@@ -525,6 +533,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17E26A611DEA415E00B02DAE /* GameOff_Odyssey.mp3 in Resources */,
+				17E26A621DEA415E00B02DAE /* GameSound - 1 up.mp3 in Resources */,
+				17E26A631DEA415E00B02DAE /* Actions.sks in Resources */,
+				17E26A641DEA415E00B02DAE /* BadGuysMob.sks in Resources */,
 				178A094C1DCFA67F008562F6 /* Settings-Watch.bundle in Resources */,
 				176CA37D1DC934DA009CF9A5 /* GameScene.sks in Resources */,
 			);
@@ -537,8 +549,10 @@
 				176CA3691DC934DA009CF9A5 /* Main.storyboard in Resources */,
 				176CA37E1DC934DA009CF9A5 /* GameScene.sks in Resources */,
 				178A09481DCFA66A008562F6 /* Settings.bundle in Resources */,
+				17E26A651DEA417B00B02DAE /* GameOff_Odyssey.mp3 in Resources */,
 				176CA3861DC934DA009CF9A5 /* Assets.xcassets in Resources */,
 				176CA37A1DC934DA009CF9A5 /* Actions.sks in Resources */,
+				17E26A671DEA418900B02DAE /* BadGuysMob.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,8 +560,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17E26A681DEA418A00B02DAE /* BadGuysMob.sks in Resources */,
 				176CA3771DC934DA009CF9A5 /* Main.storyboard in Resources */,
 				176CA37F1DC934DA009CF9A5 /* GameScene.sks in Resources */,
+				17E26A661DEA417C00B02DAE /* GameOff_Odyssey.mp3 in Resources */,
 				176CA3871DC934DA009CF9A5 /* Assets.xcassets in Resources */,
 				176CA37B1DC934DA009CF9A5 /* Actions.sks in Resources */,
 			);
