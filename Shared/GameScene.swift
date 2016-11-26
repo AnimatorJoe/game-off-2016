@@ -113,11 +113,6 @@ class GameScene: SKScene {
             self.addChild(badGuys)
         }
         
-        if let musicURL = Bundle.main.url(forResource: "music", withExtension: "m4a") {
-            backgroundMusic = SKAudioNode(url: musicURL)
-            addChild(backgroundMusic)
-        }
-        
         backgroundMusic = SKAudioNode(fileNamed: "GameOff_Odyssey.mp3")
         self.addChild(backgroundMusic)
         backgroundMusic.run(SKAction.play())
@@ -264,10 +259,7 @@ class GameScene: SKScene {
             if !(enemy?.intersects(self))! {
                 enemyArray.remove(at: enemyArray.index(where: { $0 == enemy })!)
                 enemy?.removeFromParent()
-                
-                for _ in 1...10 {
-                    spawnEnemies()
-                }
+                spawnEnemies()
             }
         }
 
@@ -300,6 +292,9 @@ class GameScene: SKScene {
             }
             for _ in 0 ... enemyArray.count - 1 {
                 enemyArray.remove(at: 0)
+            }
+            for _ in 1...10 {
+                spawnEnemies()
             }
         }
         
