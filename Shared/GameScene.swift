@@ -249,7 +249,7 @@ class GameScene: SKScene {
     
     // MARK: Check player death
     func checkDeath() {
-        if (Int(badGuys!.particleBirthRate*100) == 0) {
+        if (Int(badGuys!.particleBirthRate*100) == 0) || playerDidDie {
             badGuys!.particleBirthRate = 0
             
             self.overScreen?.setScale(0)
@@ -265,7 +265,7 @@ class GameScene: SKScene {
     
     // MARK: Restart function
     func restart() {
-        
+        print("Restart")
     }
     
     // MARK: Score update
@@ -326,6 +326,13 @@ class GameScene: SKScene {
 
         override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             for t in touches {
+                
+                for i in self.nodes(at: t.location(in: self)) {
+                    if i.name == "overScreen" {
+                        restart()
+                    }
+                }
+                
                 if self.spinnyStuff as! Bool {
                     self.makeSpinny(at: t.location(in: self), color: SKColor.green)
                 }
