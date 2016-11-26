@@ -74,6 +74,7 @@ class GameScene: SKScene {
     var textureMatrix = [[SKTexture?]](repeating: [SKTexture?](repeating: nil, count: 4), count: 3)
     var enemyArray = [SKEnemyNode?](repeating: nil, count: 0)
     var backgroundMusic = SKAudioNode()
+    var killSound = SKAudioNode()
     var playerDied = false
     
     // MARK: Configuration variables.
@@ -116,6 +117,11 @@ class GameScene: SKScene {
         backgroundMusic = SKAudioNode(fileNamed: "GameOff_Odyssey.mp3")
         self.addChild(backgroundMusic)
         backgroundMusic.run(SKAction.play())
+        backgroundMusic.autoplayLooped = true
+        
+        killSound = SKAudioNode(fileNamed: "GameSound - 1 up.mp3")
+        self.addChild(killSound)
+        killSound.run(SKAction.stop())
         
         self.mobSizeLabel = self.childNode(withName: "mobSizeLabel") as? SKLabelNode
         mobSizeLabel?.position = CGPoint(x: self.size.width * 1/5, y: self.size.height * 2/5)
