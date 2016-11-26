@@ -118,7 +118,9 @@ class GameScene: SKScene {
             addChild(backgroundMusic)
         }
         
-        backgroundMusic = SKAudioNode(url: Bundle.main.url(forResource: "music", withExtension: "m4a"))
+        backgroundMusic = SKAudioNode(fileNamed: "GameOff_Odyssey.mp3")
+        self.addChild(backgroundMusic)
+        backgroundMusic.run(SKAction.play())
         
         self.mobSizeLabel = self.childNode(withName: "mobSizeLabel") as? SKLabelNode
         mobSizeLabel?.position = CGPoint(x: self.size.width * 1/5, y: self.size.height * 2/5)
@@ -263,7 +265,9 @@ class GameScene: SKScene {
                 enemyArray.remove(at: enemyArray.index(where: { $0 == enemy })!)
                 enemy?.removeFromParent()
                 
-                spawnEnemies()
+                for _ in 1...10 {
+                    spawnEnemies()
+                }
             }
         }
 
@@ -281,6 +285,8 @@ class GameScene: SKScene {
             
             self.overScreen?.run(SKAction.scale(to: 4.0, duration: 1.5))
             self.playerDied = true
+            
+            backgroundMusic.run(SKAction.stop())
         }
     }
     
