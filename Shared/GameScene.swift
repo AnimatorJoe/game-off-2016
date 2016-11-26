@@ -344,7 +344,6 @@ class GameScene: SKScene {
             
             self.setUpScene()
         }
-
     #endif
 }
 
