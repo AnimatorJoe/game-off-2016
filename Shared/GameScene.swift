@@ -73,8 +73,8 @@ class GameScene: SKScene {
     let textureAtlas = SKTextureAtlas(named: "Enemy Sprite Atlas")
     var textureMatrix = [[SKTexture?]](repeating: [SKTexture?](repeating: nil, count: 4), count: 3)
     var enemyArray = [SKEnemyNode?](repeating: nil, count: 0)
-    var backgroundMusic = SKAudioNode()
-    var killSound = SKAudioNode()
+    var backgroundMusic: SKAudioNode?
+    var killSound: SKAudioNode?
     var playerDied = false
     
     // MARK: Configuration variables.
@@ -114,18 +114,11 @@ class GameScene: SKScene {
             self.addChild(badGuys)
         }
         
-        backgroundMusic = SKAudioNode(fileNamed: "GameOff_Odyssey.mp3")
-        self.addChild(backgroundMusic)
-        backgroundMusic.run(SKAction.play())
-        backgroundMusic.autoplayLooped = true
-        
-        killSound = SKAudioNode(fileNamed: "GameSound - 1 up.mp3")
-        self.addChild(killSound)
-        killSound.run(SKAction.stop())
-        
         self.mobSizeLabel = self.childNode(withName: "mobSizeLabel") as? SKLabelNode
         mobSizeLabel?.position = CGPoint(x: self.size.width * 1/5, y: self.size.height * 2/5)
         
+        self.backgroundMusic = self.childNode(withName: "backgroundMusic") as? SKAudioNode
+        self.killSound = self.childNode(withName: "killSound") as? SKAudioNode
         self.overScreen = self.childNode(withName: "overScreen") as? SKShapeNode
         self.deathLabel = self.overScreen?.childNode(withName: "deathLabel") as? SKLabelNode
         self.terminatedLabel = self.overScreen?.childNode(withName: "terminatedLabel") as? SKLabelNode
@@ -284,7 +277,7 @@ class GameScene: SKScene {
             self.overScreen?.run(SKAction.scale(to: 4.0, duration: 1.5))
             self.playerDied = true
             
-            backgroundMusic.run(SKAction.stop())
+            backgroundMusic?.run(SKAction.stop())
         }
     }
     
@@ -306,7 +299,7 @@ class GameScene: SKScene {
         badGuys?.position = CGPoint(x: 0, y: 0)
         self.overScreen?.run(SKAction.scale(to: 0, duration: 1.5))
         
-        backgroundMusic.run(SKAction.play())
+        backgroundMusic?.run(SKAction.play())
         for _ in 1...10 {
             spawnEnemies()
         }
