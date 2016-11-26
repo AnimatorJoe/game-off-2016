@@ -166,9 +166,11 @@ class GameScene: SKScene {
     
     // MARK: Move "hackers" to player taps at constant speed
     func moveBadGuys(_ pos: CGPoint){
-        badGuys?.removeAllActions()
-        badGuys?.run(SKAction.move(to: pos, duration: TimeInterval.init(
-            sqrt(pow(pos.x-badGuys!.frame.origin.x,2)+pow(pos.y-badGuys!.frame.origin.y,2))/100.0)))
+        if !playerDied {
+            badGuys?.removeAllActions()
+            badGuys?.run(SKAction.move(to: pos, duration: TimeInterval.init(
+                sqrt(pow(pos.x-badGuys!.frame.origin.x,2)+pow(pos.y-badGuys!.frame.origin.y,2))/100.0)))
+        }
     }
     
     // MARK: Player deterioration
@@ -237,11 +239,14 @@ class GameScene: SKScene {
             
             enemy.zPosition = 2
             enemy.setScale(CGFloat(UInt32(5) + (arc4random_uniform(UInt32(3))))/10)
-            self.addChild(enemy)
-            enemyArray.append(enemy)
             
-            // Spawn more enemies
-            enemy.run(SKAction.sequence([moveEnemy, waitRandom,SKAction.removeFromParent()]))
+            if !playerDied {
+                self.addChild(enemy)
+                enemyArray.append(enemy)
+                
+                // Spawn more enemies
+                enemy.run(SKAction.sequence([moveEnemy, waitRandom,SKAction.removeFromParent()]))
+            }
         }
     }
     
