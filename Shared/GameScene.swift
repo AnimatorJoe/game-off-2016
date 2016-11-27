@@ -73,7 +73,6 @@ class GameScene: SKScene {
     fileprivate var deathLabel: SKLabelNode?
     fileprivate var killsLabel: SKLabelNode?
     fileprivate var terminatedLabel: SKLabelNode?
-    //let textureAtlas = SKTextureAtlas(named: "Enemy Sprite Atlas")
     var textureMatrix = [[SKTexture?]](repeating: [SKTexture?](repeating: nil, count: 4), count: 3)
     var enemyArray = [SKEnemyNode?](repeating: nil, count: 0)
     var backgroundMusic: SKAudioNode?
@@ -342,6 +341,22 @@ class GameScene: SKScene {
         scoreUpdate()
         checkDeath()
         removeOffScreenEnemies()
+    }
+    
+    // MARK: Collision detection
+    func checkCollision (_ aSword: SKSpriteNode) -> Bool {
+        let swordX = aSword.position.x - aSword.frame.width/80;
+        let swordXRight = aSword.position.x + aSword.frame.width/80;
+        let swordY = aSword.position.y - aSword.frame.height/2;
+        let swordYRight = aSword.position.y + aSword.frame.height/2;
+        
+        let rocketX = (self.badGuys?.position.x)! - (self.badGuys?.frame.width)!/2;
+        let rocketXRight = (self.badGuys?.position.x)! + (self.badGuys?.frame.width)!/2;
+        let rocketY = (self.badGuys?.position.y)! - (self.badGuys?.frame.height)!/2;
+        let rocketYRight = (self.badGuys?.position.y)! + (self.badGuys?.frame.height)! * 2/5;
+        
+        return (rocketX < swordXRight && swordX < rocketXRight && // X Overlap
+            rocketY < swordYRight && swordY < rocketYRight); // Y Overlap
     }
     
     // MARK: Platform conditional SKView initialization
