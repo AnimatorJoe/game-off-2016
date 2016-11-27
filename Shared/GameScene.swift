@@ -73,7 +73,7 @@ class GameScene: SKScene {
     fileprivate var deathLabel: SKLabelNode?
     fileprivate var killsLabel: SKLabelNode?
     fileprivate var terminatedLabel: SKLabelNode?
-    let textureAtlas = SKTextureAtlas(named: "Enemy Sprite Atlas")
+    //let textureAtlas = SKTextureAtlas(named: "Enemy Sprite Atlas")
     var textureMatrix = [[SKTexture?]](repeating: [SKTexture?](repeating: nil, count: 4), count: 3)
     var enemyArray = [SKEnemyNode?](repeating: nil, count: 0)
     var backgroundMusic: SKAudioNode?
@@ -159,7 +159,7 @@ class GameScene: SKScene {
         
         for enemy in 1...3 {
             for stage in 0...3 {
-                textureMatrix[enemy-1][stage] = textureAtlas.textureNamed("spacesprite\(enemy)-\(stage)")
+                textureMatrix[enemy-1][stage] = SKTexture(imageNamed: "spacesprite\(enemy)-\(stage).png")
             }
         }
         
