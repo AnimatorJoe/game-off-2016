@@ -73,7 +73,6 @@ class GameScene: SKScene {
     fileprivate var deathLabel: SKLabelNode?
     fileprivate var killsLabel: SKLabelNode?
     fileprivate var terminatedLabel: SKLabelNode?
-    //let textureAtlas = SKTextureAtlas(named: "Enemy Sprite Atlas")
     var textureMatrix = [[SKTexture?]](repeating: [SKTexture?](repeating: nil, count: 4), count: 3)
     var enemyArray = [SKEnemyNode?](repeating: nil, count: 0)
     var backgroundMusic: SKAudioNode?
