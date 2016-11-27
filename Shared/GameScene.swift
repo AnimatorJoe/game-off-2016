@@ -126,6 +126,12 @@ class GameScene: SKScene {
         self.deathLabel = self.overScreen?.childNode(withName: "deathLabel") as? SKLabelNode
         self.terminatedLabel = self.overScreen?.childNode(withName: "terminatedLabel") as? SKLabelNode
         
+        #if os(watchOS)
+            self.overScreen?.isHidden = true
+            self.killsLabel?.isHidden = true
+            self.mobSizeLabel?.isHidden = true
+        #endif
+        
         // Create shape node to use during mouse interaction
         let w = (self.size.width + self.size.height) * 0.05
         self.spinnyNode = SKShapeNode.init(rectOf: CGSize.init(width: w, height: w), cornerRadius: w * 0.3)
