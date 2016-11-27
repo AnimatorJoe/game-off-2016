@@ -100,11 +100,6 @@ class GameScene: SKScene {
     
     // MARK: Scene setup
     func setUpScene() {
-        
-        // Print out screen size.
-        print("Screen Width: \(self.size.width)")
-        print("Screen Height: \(self.size.height)")
-        
         self.badGuys = SKEmitterNode(fileNamed: "BadGuysMob")
         if let badGuys = self.badGuys {
             badGuys.position = CGPoint(x: 0,
