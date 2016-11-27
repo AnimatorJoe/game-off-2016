@@ -10,6 +10,7 @@ import WatchKit
 import Foundation
 
 
+@available(watchOSApplicationExtension 3.0, *)
 class InterfaceController: WKInterfaceController {
 
     @IBOutlet var skInterface: WKInterfaceSKScene!

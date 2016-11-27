@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		02A8064DAB6CDC9AAE1A876A /* Pods_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FFA1CC282D1DE3EF25EB55 /* Pods_tvOS.framework */; };
+		171F610E1DEA605100FC1329 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 176CA3311DC934D9009CF9A5 /* Assets.xcassets */; };
 		176CA33A1DC934DA009CF9A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176CA3391DC934DA009CF9A5 /* AppDelegate.swift */; };
 		176CA33C1DC934DA009CF9A5 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176CA33B1DC934DA009CF9A5 /* GameViewController.swift */; };
 		176CA33F1DC934DA009CF9A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 176CA33D1DC934DA009CF9A5 /* Main.storyboard */; };
@@ -537,6 +538,7 @@
 				17E26A621DEA415E00B02DAE /* GameSound - 1 up.mp3 in Resources */,
 				17E26A631DEA415E00B02DAE /* Actions.sks in Resources */,
 				17E26A641DEA415E00B02DAE /* BadGuysMob.sks in Resources */,
+				171F610E1DEA605100FC1329 /* Assets.xcassets in Resources */,
 				178A094C1DCFA67F008562F6 /* Settings-Watch.bundle in Resources */,
 				176CA37D1DC934DA009CF9A5 /* GameScene.sks in Resources */,
 			);
@@ -984,7 +986,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -1001,7 +1003,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -1019,7 +1021,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -1038,7 +1040,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
