@@ -37,36 +37,36 @@
 		1F39E8FB962E4A618E4254E39C03C697 /* Pods-tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-tvOS-umbrella.h"; sourceTree = "<group>"; };
 		265900ED47227AA1166A79C8EAD77F2E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		2A00A670333E8B1E5D0AB1682A8DE756 /* Pods-iOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iOS-acknowledgements.plist"; sourceTree = "<group>"; };
-		2D36209DB26537ABDFB0D3A7084BD358 /* Pods_watchOS_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_watchOS_App.framework; path = "Pods-watchOS App.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D36209DB26537ABDFB0D3A7084BD358 /* Pods_watchOS_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_watchOS_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3626BD93E8D93A9AE27A8D87800AF014 /* Pods-watchOS Extension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-watchOS Extension-umbrella.h"; sourceTree = "<group>"; };
 		3B2EF12EF6F6E79E902EBBDA3687BE4C /* Pods-tvOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tvOS-resources.sh"; sourceTree = "<group>"; };
 		3C3403097A87225DE6AC709F644F9D6C /* Pods-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		3D703DB4CC4310B51016AC2FA8DA9DD9 /* Pods-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS.release.xcconfig"; sourceTree = "<group>"; };
-		402BFE0236DB1A892388769843F084DF /* Pods-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-iOS.modulemap"; sourceTree = "<group>"; };
-		43CBFB0064ABEDBD29337F533CEA1CF5 /* Pods_watchOS_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_watchOS_Extension.framework; path = "Pods-watchOS Extension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		402BFE0236DB1A892388769843F084DF /* Pods-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-iOS.modulemap"; sourceTree = "<group>"; };
+		43CBFB0064ABEDBD29337F533CEA1CF5 /* Pods_watchOS_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_watchOS_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D50599FFDA46D8A07A6D14A6244DDE1 /* Pods-tvOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-tvOS-acknowledgements.markdown"; sourceTree = "<group>"; };
 		51F81187012F6007EF1A86C1B395B094 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		53D87AEA0C8D4DC996AD199E0394B236 /* Pods-watchOS Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-watchOS Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
-		54A5FFC914F97548E4B8C2AA90D8F9A7 /* Pods_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_iOS.framework; path = "Pods-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		54A5FFC914F97548E4B8C2AA90D8F9A7 /* Pods_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		570C2AE80DB008C19C540EACF691F0A4 /* Pods-watchOS Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-watchOS Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		59CCD85F9156059DC2D8DDB23C2B411F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		61E126872B58F971D62ACEDC6E003D72 /* Pods_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_tvOS.framework; path = "Pods-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		61E126872B58F971D62ACEDC6E003D72 /* Pods_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62EDEC0F523D51A0CA43BC60B98163F1 /* Pods-iOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS-frameworks.sh"; sourceTree = "<group>"; };
 		686BED7C89E3DE5AE50BC803385F8B01 /* Pods-macOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-macOS-dummy.m"; sourceTree = "<group>"; };
-		69A05761FD4F58E51AF79731DB7C2289 /* Pods-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-macOS.modulemap"; sourceTree = "<group>"; };
-		6CD59884E785816C4246764360197134 /* Pods-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-tvOS.modulemap"; sourceTree = "<group>"; };
+		69A05761FD4F58E51AF79731DB7C2289 /* Pods-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-macOS.modulemap"; sourceTree = "<group>"; };
+		6CD59884E785816C4246764360197134 /* Pods-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-tvOS.modulemap"; sourceTree = "<group>"; };
 		727701EC637AB48E80F7E3F27F99DB3C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		743DB5A4D19CEDC5635E45B0AD4889C1 /* Pods-tvOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tvOS-acknowledgements.plist"; sourceTree = "<group>"; };
-		779EA81A44D2364EA5D3F83E12D058F6 /* Pods-watchOS App.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-watchOS App.modulemap"; sourceTree = "<group>"; };
+		779EA81A44D2364EA5D3F83E12D058F6 /* Pods-watchOS App.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-watchOS App.modulemap"; sourceTree = "<group>"; };
 		7BC4ACA6B85E4DA0153864A1F0AE43BE /* Pods-watchOS App-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-watchOS App-resources.sh"; sourceTree = "<group>"; };
 		80F7785E55CE7D201AE79CC270CF817F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		8121E97B57F940542DF2BF9788F59583 /* Pods-watchOS Extension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-watchOS Extension.modulemap"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8121E97B57F940542DF2BF9788F59583 /* Pods-watchOS Extension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-watchOS Extension.modulemap"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		984D97B0227BDBF575B4040C35720A71 /* Pods-watchOS Extension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-watchOS Extension-resources.sh"; sourceTree = "<group>"; };
 		9EDF6879E95376159A780A16DCE28B08 /* Pods-watchOS App-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-watchOS App-frameworks.sh"; sourceTree = "<group>"; };
 		AA742C66FA2C3E4FDE3674358F618E0B /* Pods-watchOS App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-watchOS App.debug.xcconfig"; sourceTree = "<group>"; };
 		AD15A3CB8EBA5B057EAF7670F18489D9 /* Pods-watchOS App-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-watchOS App-acknowledgements.plist"; sourceTree = "<group>"; };
-		AFAC5C7170D0B2A3FA4F8C3F7E4BC894 /* Pods_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_macOS.framework; path = "Pods-macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFAC5C7170D0B2A3FA4F8C3F7E4BC894 /* Pods_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFBDAD158AE175016E8E96159919D952 /* Pods-macOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-macOS-frameworks.sh"; sourceTree = "<group>"; };
 		B06164EAFC91AC9C7B8D3BC2350F2362 /* Pods-tvOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tvOS-frameworks.sh"; sourceTree = "<group>"; };
 		B3EBCBC47328E4BC910F625835BEC715 /* Pods-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-tvOS-dummy.m"; sourceTree = "<group>"; };
@@ -436,7 +436,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0820;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -552,14 +552,18 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",
@@ -775,15 +779,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",
