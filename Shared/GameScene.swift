@@ -375,8 +375,8 @@ class GameScene: SKScene {
 
         override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             for t in touches {
-                for i in self.nodes(at: t.location(in: self)) && self.playerDied {
-                    if i.name == "overScreen" {
+                for i in self.nodes(at: t.location(in: self)) {
+                    if i.name == "overScreen" && self.playerDied {
                         restart()
                     }
                 }
@@ -424,8 +424,8 @@ class GameScene: SKScene {
     extension GameScene {
 
         override func mouseDown(with event: NSEvent) {
-            for i in self.nodes(at: t.location(in: self)) && self.playerDied {
-                if i.name == "overScreen" {
+            for i in self.nodes(at: event.location(in: self)) {
+                if i.name == "overScreen" && self.playerDied {
                     restart()
                 }
             }
