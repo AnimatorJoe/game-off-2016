@@ -343,6 +343,22 @@ class GameScene: SKScene {
         removeOffScreenEnemies()
     }
     
+    // MARK: Collision detection
+    func checkCollision (_ aSword: SKSpriteNode) -> Bool {
+        let swordX = aSword.position.x - aSword.frame.width/80;
+        let swordXRight = aSword.position.x + aSword.frame.width/80;
+        let swordY = aSword.position.y - aSword.frame.height/2;
+        let swordYRight = aSword.position.y + aSword.frame.height/2;
+        
+        let rocketX = (self.badGuys?.position.x)! - (self.badGuys?.frame.width)!/2;
+        let rocketXRight = (self.badGuys?.position.x)! + (self.badGuys?.frame.width)!/2;
+        let rocketY = (self.badGuys?.position.y)! - (self.badGuys?.frame.height)!/2;
+        let rocketYRight = (self.badGuys?.position.y)! + (self.badGuys?.frame.height)! * 2/5;
+        
+        return (rocketX < swordXRight && swordX < rocketXRight && // X Overlap
+            rocketY < swordYRight && swordY < rocketYRight); // Y Overlap
+    }
+    
     // MARK: Platform conditional SKView initialization
     #if os(watchOS)
         override func sceneDidLoad() {
