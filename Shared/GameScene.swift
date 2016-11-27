@@ -277,7 +277,6 @@ class GameScene: SKScene {
             self.badGuys?.isHidden = false
             
             self.overScreen?.run(SKAction.scale(to: 4.0, duration: 1.5))
-            self.overScreen?.isUserInteractionEnabled = true
             self.playerDied = true
             
             backgroundMusic?.run(SKAction.stop())
@@ -301,7 +300,6 @@ class GameScene: SKScene {
         badGuys?.particleBirthRate = 0.3
         badGuys?.position = CGPoint(x: 0, y: 0)
         self.overScreen?.run(SKAction.scale(to: 0, duration: 1.5))
-        self.overScreen?.isUserInteractionEnabled = false
         self.kills = 0
         
         backgroundMusic?.run(SKAction.play())
@@ -377,7 +375,7 @@ class GameScene: SKScene {
 
         override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             for t in touches {
-                for i in self.nodes(at: t.location(in: self)) {
+                for i in self.nodes(at: t.location(in: self)) && self.playerDied {
                     if i.name == "overScreen" {
                         restart()
                     }
@@ -426,7 +424,7 @@ class GameScene: SKScene {
     extension GameScene {
 
         override func mouseDown(with event: NSEvent) {
-            for i in self.nodes(at: event.location(in: self)) {
+            for i in self.nodes(at: t.location(in: self)) && self.playerDied {
                 if i.name == "overScreen" {
                     restart()
                 }
