@@ -114,6 +114,9 @@
                                 <state key="normal" title="Tutorial">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="l72-zh-8qx" kind="show" id="Les-se-azX"/>
+                                </connections>
                             </button>
                         </subviews>
                     </view>
