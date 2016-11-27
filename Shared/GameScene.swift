@@ -118,9 +118,7 @@ class GameScene: SKScene {
         self.mobSizeLabel = self.childNode(withName: "mobSizeLabel") as? SKLabelNode
         self.killsLabel = self.childNode(withName: "enemiesKilled") as? SKLabelNode
         mobSizeLabel?.position = CGPoint(x: self.size.width * 0.1, y: self.size.height * 2/5)
-        self.mobSizeLabel?.zPosition = 6
         killsLabel?.position = CGPoint(x: self.size.width * 0.1, y: self.size.height * 2/5 - 1.5 * (killsLabel?.fontSize)!)
-        self.killsLabel?.zPosition = 6
         
         self.backgroundMusic = self.childNode(withName: "backgroundMusic") as? SKAudioNode
         self.killSound = self.childNode(withName: "killSound") as? SKAudioNode
