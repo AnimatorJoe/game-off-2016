@@ -100,11 +100,6 @@ class GameScene: SKScene {
     
     // MARK: Scene setup
     func setUpScene() {
-        
-        // Print out screen size.
-        print("Screen Width: \(self.size.width)")
-        print("Screen Height: \(self.size.height)")
-        
         self.badGuys = SKEmitterNode(fileNamed: "BadGuysMob")
         if let badGuys = self.badGuys {
             badGuys.position = CGPoint(x: 0,
@@ -116,7 +111,7 @@ class GameScene: SKScene {
         }
         
         self.mobSizeLabel = self.childNode(withName: "mobSizeLabel") as? SKLabelNode
-        self.killsLabel = self.childNode(withName: "enemiesKilled") as? SKLabelNode
+        self.killsLabel = self.childNode(withName: "killsLabel") as? SKLabelNode
         mobSizeLabel?.position = CGPoint(x: self.size.width * 0.1, y: self.size.height * 2/5)
         killsLabel?.position = CGPoint(x: self.size.width * 0.1, y: self.size.height * 2/5 - 1.5 * (killsLabel?.fontSize)!)
         
@@ -125,6 +120,12 @@ class GameScene: SKScene {
         self.overScreen = self.childNode(withName: "overScreen") as? SKShapeNode
         self.deathLabel = self.overScreen?.childNode(withName: "deathLabel") as? SKLabelNode
         self.terminatedLabel = self.overScreen?.childNode(withName: "terminatedLabel") as? SKLabelNode
+        
+        #if os(watchOS)
+            self.overScreen?.isHidden = true
+            self.killsLabel?.isHidden = true
+            self.mobSizeLabel?.isHidden = true
+        #endif
         
         // Create shape node to use during mouse interaction
         let w = (self.size.width + self.size.height) * 0.05
@@ -297,7 +298,7 @@ class GameScene: SKScene {
         
         self.playerDied = false
         badGuys?.setScale(3)
-        badGuys?.particleBirthRate = 0.3
+        badGuys?.particleBirthRate = 0.5
         badGuys?.position = CGPoint(x: 0, y: 0)
         self.overScreen?.run(SKAction.scale(to: 0, duration: 1.5))
         self.kills = 0
