@@ -99,11 +99,6 @@ class GameScene: SKScene {
     
     // MARK: Scene setup
     func setUpScene() {
-        
-        // Print out screen size.
-        print("Screen Width: \(self.size.width)")
-        print("Screen Height: \(self.size.height)")
-        
         self.badGuys = SKEmitterNode(fileNamed: "BadGuysMob")
         if let badGuys = self.badGuys {
             badGuys.position = CGPoint(x: 0,
@@ -301,7 +296,7 @@ class GameScene: SKScene {
         
         self.playerDied = false
         badGuys?.setScale(3)
-        badGuys?.particleBirthRate = 0.3
+        badGuys?.particleBirthRate = 0.5
         badGuys?.position = CGPoint(x: 0, y: 0)
         self.overScreen?.run(SKAction.scale(to: 0, duration: 1.5))
         self.kills = 0
