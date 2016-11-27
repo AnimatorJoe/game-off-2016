@@ -115,7 +115,7 @@ class GameScene: SKScene {
         }
         
         self.mobSizeLabel = self.childNode(withName: "mobSizeLabel") as? SKLabelNode
-        self.killsLabel = self.childNode(withName: "enemiesKilled") as? SKLabelNode
+        self.killsLabel = self.childNode(withName: "killsLabel") as? SKLabelNode
         mobSizeLabel?.position = CGPoint(x: self.size.width * 0.1, y: self.size.height * 2/5)
         killsLabel?.position = CGPoint(x: self.size.width * 0.1, y: self.size.height * 2/5 - 1.5 * (killsLabel?.fontSize)!)
         
