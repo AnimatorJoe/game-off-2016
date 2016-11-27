@@ -303,7 +303,7 @@ class GameScene: SKScene {
         
         self.playerDied = false
         badGuys?.setScale(3)
-        badGuys?.particleBirthRate = 0.3
+        badGuys?.particleBirthRate = 0.5
         badGuys?.position = CGPoint(x: 0, y: 0)
         self.overScreen?.run(SKAction.scale(to: 0, duration: 1.5))
         self.kills = 0
