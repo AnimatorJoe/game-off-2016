@@ -1,6 +1,7 @@
 # Immolation Organization
 
 ![GitHub Game Off 2016 Theme is Hacking, Modding, or Augmenting](https://cloud.githubusercontent.com/assets/121322/19498019/d8827370-9543-11e6-82d8-6da822b6147b.png)
+###### NOTE: This banner will soon be replaced with an image of the game! It will be taken at some point from our live stream tonight, hosted by our lead programmer. Be sure to tune in at 5:30 P.M. CST (23:30 UTC) at https://youtu.be/lQOQ3nmBHog!
 
 ## Our Submission
 
