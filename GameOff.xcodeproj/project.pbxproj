@@ -1037,7 +1037,7 @@
 				DEVELOPMENT_TEAM = 9SR8L2XE3A;
 				INFOPLIST_FILE = "watchOS Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ethertyper.GameOff.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.animatorjoe.GameOff.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "GameOff Extension";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1053,7 +1053,7 @@
 				DEVELOPMENT_TEAM = 9SR8L2XE3A;
 				INFOPLIST_FILE = "watchOS Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ethertyper.GameOff.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.animatorjoe.GameOff.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "GameOff Extension";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1072,7 +1072,7 @@
 				DEVELOPMENT_TEAM = 9SR8L2XE3A;
 				IBSC_MODULE = GameOff_Extension;
 				INFOPLIST_FILE = "watchOS App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ethertyper.GameOff.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.animatorjoe.GameOff.watchkitapp;
 				PRODUCT_NAME = GameOff;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1090,7 +1090,7 @@
 				DEVELOPMENT_TEAM = 9SR8L2XE3A;
 				IBSC_MODULE = GameOff_Extension;
 				INFOPLIST_FILE = "watchOS App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ethertyper.GameOff.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.animatorjoe.GameOff.watchkitapp;
 				PRODUCT_NAME = GameOff;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1110,7 +1110,7 @@
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ethertyper.GameOff;
+				PRODUCT_BUNDLE_IDENTIFIER = com.animatorjoe.GameOff;
 				PRODUCT_NAME = GameOff;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 3.0;
@@ -1128,7 +1128,7 @@
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ethertyper.GameOff;
+				PRODUCT_BUNDLE_IDENTIFIER = com.animatorjoe.GameOff;
 				PRODUCT_NAME = GameOff;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 3.0;
@@ -1146,7 +1146,7 @@
 				DEVELOPMENT_TEAM = 9SR8L2XE3A;
 				INFOPLIST_FILE = tvOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ethertyper.GameOff;
+				PRODUCT_BUNDLE_IDENTIFIER = com.animatorjoe.GameOff;
 				PRODUCT_NAME = GameOff;
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 3.0;
@@ -1163,7 +1163,7 @@
 				DEVELOPMENT_TEAM = 9SR8L2XE3A;
 				INFOPLIST_FILE = tvOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ethertyper.GameOff;
+				PRODUCT_BUNDLE_IDENTIFIER = com.animatorjoe.GameOff;
 				PRODUCT_NAME = GameOff;
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 3.0;
@@ -1183,7 +1183,7 @@
 				INFOPLIST_FILE = macOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ethertyper.GameOff;
+				PRODUCT_BUNDLE_IDENTIFIER = com.animatorjoe.GameOff;
 				PRODUCT_NAME = GameOff;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 3.0;
@@ -1201,7 +1201,7 @@
 				INFOPLIST_FILE = macOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ethertyper.GameOff;
+				PRODUCT_BUNDLE_IDENTIFIER = com.animatorjoe.GameOff;
 				PRODUCT_NAME = GameOff;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 3.0;
