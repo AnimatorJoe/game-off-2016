@@ -3,161 +3,161 @@
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "iPad Spotlight iOS 7,9.png",
+      "filename" : "Icon-App-20x20@2x.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "size" : "20x20",
+      "idiom" : "iphone",
+      "filename" : "Icon-App-20x20@3x.png",
       "scale" : "3x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "iPad Settings.png",
+      "filename" : "Icon-App-29x29@1x.png",
       "scale" : "1x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "iPhone Spotlight iOS 5,6 & Settings@2x.png",
+      "filename" : "Icon-App-29x29@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "iPhone Spotlight iOS 5,6 & Settings@3x.png",
+      "filename" : "Icon-App-29x29@3x.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "iPad Spotlight iOS 7,9@2x.png",
+      "filename" : "Icon-App-40x40@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "iPhone Spotlight iOS 7,9@3x.png",
+      "filename" : "Icon-App-40x40@3x.png",
       "scale" : "3x"
     },
     {
       "size" : "57x57",
       "idiom" : "iphone",
-      "filename" : "iPhone App Icon iOS 5,6.png",
+      "filename" : "Icon-App-57x57@1x.png",
       "scale" : "1x"
     },
     {
       "size" : "57x57",
       "idiom" : "iphone",
-      "filename" : "iPhone App Icon iOS 5,6@2x.png",
+      "filename" : "Icon-App-57x57@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "iPhone App Icon iOS 7,9@2x-1.png",
+      "filename" : "Icon-App-60x60@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "iPhone App Icon iOS 7,9@3x.png",
+      "filename" : "Icon-App-60x60@3x.png",
       "scale" : "3x"
     },
     {
-      "idiom" : "ipad",
       "size" : "20x20",
+      "idiom" : "ipad",
+      "filename" : "Icon-App-20x20@1x.png",
       "scale" : "1x"
     },
     {
       "size" : "20x20",
       "idiom" : "ipad",
-      "filename" : "iPad Spotlight iOS 7,9-2.png",
+      "filename" : "Icon-App-20x20@2x-1.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "iPad Settings-1.png",
+      "filename" : "Icon-App-29x29@1x-1.png",
       "scale" : "1x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "iPad Settings@2x.png",
+      "filename" : "Icon-App-29x29@2x-1.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "iPad Spotlight iOS 7,9-1.png",
+      "filename" : "Icon-App-40x40@1x.png",
       "scale" : "1x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "iPad Spotlight iOS 7,9@2x-1.png",
+      "filename" : "Icon-App-40x40@2x-1.png",
       "scale" : "2x"
     },
     {
-      "size" : "50x50",
       "idiom" : "ipad",
-      "filename" : "iPad Spotlight iOS 5,6.png",
+      "size" : "50x50",
       "scale" : "1x"
     },
     {
-      "size" : "50x50",
       "idiom" : "ipad",
-      "filename" : "iPad Spotlight iOS 5,6@2x.png",
+      "size" : "50x50",
       "scale" : "2x"
     },
     {
       "size" : "72x72",
       "idiom" : "ipad",
-      "filename" : "iPad App Icon iOS 5,6.png",
+      "filename" : "Icon-App-72x72@1x.png",
       "scale" : "1x"
     },
     {
       "size" : "72x72",
       "idiom" : "ipad",
-      "filename" : "iPad App Icon iOS 5,6@2x.png",
+      "filename" : "Icon-App-72x72@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "iPad App Icon iOS 7,9.png",
+      "filename" : "Icon-App-76x76@1x.png",
       "scale" : "1x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "iPad App Icon iOS 7,9@2x.png",
+      "filename" : "Icon-App-76x76@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "83.5x83.5",
       "idiom" : "ipad",
-      "filename" : "iPad Pro Icon iOS 9@2x.png",
+      "filename" : "Icon-App-83.5x83.5@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "car",
-      "filename" : "iPhone App Icon iOS 7,9@2x.png",
+      "filename" : "Icon-App-60x60@2x-1.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "car",
-      "filename" : "iPhone App Icon iOS 7,9@3x-1.png",
+      "filename" : "Icon-App-60x60@3x-1.png",
       "scale" : "3x"
     },
     {
       "size" : "24x24",
       "idiom" : "watch",
-      "filename" : "Apple Watch Notification center (38mm).png",
+      "filename" : "Icon-24@2x.png",
       "scale" : "2x",
       "role" : "notificationCenter",
       "subtype" : "38mm"
@@ -165,7 +165,7 @@
     {
       "size" : "27.5x27.5",
       "idiom" : "watch",
-      "filename" : "Apple Watch Notification center (42mm).png",
+      "filename" : "Icon-27.5@2x.png",
       "scale" : "2x",
       "role" : "notificationCenter",
       "subtype" : "42mm"
@@ -173,21 +173,21 @@
     {
       "size" : "29x29",
       "idiom" : "watch",
-      "filename" : "Apple Watch Companion Settings@2x.png",
+      "filename" : "Icon-29@2x.png",
       "role" : "companionSettings",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "watch",
-      "filename" : "Apple Watch Companion Settings@3x.png",
+      "filename" : "Icon-29@3x.png",
       "role" : "companionSettings",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "watch",
-      "filename" : "Apple Watch Home Screen@2x.png",
+      "filename" : "Icon-40@2x.png",
       "scale" : "2x",
       "role" : "appLauncher",
       "subtype" : "38mm"
@@ -195,7 +195,7 @@
     {
       "size" : "44x44",
       "idiom" : "watch",
-      "filename" : "Apple Watch Long Look (42mm).png",
+      "filename" : "Icon-44@2x.png",
       "scale" : "2x",
       "role" : "longLook",
       "subtype" : "42mm"
@@ -203,7 +203,7 @@
     {
       "size" : "86x86",
       "idiom" : "watch",
-      "filename" : "Apple Watch Short Look (38mm).png",
+      "filename" : "Icon-86@2x.png",
       "scale" : "2x",
       "role" : "quickLook",
       "subtype" : "38mm"
@@ -211,7 +211,7 @@
     {
       "size" : "98x98",
       "idiom" : "watch",
-      "filename" : "Apple Watch Short Look (42mm).png",
+      "filename" : "Icon-98@2x.png",
       "scale" : "2x",
       "role" : "quickLook",
       "subtype" : "42mm"
@@ -231,7 +231,7 @@
     {
       "size" : "32x32",
       "idiom" : "mac",
-      "filename" : "icon_32x32-1.png",
+      "filename" : "icon_32x32.png",
       "scale" : "1x"
     },
     {
@@ -255,7 +255,7 @@
     {
       "size" : "256x256",
       "idiom" : "mac",
-      "filename" : "icon_256x256.png",
+      "filename" : "icon_256x256-1.png",
       "scale" : "1x"
     },
     {
