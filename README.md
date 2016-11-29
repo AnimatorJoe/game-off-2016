@@ -2,6 +2,7 @@
 
 ![Eli Bradley doing a live stream of _Immolation Organization_.](https://cloud.githubusercontent.com/assets/16024539/20692682/44762eca-b59f-11e6-8cc6-d5b8374fb3bc.png)
 
+###### This banner was taken from our live stream on November 28th, hosted by our lead programmer, where he overviewed the codebase and played the game for viewers. Be sure to to watch it prerecorded at https://youtu.be/lQOQ3nmBHog!
 
 ## Our Submission
 
